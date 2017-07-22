@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Decodable
 
 enum VpnStatus {
     case notConnected
@@ -15,7 +16,7 @@ enum VpnStatus {
     case error
 }
 
-class Vpn {
+struct Vpn {
     
     let title: String
     let ovpn: String
@@ -36,4 +37,16 @@ class Vpn {
             Vpn(title: "production.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-product.ovpn", connect: true)
         ]
     }
+}
+
+extension Vpn: Decodable {
+    
+    static func decode(_ json: Any) throws -> Vpn {
+        return try Vpn(
+            title: json => "name",
+            ovpn: json => "ovpn",
+            connect: json => "connect"
+        )
+    }
+    
 }
