@@ -158,6 +158,7 @@
 				6FAFE35A1F2384D800F66AD3 /* Controller */,
 				6FAFE35D1F2384D800F66AD3 /* Viewmodel */,
 				6FAFE3721F2388AE00F66AD3 /* Util */,
+				6FAFE3851F23DD4300F66AD3 /* Resources */,
 				6FAFE32B1F237B9300F66AD3 /* Main.storyboard */,
 				6FAFE32E1F237B9300F66AD3 /* Info.plist */,
 			);
@@ -228,6 +229,13 @@
 				6FAFE3731F2388D400F66AD3 /* NSViewController+Identifier.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		6FAFE3851F23DD4300F66AD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		78EC4A8DAF357C15F4D982A5 /* Frameworks */ = {
