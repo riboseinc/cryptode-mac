@@ -11,10 +11,24 @@ import CocoaLumberjack
 
 class StatusItemDelegate: NSObject {
     
-    weak var appDelegate: AppDelegate?
+    weak var appDelegate: AppDelegate!
     
-    func didClick(_ statusBarButton: NSStatusBarButton) {
-        DDLogInfo("\(#function), \(String(describing: statusBarButton))")
+    func didClick(_ button: NSStatusBarButton) {
+        DDLogInfo("\(#function), \(String(describing: button))")
+        
+        let window = self.appDelegate.windowController.window!
+
+        let windowFrame = window.frame
+        let eventFrame = NSApp.currentEvent!.window!.frame
+
+        let origin = NSPoint(
+            x: eventFrame.midX - windowFrame.width / 2,
+            y: eventFrame.origin.y
+        )
+        
+        window.setFrameTopLeftPoint(origin)
+        window.makeKeyAndOrderFront(self)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
 }

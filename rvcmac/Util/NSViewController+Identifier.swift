@@ -13,3 +13,9 @@ extension NSViewController {
         return String(describing: self)
     }
 }
+
+extension NSWindowController {
+    class func identifier() -> String {
+        return String(describing: self)
+    }
+}

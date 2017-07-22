@@ -24,6 +24,7 @@
 		6FAFE3761F238AAC00F66AD3 /* VpnCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3751F238AAC00F66AD3 /* VpnCollectionViewItem.swift */; };
 		6FAFE3781F239D0B00F66AD3 /* VpnCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */; };
 		6FAFE37A1F23A2E200F66AD3 /* StatusItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3791F23A2E200F66AD3 /* StatusItemDelegate.swift */; };
+		6FAFE37C1F23A75600F66AD3 /* VpnWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE37B1F23A75600F66AD3 /* VpnWindowController.swift */; };
 		A191834B4F4D59FAF28CECDB /* Pods_rvcmac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */; };
 		AF3E14A3B0E970695DADB52B /* Pods_rvcmacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */; };
 		F5872F3C85E3E007CD0F25E2 /* Pods_rvcmacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */; };
@@ -74,6 +75,7 @@
 		6FAFE3751F238AAC00F66AD3 /* VpnCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewItem.swift; sourceTree = "<group>"; };
 		6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VpnCollectionViewItem.xib; sourceTree = "<group>"; };
 		6FAFE3791F23A2E200F66AD3 /* StatusItemDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemDelegate.swift; sourceTree = "<group>"; };
+		6FAFE37B1F23A75600F66AD3 /* VpnWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnWindowController.swift; sourceTree = "<group>"; };
 		737EC4252273364B1096954E /* Pods-rvcmacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADFEF8EFBFB48716C9DF34EC /* Pods-rvcmacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 		6FAFE35A1F2384D800F66AD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6FAFE37B1F23A75600F66AD3 /* VpnWindowController.swift */,
 				6FAFE3641F2387C200F66AD3 /* VpnContainerViewController.swift */,
 				6FAFE3601F2387C200F66AD3 /* VpnCollectionViewController.swift */,
 				6FAFE3611F2387C200F66AD3 /* VpnCollectionViewDataSource.swift */,
@@ -535,6 +538,7 @@
 			files = (
 				6FAFE3261F237B9300F66AD3 /* AppDelegate.swift in Sources */,
 				6FAFE3741F2388D400F66AD3 /* NSViewController+Identifier.swift in Sources */,
+				6FAFE37C1F23A75600F66AD3 /* VpnWindowController.swift in Sources */,
 				6FAFE3691F2387C200F66AD3 /* VpnContainerViewController.swift in Sources */,
 				6FAFE3711F2387C800F66AD3 /* VpnWindow.swift in Sources */,
 				6FAFE3761F238AAC00F66AD3 /* VpnCollectionViewItem.swift in Sources */,

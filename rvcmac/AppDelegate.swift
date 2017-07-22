@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItem: NSStatusItem!
     let statusItemDelegate = StatusItemDelegate()
+    let windowController = VpnWindowController.instantiate()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {
