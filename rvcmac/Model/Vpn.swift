@@ -6,10 +6,7 @@
 //  Copyright © 2017 Ribose. All rights reserved.
 //
 
-import Foundation
-import Argo
-import Curry
-import Runes
+import Cocoa
 
 enum VpnStatus {
     case notConnected
@@ -21,31 +18,20 @@ enum VpnStatus {
 class Vpn {
     
     let title: String
-    let ovpn: String
     var connect: Bool
     var status: VpnStatus
     
-    init(title: String, ovpn: String, connect: Bool) {
+    init(title: String, connect: Bool, status: VpnStatus) {
         self.title = title
-        self.ovpn = ovpn
         self.connect = connect
-        self.status = .notConnected
+        self.status = status
     }
     
     static func demo() -> [Vpn] {
         return [
-            Vpn(title: "staging.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-staging.ovpn", connect: false),
-            Vpn(title: "testing.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-testing.ovpn", connect: true),
-            Vpn(title: "production.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-product.ovpn", connect: true)
+            Vpn(title: "staging.foobar.baz", connect: false, status: .notConnected),
+            Vpn(title: "testing.foobar.baz", connect: true, status: .notConnected),
+            Vpn(title: "production.foobar.baz", connect: true, status: .connected)
         ]
-    }
-}
-
-extension Vpn: Decodable {
-    static func decode(_ json: JSON) -> Decoded<Vpn> {
-        return curry(Vpn.init)
-            <^> json <| "name"
-            <*> json <| "ovpn"
-            <*> json <| "connect"
     }
 }
