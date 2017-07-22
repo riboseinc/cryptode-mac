@@ -8,7 +8,7 @@
 
 import XCTest
 
-class rvcmacUITests: XCTestCase {
+class RvcmacUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

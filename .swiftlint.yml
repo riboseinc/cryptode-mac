@@ -1,0 +1,10 @@
+disabled_rules: # rule identifiers to exclude from running
+  - trailing_whitespace
+  - implicit_getter
+  - line_length
+opt_in_rules:
+included: # paths to include during linting. `--path` is ignored if present.
+  - rvcmac
+  - rvcmacTests
+  - rvcmacUITests
+excluded:

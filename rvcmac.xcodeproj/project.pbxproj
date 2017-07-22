@@ -51,6 +51,7 @@
 		6FAFE33E1F237B9300F66AD3 /* rvcmacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rvcmacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFE3421F237B9300F66AD3 /* rvcmacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rvcmacUITests.swift; sourceTree = "<group>"; };
 		6FAFE3441F237B9300F66AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FAFE3501F237D7B00F66AD3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		737EC4252273364B1096954E /* Pods-rvcmacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADFEF8EFBFB48716C9DF34EC /* Pods-rvcmacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +126,7 @@
 		6FAFE3241F237B9300F66AD3 /* rvcmac */ = {
 			isa = PBXGroup;
 			children = (
+				6FAFE3501F237D7B00F66AD3 /* .swiftlint.yml */,
 				6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */,
 				6FAFE3271F237B9300F66AD3 /* ViewController.swift */,
 				6FAFE3291F237B9300F66AD3 /* Assets.xcassets */,
@@ -175,6 +177,7 @@
 				6FAFE3201F237B9300F66AD3 /* Resources */,
 				975F4A3366B9F8F6C4318AEA /* [CP] Embed Pods Frameworks */,
 				5DE3DF0CB630BE996D611BCE /* [CP] Copy Pods Resources */,
+				6FAFE3511F237E6E00F66AD3 /* Run SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -374,6 +377,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rvcmac/Pods-rvcmac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6FAFE3511F237E6E00F66AD3 /* Run SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		975F4A3366B9F8F6C4318AEA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -691,6 +708,7 @@
 				6FAFE3491F237B9300F66AD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FAFE34A1F237B9300F66AD3 /* Build configuration list for PBXNativeTarget "rvcmacTests" */ = {
 			isa = XCConfigurationList;
@@ -699,6 +717,7 @@
 				6FAFE34C1F237B9300F66AD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FAFE34D1F237B9300F66AD3 /* Build configuration list for PBXNativeTarget "rvcmacUITests" */ = {
 			isa = XCConfigurationList;
@@ -707,6 +726,7 @@
 				6FAFE34F1F237B9300F66AD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
