@@ -726,10 +726,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
                                                         <subviews>
                                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-rQ-YED">
-                                                                <rect key="frame" x="-6" y="-7" width="172" height="41"/>
-                                                                <buttonCell key="cell" type="push" title="Connect All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vyd-LC-jMm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                                <buttonCell key="cell" type="roundRect" title="Connect All" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Vyd-LC-jMm">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                    <font key="font" metaFont="system"/>
+                                                                    <font key="font" metaFont="cellTitle"/>
                                                                 </buttonCell>
                                                                 <connections>
                                                                     <action selector="actionConnectAll:" target="ZH3-qS-MNq" id="NN5-x8-Cu4"/>
@@ -747,10 +747,10 @@
                                                         <rect key="frame" x="160" y="0.0" width="160" height="30"/>
                                                         <subviews>
                                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-N3-xIb">
-                                                                <rect key="frame" x="-6" y="-7" width="172" height="41"/>
-                                                                <buttonCell key="cell" type="push" title="Disconnect All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AA0-bs-pkO">
-                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                    <font key="font" metaFont="system"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                                <buttonCell key="cell" type="roundRect" title="Disconnect All" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="AA0-bs-pkO">
+                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="cellTitle"/>
                                                                 </buttonCell>
                                                                 <connections>
                                                                     <action selector="actoinDisconnectAll:" target="ZH3-qS-MNq" id="LGB-cq-idw"/>
