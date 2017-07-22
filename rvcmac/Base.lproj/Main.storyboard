@@ -702,6 +702,9 @@
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="actionMenu:" target="ZH3-qS-MNq" id="agn-i9-oti"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -800,9 +803,27 @@
                     </view>
                     <connections>
                         <outlet property="containerView" destination="EC6-GP-k0N" id="cUA-WA-9sY"/>
+                        <outlet property="menuButton" destination="Tb7-x3-Skr" id="Baf-1A-zlJ"/>
+                        <outlet property="menuRef" destination="7SU-Ia-UGB" id="WeX-gJ-KPB"/>
                     </connections>
                 </viewController>
                 <customObject id="OvK-fe-BRU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="7SU-Ia-UGB">
+                    <items>
+                        <menuItem title="Preferences…" id="dwn-lk-VMo">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Help Center" id="cuF-ix-br4">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="8U1-ef-VTV"/>
+                        <menuItem title="Quit" keyEquivalent="q" id="WY8-HZ-M7d">
+                            <connections>
+                                <action selector="actionQuit:" target="ZH3-qS-MNq" id="68n-pG-gFx"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>

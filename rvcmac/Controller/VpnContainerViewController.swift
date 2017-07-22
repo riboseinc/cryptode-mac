@@ -13,6 +13,8 @@ class VpnContainerViewController: NSViewController {
 
     let collection = VpnCollectionViewController.instantiate()
     
+    @IBOutlet var menuRef: NSMenu!
+    @IBOutlet weak var menuButton: NSButton!
     @IBOutlet weak var containerView: NSView!
     
     static func instantiate() -> VpnContainerViewController {
@@ -21,6 +23,8 @@ class VpnContainerViewController: NSViewController {
     }
 
     func assertCheck() {
+        assert(menuRef != nil)
+        assert(menuButton != nil)
         assert(containerView != nil)
     }
     
@@ -31,4 +35,11 @@ class VpnContainerViewController: NSViewController {
         containerView.addSubview(collection.view)
     }
     
+    @IBAction func actionMenu(_ sender: Any) {
+        menuRef.popUp(positioning: nil, at: NSPoint(x: menuButton.bounds.midX + 4, y: 34), in: menuButton)
+    }
+    
+    @IBAction func actionQuit(_ sender: Any) {
+        NSApp.terminate(self)
+    }
 }
