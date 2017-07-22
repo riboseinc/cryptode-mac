@@ -1,0 +1,12 @@
+[
+  {
+    "name": "staging foobar.baz",
+    "ovpn": "/Users/test/.setup/vpn/test@foobar.baz-staging.ovpn",
+    "connect": "true"
+  },
+  {
+    "name": "testing foobar.baz",
+    "ovpn": "/Users/test/.setup/vpn/test@foobar.baz-testing.ovpn",
+    "connect": "false"
+  }
+]

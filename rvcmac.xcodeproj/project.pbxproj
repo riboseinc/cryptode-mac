@@ -25,6 +25,7 @@
 		6FAFE3781F239D0B00F66AD3 /* VpnCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */; };
 		6FAFE37C1F23A75600F66AD3 /* VpnWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE37B1F23A75600F66AD3 /* VpnWindowController.swift */; };
 		6FAFE3841F23CAC600F66AD3 /* VpnPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */; };
+		6FAFE3871F23DD7200F66AD3 /* config.json.example in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3861F23DD7200F66AD3 /* config.json.example */; };
 		A191834B4F4D59FAF28CECDB /* Pods_rvcmac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */; };
 		AF3E14A3B0E970695DADB52B /* Pods_rvcmacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */; };
 		F5872F3C85E3E007CD0F25E2 /* Pods_rvcmacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */; };
@@ -76,6 +77,7 @@
 		6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VpnCollectionViewItem.xib; sourceTree = "<group>"; };
 		6FAFE37B1F23A75600F66AD3 /* VpnWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnWindowController.swift; sourceTree = "<group>"; };
 		6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnPopover.swift; sourceTree = "<group>"; };
+		6FAFE3861F23DD7200F66AD3 /* config.json.example */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.json.example; sourceTree = "<group>"; };
 		737EC4252273364B1096954E /* Pods-rvcmacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADFEF8EFBFB48716C9DF34EC /* Pods-rvcmacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 		6FAFE3851F23DD4300F66AD3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6FAFE3861F23DD7200F66AD3 /* config.json.example */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				6FAFE3781F239D0B00F66AD3 /* VpnCollectionViewItem.xib in Resources */,
 				6FAFE32A1F237B9300F66AD3 /* Assets.xcassets in Resources */,
 				6FAFE32D1F237B9300F66AD3 /* Main.storyboard in Resources */,
+				6FAFE3871F23DD7200F66AD3 /* config.json.example in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
