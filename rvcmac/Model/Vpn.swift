@@ -7,9 +7,6 @@
 //
 
 import Foundation
-import Argo
-import Curry
-import Runes
 
 enum VpnStatus {
     case notConnected
@@ -38,14 +35,5 @@ class Vpn {
             Vpn(title: "testing.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-testing.ovpn", connect: true),
             Vpn(title: "production.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-product.ovpn", connect: true)
         ]
-    }
-}
-
-extension Vpn: Decodable {
-    static func decode(_ json: JSON) -> Decoded<Vpn> {
-        return curry(Vpn.init)
-            <^> json <| "name"
-            <*> json <| "ovpn"
-            <*> json <| "connect"
     }
 }
