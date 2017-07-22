@@ -20,10 +20,4 @@ class VpnWindowController: NSWindowController, NSWindowDelegate {
         super.windowDidLoad()
     }
     
-    // MARK: - NSWindowDelegate
-    
-    func windowDidResignKey(_ notification: Notification) {
-        DDLogInfo("\(#function), \(String(describing: notification))")
-        self.window?.orderOut(self)
-    }
 }

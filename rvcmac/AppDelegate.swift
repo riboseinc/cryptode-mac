@@ -12,9 +12,9 @@ import CocoaLumberjack
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var statusItem: NSStatusItem!
-    let statusItemDelegate = StatusItemDelegate()
-    let windowController = VpnWindowController.instantiate()
+    let rootController = VpnContainerViewController.instantiate()
+    let popover = VpnPopover()
+    let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {
@@ -26,17 +26,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             fileLogger.logFileManager.maximumNumberOfLogFiles = 7
             DDLog.add(fileLogger)
         }
-        func createStatusItem() -> NSStatusItem {
-            let item = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
-            item.image = #imageLiteral(resourceName: "rvcmac")
-            item.highlightMode = true
-            item.target = self.statusItemDelegate
-            item.action = #selector(StatusItemDelegate.didClick(_:))
-            return item
-        }
         setupLogging()
-        self.statusItemDelegate.appDelegate = self
-        self.statusItem = createStatusItem()
+        popover.contentViewController = rootController
+        statusItem.button!.image = #imageLiteral(resourceName: "rvcmac")
+        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in
+            if self.popover.isShown {
+                self.hide(event)
+            }
+        })
+        NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { event -> NSEvent? in
+            if event.window == self.statusItem.button!.window {
+                self.toggle(sender: self.statusItem.button!)
+                return nil
+            }
+            return event
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -44,6 +48,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // MARK: - Utility
+    
+    private func show(_ sender: NSStatusBarButton) {
+        DDLogInfo("\(#function)")
+        popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .minY)
+        statusItem.button!.highlight(true)
+    }
+    
+    private func hide(_ event: NSEvent?) {
+        DDLogInfo("\(#function)")
+        popover.performClose(event)
+        statusItem.button!.highlight(false)
+    }
+    
+    private func toggle(sender: NSStatusBarButton) {
+        DDLogInfo("\(#function)")
+        popover.isShown ? hide(nil) : show(sender)
+    }
     
     class var shared: AppDelegate {
         return NSApplication.shared().delegate! as! AppDelegate

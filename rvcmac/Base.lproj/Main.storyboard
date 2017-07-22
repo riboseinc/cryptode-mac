@@ -684,16 +684,13 @@
         <!--Vpn Container View Controller-->
         <scene sceneID="3Uk-EM-a4D">
             <objects>
-                <viewController id="ZH3-qS-MNq" customClass="VpnContainerViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VpnContainerViewController" id="ZH3-qS-MNq" customClass="VpnContainerViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="p3w-QC-Rip">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="EC6-GP-k0N">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <connections>
-                                    <segue destination="7bm-N7-2dY" kind="embed" id="lEG-4G-V3i"/>
-                                </connections>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                             </containerView>
                         </subviews>
                         <constraints>
@@ -703,6 +700,9 @@
                             <constraint firstItem="EC6-GP-k0N" firstAttribute="leading" secondItem="p3w-QC-Rip" secondAttribute="leading" id="uUy-17-xMq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="EC6-GP-k0N" id="cUA-WA-9sY"/>
+                    </connections>
                 </viewController>
                 <customObject id="OvK-fe-BRU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -711,14 +711,14 @@
         <!--Vpn Collection View Controller-->
         <scene sceneID="LrA-Jg-c2B">
             <objects>
-                <viewController id="7bm-N7-2dY" customClass="VpnCollectionViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VpnCollectionViewController" id="7bm-N7-2dY" customClass="VpnCollectionViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0KR-Wi-8DU">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEq-ou-UN7">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" drawsBackground="NO" id="Btg-l3-yp8">
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Btg-l3-yp8">
                                     <rect key="frame" x="1" y="1" width="448" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
