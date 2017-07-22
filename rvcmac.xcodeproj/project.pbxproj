@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		6FAFE3261F237B9300F66AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */; };
-		6FAFE3281F237B9300F66AD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3271F237B9300F66AD3 /* ViewController.swift */; };
 		6FAFE32A1F237B9300F66AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3291F237B9300F66AD3 /* Assets.xcassets */; };
 		6FAFE32D1F237B9300F66AD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE32B1F237B9300F66AD3 /* Main.storyboard */; };
 		6FAFE3381F237B9300F66AD3 /* rvcmacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3371F237B9300F66AD3 /* rvcmacTests.swift */; };
 		6FAFE3431F237B9300F66AD3 /* rvcmacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3421F237B9300F66AD3 /* rvcmacUITests.swift */; };
 		6FAFE35F1F23861400F66AD3 /* Vpn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE35E1F23861400F66AD3 /* Vpn.swift */; };
+		6FAFE3651F2387C200F66AD3 /* VpnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3601F2387C200F66AD3 /* VpnCollectionViewController.swift */; };
+		6FAFE3661F2387C200F66AD3 /* VpnCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3611F2387C200F66AD3 /* VpnCollectionViewDataSource.swift */; };
+		6FAFE3671F2387C200F66AD3 /* VpnCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3621F2387C200F66AD3 /* VpnCollectionViewDelegate.swift */; };
+		6FAFE3681F2387C200F66AD3 /* VpnCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3631F2387C200F66AD3 /* VpnCollectionViewFlowLayout.swift */; };
+		6FAFE3691F2387C200F66AD3 /* VpnContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3641F2387C200F66AD3 /* VpnContainerViewController.swift */; };
+		6FAFE36E1F2387C800F66AD3 /* VpnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE36A1F2387C800F66AD3 /* VpnCollectionView.swift */; };
+		6FAFE3711F2387C800F66AD3 /* VpnWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE36D1F2387C800F66AD3 /* VpnWindow.swift */; };
+		6FAFE3741F2388D400F66AD3 /* NSViewController+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3731F2388D400F66AD3 /* NSViewController+Identifier.swift */; };
+		6FAFE3761F238AAC00F66AD3 /* VpnCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3751F238AAC00F66AD3 /* VpnCollectionViewItem.swift */; };
+		6FAFE3781F239D0B00F66AD3 /* VpnCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */; };
 		A191834B4F4D59FAF28CECDB /* Pods_rvcmac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */; };
 		AF3E14A3B0E970695DADB52B /* Pods_rvcmacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */; };
 		F5872F3C85E3E007CD0F25E2 /* Pods_rvcmacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */; };
@@ -42,7 +51,6 @@
 		58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFE3221F237B9300F66AD3 /* rvcmac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rvcmac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6FAFE3271F237B9300F66AD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6FAFE3291F237B9300F66AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FAFE32C1F237B9300F66AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FAFE32E1F237B9300F66AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +62,16 @@
 		6FAFE3441F237B9300F66AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FAFE3501F237D7B00F66AD3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		6FAFE35E1F23861400F66AD3 /* Vpn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vpn.swift; sourceTree = "<group>"; };
+		6FAFE3601F2387C200F66AD3 /* VpnCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewController.swift; sourceTree = "<group>"; };
+		6FAFE3611F2387C200F66AD3 /* VpnCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		6FAFE3621F2387C200F66AD3 /* VpnCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		6FAFE3631F2387C200F66AD3 /* VpnCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		6FAFE3641F2387C200F66AD3 /* VpnContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnContainerViewController.swift; sourceTree = "<group>"; };
+		6FAFE36A1F2387C800F66AD3 /* VpnCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionView.swift; sourceTree = "<group>"; };
+		6FAFE36D1F2387C800F66AD3 /* VpnWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnWindow.swift; sourceTree = "<group>"; };
+		6FAFE3731F2388D400F66AD3 /* NSViewController+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Identifier.swift"; sourceTree = "<group>"; };
+		6FAFE3751F238AAC00F66AD3 /* VpnCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewItem.swift; sourceTree = "<group>"; };
+		6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VpnCollectionViewItem.xib; sourceTree = "<group>"; };
 		737EC4252273364B1096954E /* Pods-rvcmacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADFEF8EFBFB48716C9DF34EC /* Pods-rvcmacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,12 +148,12 @@
 			children = (
 				6FAFE3501F237D7B00F66AD3 /* .swiftlint.yml */,
 				6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */,
-				6FAFE3271F237B9300F66AD3 /* ViewController.swift */,
 				6FAFE3291F237B9300F66AD3 /* Assets.xcassets */,
 				6FAFE35B1F2384D800F66AD3 /* Model */,
 				6FAFE35C1F2384D800F66AD3 /* View */,
 				6FAFE35A1F2384D800F66AD3 /* Controller */,
 				6FAFE35D1F2384D800F66AD3 /* Viewmodel */,
+				6FAFE3721F2388AE00F66AD3 /* Util */,
 				6FAFE32B1F237B9300F66AD3 /* Main.storyboard */,
 				6FAFE32E1F237B9300F66AD3 /* Info.plist */,
 			);
@@ -163,6 +181,13 @@
 		6FAFE35A1F2384D800F66AD3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6FAFE3641F2387C200F66AD3 /* VpnContainerViewController.swift */,
+				6FAFE3601F2387C200F66AD3 /* VpnCollectionViewController.swift */,
+				6FAFE3611F2387C200F66AD3 /* VpnCollectionViewDataSource.swift */,
+				6FAFE3621F2387C200F66AD3 /* VpnCollectionViewDelegate.swift */,
+				6FAFE3631F2387C200F66AD3 /* VpnCollectionViewFlowLayout.swift */,
+				6FAFE3751F238AAC00F66AD3 /* VpnCollectionViewItem.swift */,
+				6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +203,8 @@
 		6FAFE35C1F2384D800F66AD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6FAFE36A1F2387C800F66AD3 /* VpnCollectionView.swift */,
+				6FAFE36D1F2387C800F66AD3 /* VpnWindow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +214,14 @@
 			children = (
 			);
 			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		6FAFE3721F2388AE00F66AD3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				6FAFE3731F2388D400F66AD3 /* NSViewController+Identifier.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		78EC4A8DAF357C15F4D982A5 /* Frameworks */ = {
@@ -316,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FAFE3781F239D0B00F66AD3 /* VpnCollectionViewItem.xib in Resources */,
 				6FAFE32A1F237B9300F66AD3 /* Assets.xcassets in Resources */,
 				6FAFE32D1F237B9300F66AD3 /* Main.storyboard in Resources */,
 			);
@@ -494,9 +530,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FAFE3281F237B9300F66AD3 /* ViewController.swift in Sources */,
 				6FAFE3261F237B9300F66AD3 /* AppDelegate.swift in Sources */,
+				6FAFE3741F2388D400F66AD3 /* NSViewController+Identifier.swift in Sources */,
+				6FAFE3691F2387C200F66AD3 /* VpnContainerViewController.swift in Sources */,
+				6FAFE3711F2387C800F66AD3 /* VpnWindow.swift in Sources */,
+				6FAFE3761F238AAC00F66AD3 /* VpnCollectionViewItem.swift in Sources */,
 				6FAFE35F1F23861400F66AD3 /* Vpn.swift in Sources */,
+				6FAFE3671F2387C200F66AD3 /* VpnCollectionViewDelegate.swift in Sources */,
+				6FAFE3661F2387C200F66AD3 /* VpnCollectionViewDataSource.swift in Sources */,
+				6FAFE36E1F2387C800F66AD3 /* VpnCollectionView.swift in Sources */,
+				6FAFE3651F2387C200F66AD3 /* VpnCollectionViewController.swift in Sources */,
+				6FAFE3681F2387C200F66AD3 /* VpnCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

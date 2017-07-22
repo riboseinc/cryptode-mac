@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Vpn {
+open class Vpn: NSObject {
     
     enum Status {
         case notConnected

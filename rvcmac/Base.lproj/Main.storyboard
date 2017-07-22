@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G18a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="rvcmac" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -662,32 +664,104 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="VpnWindow" customModule="rvcmac" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="ZH3-qS-MNq" kind="relationship" relationship="window.shadowedContentViewController" id="DtU-L2-txt"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Vpn Container View Controller-->
+        <scene sceneID="3Uk-EM-a4D">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                <viewController id="ZH3-qS-MNq" customClass="VpnContainerViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="p3w-QC-Rip">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="EC6-GP-k0N">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <connections>
+                                    <segue destination="7bm-N7-2dY" kind="embed" id="lEG-4G-V3i"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="EC6-GP-k0N" firstAttribute="top" secondItem="p3w-QC-Rip" secondAttribute="top" id="BZx-af-sZY"/>
+                            <constraint firstAttribute="bottom" secondItem="EC6-GP-k0N" secondAttribute="bottom" id="SDd-sy-pfJ"/>
+                            <constraint firstAttribute="trailing" secondItem="EC6-GP-k0N" secondAttribute="trailing" id="uTp-2a-vQ0"/>
+                            <constraint firstItem="EC6-GP-k0N" firstAttribute="leading" secondItem="p3w-QC-Rip" secondAttribute="leading" id="uUy-17-xMq"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="OvK-fe-BRU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Vpn Collection View Controller-->
+        <scene sceneID="LrA-Jg-c2B">
+            <objects>
+                <viewController id="7bm-N7-2dY" customClass="VpnCollectionViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="0KR-Wi-8DU">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEq-ou-UN7">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <clipView key="contentView" drawsBackground="NO" id="Btg-l3-yp8">
+                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView allowsMultipleSelection="YES" id="Rh4-pe-8a0" customClass="VpnCollectionView" customModule="rvcmac" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" id="IOX-JC-3oP" customClass="VpnCollectionViewFlowLayout" customModule="rvcmac" customModuleProvider="target">
+                                                <size key="itemSize" width="320" height="40"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="07h-Na-pR4" id="gbx-4O-2WE"/>
+                                                <outlet property="delegate" destination="uSW-n5-MRQ" id="cBI-2O-JKc"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Pr5-am-Duh">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="sKz-1O-9yB">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JEq-ou-UN7" secondAttribute="trailing" id="3ri-Kq-4Pn"/>
+                            <constraint firstItem="JEq-ou-UN7" firstAttribute="leading" secondItem="0KR-Wi-8DU" secondAttribute="leading" id="BgI-Wk-G8q"/>
+                            <constraint firstItem="JEq-ou-UN7" firstAttribute="top" secondItem="0KR-Wi-8DU" secondAttribute="top" id="Ugl-sF-cA5"/>
+                            <constraint firstAttribute="bottom" secondItem="JEq-ou-UN7" secondAttribute="bottom" id="Yfo-3G-QAu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Rh4-pe-8a0" id="xj6-qK-hB0"/>
+                        <outlet property="collectionViewDataSource" destination="07h-Na-pR4" id="JZJ-eU-rM6"/>
+                        <outlet property="collectionViewDelegate" destination="uSW-n5-MRQ" id="GlC-dn-QzO"/>
+                    </connections>
+                </viewController>
+                <customObject id="tPK-ji-276" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="07h-Na-pR4" customClass="VpnCollectionViewDataSource" customModule="rvcmac" customModuleProvider="target"/>
+                <customObject id="uSW-n5-MRQ" customClass="VpnCollectionViewDelegate" customModule="rvcmac" customModuleProvider="target"/>
+                <userDefaultsController id="W3q-cw-Vci"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="655"/>
         </scene>
     </scenes>
 </document>
