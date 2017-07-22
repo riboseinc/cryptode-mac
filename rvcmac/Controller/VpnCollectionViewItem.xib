@@ -110,7 +110,7 @@
                         <constraint firstAttribute="bottom" secondItem="TED-lS-30n" secondAttribute="bottom" id="4Lf-Mn-RQM"/>
                         <constraint firstItem="TED-lS-30n" firstAttribute="leading" secondItem="fQ2-YN-31e" secondAttribute="leading" id="57h-i2-E6k"/>
                         <constraint firstAttribute="trailing" secondItem="TED-lS-30n" secondAttribute="trailing" id="Fh8-AB-Gxa"/>
-                        <constraint firstAttribute="width" constant="320" id="aD7-l0-S4Y"/>
+                        <constraint firstAttribute="width" constant="320" placeholder="YES" id="aD7-l0-S4Y"/>
                     </constraints>
                 </customView>
             </subviews>
