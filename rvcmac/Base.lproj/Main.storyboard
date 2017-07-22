@@ -4,6 +4,7 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -686,18 +687,115 @@
             <objects>
                 <viewController storyboardIdentifier="VpnContainerViewController" id="ZH3-qS-MNq" customClass="VpnContainerViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="p3w-QC-Rip">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="EC6-GP-k0N">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
-                            </containerView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="jxh-Lo-wye">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="khJ-jK-VWN" userLabel="Header View">
+                                        <rect key="frame" x="0.0" y="210" width="320" height="30"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-x3-Skr">
+                                                <rect key="frame" x="244" y="-2" width="74" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Menu" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s0l-bE-WTY">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="R09-i1-6qe"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tb7-x3-Skr" secondAttribute="trailing" constant="8" id="jSV-RD-zJM"/>
+                                            <constraint firstItem="Tb7-x3-Skr" firstAttribute="centerY" secondItem="khJ-jK-VWN" secondAttribute="centerY" id="wKc-LZ-F2T"/>
+                                        </constraints>
+                                    </customView>
+                                    <containerView translatesAutoresizingMaskIntoConstraints="NO" id="EC6-GP-k0N">
+                                        <rect key="frame" x="0.0" y="30" width="320" height="180"/>
+                                    </containerView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="FgO-eV-kam" userLabel="Footer View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <subviews>
+                                            <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-35-SHP">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                <subviews>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="iue-f2-nvn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-rQ-YED">
+                                                                <rect key="frame" x="-6" y="-7" width="172" height="41"/>
+                                                                <buttonCell key="cell" type="push" title="Connect All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vyd-LC-jMm">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="wZb-rQ-YED" secondAttribute="trailing" id="Ye4-hh-X6j"/>
+                                                            <constraint firstItem="wZb-rQ-YED" firstAttribute="top" secondItem="iue-f2-nvn" secondAttribute="top" id="ahx-Ht-D6m"/>
+                                                            <constraint firstItem="wZb-rQ-YED" firstAttribute="leading" secondItem="iue-f2-nvn" secondAttribute="leading" id="cdc-99-8MB"/>
+                                                            <constraint firstAttribute="bottom" secondItem="wZb-rQ-YED" secondAttribute="bottom" id="ofx-74-aRU"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="X0E-lB-dpS">
+                                                        <rect key="frame" x="160" y="0.0" width="160" height="30"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-N3-xIb">
+                                                                <rect key="frame" x="-6" y="-7" width="172" height="41"/>
+                                                                <buttonCell key="cell" type="push" title="Disconnect All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AA0-bs-pkO">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="TGh-N3-xIb" secondAttribute="bottom" id="JGi-vr-dPx"/>
+                                                            <constraint firstItem="TGh-N3-xIb" firstAttribute="top" secondItem="X0E-lB-dpS" secondAttribute="top" id="aUg-7H-WD3"/>
+                                                            <constraint firstItem="TGh-N3-xIb" firstAttribute="leading" secondItem="X0E-lB-dpS" secondAttribute="leading" id="fqT-0S-Inm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="TGh-N3-xIb" secondAttribute="trailing" id="yOu-8j-Z6u"/>
+                                                        </constraints>
+                                                    </customView>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Ecz-35-SHP" secondAttribute="bottom" id="0Jc-RU-5wY"/>
+                                            <constraint firstItem="Ecz-35-SHP" firstAttribute="top" secondItem="FgO-eV-kam" secondAttribute="top" id="1sx-wX-p0q"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ecz-35-SHP" secondAttribute="trailing" id="7ol-40-azZ"/>
+                                            <constraint firstAttribute="height" constant="30" id="Gru-G7-1q4"/>
+                                            <constraint firstItem="Ecz-35-SHP" firstAttribute="leading" secondItem="FgO-eV-kam" secondAttribute="leading" id="ZVg-X7-XqT"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="khJ-jK-VWN" secondAttribute="trailing" id="0Ti-Vj-tjb"/>
+                                    <constraint firstItem="khJ-jK-VWN" firstAttribute="leading" secondItem="jxh-Lo-wye" secondAttribute="leading" id="8TZ-ao-gRG"/>
+                                    <constraint firstItem="FgO-eV-kam" firstAttribute="leading" secondItem="jxh-Lo-wye" secondAttribute="leading" id="EOI-yX-eSY"/>
+                                    <constraint firstItem="FgO-eV-kam" firstAttribute="top" secondItem="EC6-GP-k0N" secondAttribute="bottom" id="ESI-EQ-Dfb"/>
+                                    <constraint firstAttribute="trailing" secondItem="FgO-eV-kam" secondAttribute="trailing" id="GQ3-RX-Pza"/>
+                                    <constraint firstItem="EC6-GP-k0N" firstAttribute="top" secondItem="khJ-jK-VWN" secondAttribute="bottom" id="T8e-iR-z6U"/>
+                                    <constraint firstAttribute="trailing" secondItem="EC6-GP-k0N" secondAttribute="trailing" id="YfS-1R-tzM"/>
+                                    <constraint firstAttribute="width" constant="320" id="aFP-Cr-6Za"/>
+                                    <constraint firstItem="EC6-GP-k0N" firstAttribute="top" secondItem="khJ-jK-VWN" secondAttribute="bottom" id="dTJ-uo-KJw"/>
+                                    <constraint firstAttribute="bottom" secondItem="FgO-eV-kam" secondAttribute="bottom" id="dgZ-V0-Hsb"/>
+                                    <constraint firstItem="EC6-GP-k0N" firstAttribute="leading" secondItem="jxh-Lo-wye" secondAttribute="leading" id="jOc-h2-rpW"/>
+                                    <constraint firstItem="khJ-jK-VWN" firstAttribute="top" secondItem="jxh-Lo-wye" secondAttribute="top" id="qLx-O2-gQf"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="EC6-GP-k0N" firstAttribute="top" secondItem="p3w-QC-Rip" secondAttribute="top" id="BZx-af-sZY"/>
-                            <constraint firstAttribute="bottom" secondItem="EC6-GP-k0N" secondAttribute="bottom" id="SDd-sy-pfJ"/>
-                            <constraint firstAttribute="trailing" secondItem="EC6-GP-k0N" secondAttribute="trailing" id="uTp-2a-vQ0"/>
-                            <constraint firstItem="EC6-GP-k0N" firstAttribute="leading" secondItem="p3w-QC-Rip" secondAttribute="leading" id="uUy-17-xMq"/>
+                            <constraint firstItem="jxh-Lo-wye" firstAttribute="leading" secondItem="p3w-QC-Rip" secondAttribute="leading" id="bVf-eU-OWs"/>
+                            <constraint firstAttribute="bottom" secondItem="jxh-Lo-wye" secondAttribute="bottom" id="fBa-Ii-F8l"/>
+                            <constraint firstAttribute="trailing" secondItem="jxh-Lo-wye" secondAttribute="trailing" id="hVf-JF-utC"/>
+                            <constraint firstItem="jxh-Lo-wye" firstAttribute="top" secondItem="p3w-QC-Rip" secondAttribute="top" id="w3O-RU-Og0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -716,14 +814,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEq-ou-UN7">
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEq-ou-UN7">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Btg-l3-yp8">
-                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView allowsMultipleSelection="YES" id="Rh4-pe-8a0" customClass="VpnCollectionView" customModule="rvcmac" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" id="IOX-JC-3oP" customClass="VpnCollectionViewFlowLayout" customModule="rvcmac" customModuleProvider="target">
                                                 <size key="itemSize" width="320" height="40"/>
