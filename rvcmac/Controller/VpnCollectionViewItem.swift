@@ -92,12 +92,21 @@ class VpnCollectionViewItem: NSCollectionViewItem {
         switch self.checkBoxButton.state {
         case NSOnState:
             DDLogInfo("on")
+            item.connect = true
         default:
             DDLogInfo("off")
+            item.connect = false
         }
     }
     
     @IBAction func actionToggleButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
+        if item.status == .connected {
+            item.status = .notConnected
+        } else {
+            item.status = .connected
+        }
+        updateStatus()
+        updateToggleButton()
     }
 }
