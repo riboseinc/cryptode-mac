@@ -19,4 +19,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    class var shared: AppDelegate {
+        // swiftlint:disable force_cast
+        return NSApplication.shared().delegate! as! AppDelegate
+        // swiftlint:enable force_cast
+    }
 }
