@@ -130,6 +130,10 @@
 				6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */,
 				6FAFE3271F237B9300F66AD3 /* ViewController.swift */,
 				6FAFE3291F237B9300F66AD3 /* Assets.xcassets */,
+				6FAFE35B1F2384D800F66AD3 /* Model */,
+				6FAFE35C1F2384D800F66AD3 /* View */,
+				6FAFE35A1F2384D800F66AD3 /* Controller */,
+				6FAFE35D1F2384D800F66AD3 /* Viewmodel */,
 				6FAFE32B1F237B9300F66AD3 /* Main.storyboard */,
 				6FAFE32E1F237B9300F66AD3 /* Info.plist */,
 			);
@@ -152,6 +156,34 @@
 				6FAFE3441F237B9300F66AD3 /* Info.plist */,
 			);
 			path = rvcmacUITests;
+			sourceTree = "<group>";
+		};
+		6FAFE35A1F2384D800F66AD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6FAFE35B1F2384D800F66AD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FAFE35C1F2384D800F66AD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6FAFE35D1F2384D800F66AD3 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Viewmodel;
 			sourceTree = "<group>";
 		};
 		78EC4A8DAF357C15F4D982A5 /* Frameworks */ = {
