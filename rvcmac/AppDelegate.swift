@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DDLog.add(fileLogger)
         }
         func createStatusItem() -> NSStatusItem {
-            let item = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+            let item = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
             item.image = #imageLiteral(resourceName: "rvcmac")
             item.highlightMode = true
             item.target = self.statusItemDelegate
