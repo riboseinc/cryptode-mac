@@ -6,6 +6,7 @@ target 'rvcmac' do
   # Pods for rvcmac
   pod 'SwiftLint'
   pod 'CocoaLumberjack/Swift'
+  pod 'Decodable', '~> 0.5'
 
   target 'rvcmacTests' do
     inherit! :search_paths
