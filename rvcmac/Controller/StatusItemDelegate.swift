@@ -7,13 +7,14 @@
 //
 
 import Cocoa
+import CocoaLumberjack
 
 class StatusItemDelegate: NSObject {
     
     weak var appDelegate: AppDelegate?
     
     func didClick(_ statusBarButton: NSStatusBarButton) {
-        print(#function, String(describing: statusBarButton))
+        DDLogInfo("\(#function), \(String(describing: statusBarButton))")
     }
     
 }

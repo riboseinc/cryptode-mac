@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {
-            DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+//            DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console -- ASL is enough on macOS
             DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
             
             let fileLogger: DDFileLogger = DDFileLogger() // File Logger
