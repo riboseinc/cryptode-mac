@@ -8,22 +8,30 @@
 
 import Cocoa
 
-open class Vpn: NSObject {
+enum VpnStatus {
+    case notConnected
+    case connecting
+    case connected
+    case error
+}
+
+class Vpn {
     
-    enum Status {
-        case notConnected
-        case connecting
-        case connected
-        case error
-    }
-    
-    var title: String
+    let title: String
     var connect: Bool
-    var status: Status
+    var status: VpnStatus
     
-    init(title: String, connect: Bool, status: Status) {
+    init(title: String, connect: Bool, status: VpnStatus) {
         self.title = title
         self.connect = connect
         self.status = status
+    }
+    
+    static func demo() -> [Vpn] {
+        return [
+            Vpn(title: "staging.foobar.baz", connect: false, status: .notConnected),
+            Vpn(title: "testing.foobar.baz", connect: true, status: .notConnected),
+            Vpn(title: "production.foobar.baz", connect: true, status: .connected)
+        ]
     }
 }
