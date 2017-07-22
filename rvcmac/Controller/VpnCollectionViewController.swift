@@ -14,17 +14,18 @@ class VpnCollectionViewController: NSViewController {
     @IBOutlet var collectionViewDataSource: VpnCollectionViewDataSource!
     @IBOutlet var collectionViewDelegate: VpnCollectionViewDelegate!
     
+    static func instantiate() -> VpnCollectionViewController {
+        let sb = NSStoryboard(name: "Main", bundle: nil)
+        return sb.instantiateController(withIdentifier: self.identifier()) as! VpnCollectionViewController
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        func registerNib() {
-            let nib = NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!
-            self.collectionView.register(nib, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
-        }
-        registerNib()
+        self.collectionView.register(NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
     }
     
     override func viewWillAppear() {
-        let w =  view.window!.minSize.width
+        let w = view.window!.minSize.width
         let h = self.collectionView.minItemSize.height
         self.collectionView.minItemSize = NSSize(width: w, height: h)
     }
