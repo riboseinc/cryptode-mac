@@ -9,7 +9,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="VpnCollectionViewItem" customModule="rvcmac" customModuleProvider="target">
             <connections>
+                <outlet property="actionToggleButtonPressed" destination="4tB-eC-0nw" id="VVZ-p1-Cai"/>
+                <outlet property="checkBoxButton" destination="qdu-l7-cAj" id="IDW-Jl-Hz4"/>
+                <outlet property="statusView" destination="7Ht-gT-Dgq" id="91k-cC-alq"/>
                 <outlet property="titleTextField" destination="UsC-bY-VAP" id="UNc-9h-uFX"/>
+                <outlet property="toggleButton" destination="4tB-eC-0nw" id="vXY-eN-7c5"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -40,6 +44,9 @@
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="actionCheckBoxButtonPressed:" target="-2" id="06N-NS-ZQe"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -76,6 +83,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="actionToggleButtonPressed:" target="-2" id="8O7-3J-1SC"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
