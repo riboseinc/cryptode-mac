@@ -264,8 +264,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FAFE3471F237B9300F66AD3 /* Build configuration list for PBXNativeTarget "rvcmac" */;
 			buildPhases = (
-				6FAFE3511F237E6E00F66AD3 /* Run SwiftLint Script */,
 				DDF45389D8B18B79C564E3DF /* [CP] Check Pods Manifest.lock */,
+				6FAFE3511F237E6E00F66AD3 /* Run SwiftLint Script */,
 				6FAFE31E1F237B9300F66AD3 /* Sources */,
 				6FAFE31F1F237B9300F66AD3 /* Frameworks */,
 				6FAFE3201F237B9300F66AD3 /* Resources */,
