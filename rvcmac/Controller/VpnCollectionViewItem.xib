@@ -20,7 +20,7 @@
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsC-bY-VAP">
                     <rect key="frame" x="6" y="8" width="308" height="17"/>
-                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="PV1-ak-9KA">
+                    <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Multiline Label" id="PV1-ak-9KA">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
