@@ -4,41 +4,133 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="VpnCollectionViewItem" customModule="rvcmac" customModuleProvider="target">
-            <connections>
-                <outlet property="titleTextField" destination="UsC-bY-VAP" id="UNc-9h-uFX"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
-            </connections>
-        </customObject>
+        <customObject id="-2" userLabel="File's Owner" customClass="VpnCollectionViewItem" customModule="rvcmac" customModuleProvider="target"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsC-bY-VAP">
-                    <rect key="frame" x="6" y="8" width="308" height="17"/>
-                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="PV1-ak-9KA">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </textFieldCell>
-                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="fQ2-YN-31e">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TED-lS-30n">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <subviews>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Ht-gT-Dgq" userLabel="Status View">
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="10" id="CeW-5Q-ad8"/>
+                                    </constraints>
+                                </customView>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="hSp-B1-6JA" userLabel="Check Box Container">
+                                    <rect key="frame" x="10" y="18" width="24" height="14"/>
+                                    <subviews>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="qdu-l7-cAj">
+                                            <rect key="frame" x="3" y="-2" width="18" height="18"/>
+                                            <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="only" inset="2" id="uy0-7T-7h2">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="actionCheckBoxButtonPressed:" target="WkK-Ds-H2F" id="5zc-3v-gXZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qdu-l7-cAj" firstAttribute="centerX" secondItem="hSp-B1-6JA" secondAttribute="centerX" id="8Ac-2Z-WKb"/>
+                                        <constraint firstAttribute="height" constant="14" id="HJg-Qq-Nct"/>
+                                        <constraint firstItem="qdu-l7-cAj" firstAttribute="centerY" secondItem="hSp-B1-6JA" secondAttribute="centerY" id="Ygt-gC-R0X"/>
+                                        <constraint firstAttribute="width" constant="24" id="gWX-V6-h4Z"/>
+                                    </constraints>
+                                </customView>
+                                <customView horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cc-wI-B0z" userLabel="Title Container">
+                                    <rect key="frame" x="34" y="0.0" width="186" height="50"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsC-bY-VAP">
+                                            <rect key="frame" x="18" y="17" width="150" height="17"/>
+                                            <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Multiline Label" id="PV1-ak-9KA">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UsC-bY-VAP" firstAttribute="centerY" secondItem="8cc-wI-B0z" secondAttribute="centerY" id="6jF-xd-J0J"/>
+                                        <constraint firstItem="UsC-bY-VAP" firstAttribute="leading" secondItem="8cc-wI-B0z" secondAttribute="leading" constant="20" symbolic="YES" id="dRQ-LW-wlI"/>
+                                        <constraint firstAttribute="trailing" secondItem="UsC-bY-VAP" secondAttribute="trailing" constant="20" symbolic="YES" id="o8g-25-ylU"/>
+                                    </constraints>
+                                </customView>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="6yE-zq-6WA" userLabel="Button Container">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="50"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4tB-eC-0nw">
+                                            <rect key="frame" x="2" y="7" width="96" height="32"/>
+                                            <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8p6-to-v6N">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="actionToggleButtonPressed:" target="WkK-Ds-H2F" id="BHB-ae-g7r"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4tB-eC-0nw" firstAttribute="centerY" secondItem="6yE-zq-6WA" secondAttribute="centerY" id="MgR-pI-xzC"/>
+                                        <constraint firstItem="4tB-eC-0nw" firstAttribute="centerX" secondItem="6yE-zq-6WA" secondAttribute="centerX" id="Rb4-rV-1Yu"/>
+                                        <constraint firstItem="4tB-eC-0nw" firstAttribute="leading" secondItem="6yE-zq-6WA" secondAttribute="leading" constant="8" id="YmY-Yl-rt2"/>
+                                        <constraint firstAttribute="width" constant="100" id="ar1-U8-M8D"/>
+                                        <constraint firstItem="4tB-eC-0nw" firstAttribute="centerY" secondItem="6yE-zq-6WA" secondAttribute="centerY" id="p33-J9-kfm"/>
+                                        <constraint firstAttribute="trailing" secondItem="4tB-eC-0nw" secondAttribute="trailing" constant="8" id="qqe-g5-Qhb"/>
+                                    </constraints>
+                                </customView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="hSp-B1-6JA" firstAttribute="centerY" secondItem="TED-lS-30n" secondAttribute="centerY" id="I2h-gT-ec9"/>
+                            </constraints>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="TED-lS-30n" firstAttribute="top" secondItem="fQ2-YN-31e" secondAttribute="top" id="2TQ-5J-94J"/>
+                        <constraint firstAttribute="bottom" secondItem="TED-lS-30n" secondAttribute="bottom" id="4Lf-Mn-RQM"/>
+                        <constraint firstItem="TED-lS-30n" firstAttribute="leading" secondItem="fQ2-YN-31e" secondAttribute="leading" id="57h-i2-E6k"/>
+                        <constraint firstAttribute="trailing" secondItem="TED-lS-30n" secondAttribute="trailing" id="Fh8-AB-Gxa"/>
+                        <constraint firstAttribute="width" constant="320" placeholder="YES" id="aD7-l0-S4Y"/>
+                    </constraints>
+                </customView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="UsC-bY-VAP" secondAttribute="bottom" constant="8" id="9kY-ve-pma"/>
-                <constraint firstAttribute="trailing" secondItem="UsC-bY-VAP" secondAttribute="trailing" constant="8" id="My4-L9-jd5"/>
-                <constraint firstItem="UsC-bY-VAP" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="dTt-zs-Lkr"/>
-                <constraint firstItem="UsC-bY-VAP" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="8" id="ddl-7j-fbt"/>
+                <constraint firstItem="fQ2-YN-31e" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="ZeQ-aq-KLw"/>
+                <constraint firstItem="fQ2-YN-31e" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="gTW-du-XwG"/>
+                <constraint firstAttribute="trailing" secondItem="fQ2-YN-31e" secondAttribute="trailing" id="qDT-EY-iMo"/>
+                <constraint firstAttribute="bottom" secondItem="fQ2-YN-31e" secondAttribute="bottom" id="qgb-wu-qDo"/>
             </constraints>
-            <point key="canvasLocation" x="208" y="377"/>
+            <point key="canvasLocation" x="-56" y="376"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="i2v-Xj-lqD"/>
         <collectionViewItem nibName="VpnCollectionViewItem" id="WkK-Ds-H2F" customClass="VpnCollectionViewItem" customModule="rvcmac" customModuleProvider="target">
             <connections>
-                <outlet property="titleTextField" destination="UsC-bY-VAP" id="MYA-63-g6o"/>
+                <outlet property="checkBoxButton" destination="qdu-l7-cAj" id="Eux-uw-IaD"/>
+                <outlet property="statusView" destination="7Ht-gT-Dgq" id="6lF-1k-4jl"/>
+                <outlet property="titleTextField" destination="UsC-bY-VAP" id="Q8L-6q-4wI"/>
+                <outlet property="toggleButton" destination="4tB-eC-0nw" id="XX7-G2-k8J"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="xkb-cn-TBe"/>
             </connections>
         </collectionViewItem>
     </objects>

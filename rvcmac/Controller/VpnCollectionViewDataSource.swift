@@ -12,11 +12,9 @@ class VpnCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
     
     let itemIdentifier = VpnCollectionViewItem.identifier()
     
-    var items = [
-        Vpn(title: "staging.foobar.baz", connect: false, status: .notConnected),
-        Vpn(title: "testing.foobar.baz", connect: true, status: .notConnected),
-        Vpn(title: "production.foobar.baz", connect: true, status: .connected)
-    ]
+    lazy var items = {
+        return Vpn.file()
+    }()
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count

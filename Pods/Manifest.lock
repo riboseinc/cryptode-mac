@@ -1,26 +1,20 @@
 PODS:
-  - Argo (4.1.2):
-    - Runes (>= 4.0.0)
   - CocoaLumberjack/Default (3.2.0)
   - CocoaLumberjack/Swift (3.2.0):
     - CocoaLumberjack/Default
-  - Curry (3.0.0)
-  - Runes (4.1.0)
+  - Decodable (0.5)
   - SwiftLint (0.20.1)
 
 DEPENDENCIES:
-  - Argo
   - CocoaLumberjack/Swift
-  - Curry
+  - Decodable (~> 0.5)
   - SwiftLint
 
 SPEC CHECKSUMS:
-  Argo: 5db06502fc1222d83011f574243089dab25202ff
   CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
-  Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
-  Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
+  Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
   SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
 
-PODFILE CHECKSUM: 86aa3ba57ccd150abdad13c3da84a6efb675afb6
+PODFILE CHECKSUM: 33a5f843fab5602211939767c1a1f6cedc2b8544
 
 COCOAPODS: 1.2.1
