@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         setupLogging()
         popover.contentViewController = rootController
-        statusItem.button!.image = #imageLiteral(resourceName: "rvcmac")
+        statusItem.button!.image = NSImage(named: "rvcmac")!
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in
             if self.popover.isShown {
                 self.hide(event)
