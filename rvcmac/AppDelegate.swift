@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CocoaLumberjack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -15,6 +16,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItemDelegate = StatusItemDelegate()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        func setupLogging() {
+            DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+            DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
+            
+            let fileLogger: DDFileLogger = DDFileLogger() // File Logger
+            fileLogger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
+            fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+            DDLog.add(fileLogger)
+        }
         func createStatusItem() -> NSStatusItem {
             let item = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
             item.image = #imageLiteral(resourceName: "rvcmac")
@@ -23,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             item.action = #selector(StatusItemDelegate.didClick(_:))
             return item
         }
+        setupLogging()
         self.statusItemDelegate.appDelegate = self
         self.statusItem = createStatusItem()
     }
