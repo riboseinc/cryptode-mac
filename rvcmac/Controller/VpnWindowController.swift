@@ -7,8 +7,9 @@
 //
 
 import Cocoa
+import CocoaLumberjack
 
-class VpnWindowController: NSWindowController {
+class VpnWindowController: NSWindowController, NSWindowDelegate {
 
     static func instantiate() -> VpnWindowController {
         let sb = NSStoryboard(name: "Main", bundle: nil)
@@ -18,5 +19,11 @@ class VpnWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
     }
-
+    
+    // MARK: - NSWindowDelegate
+    
+    func windowDidResignKey(_ notification: Notification) {
+        DDLogInfo("\(#function), \(String(describing: notification))")
+        self.window?.orderOut(self)
+    }
 }

@@ -42,7 +42,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
+    
+    // MARK: - Utility
+    
     class var shared: AppDelegate {
         return NSApplication.shared().delegate! as! AppDelegate
     }
