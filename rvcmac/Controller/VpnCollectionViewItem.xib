@@ -135,7 +135,10 @@
         <userDefaultsController representsSharedInstance="YES" id="i2v-Xj-lqD"/>
         <collectionViewItem nibName="VpnCollectionViewItem" id="WkK-Ds-H2F" customClass="VpnCollectionViewItem" customModule="rvcmac" customModuleProvider="target">
             <connections>
+                <outlet property="checkBoxButton" destination="qdu-l7-cAj" id="4e0-fW-rRd"/>
+                <outlet property="statusView" destination="7Ht-gT-Dgq" id="rwz-Z9-y0f"/>
                 <outlet property="titleTextField" destination="UsC-bY-VAP" id="MYA-63-g6o"/>
+                <outlet property="toggleButton" destination="4tB-eC-0nw" id="SvR-EK-cgV"/>
             </connections>
         </collectionViewItem>
     </objects>
