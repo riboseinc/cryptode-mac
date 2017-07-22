@@ -11,6 +11,8 @@ import CocoaLumberjack
 
 class VpnCollectionViewItem: NSCollectionViewItem {
 
+    weak var collectionViewDataSource: VpnCollectionViewDataSource!
+    
     @IBOutlet weak var statusView: NSView!
     @IBOutlet weak var checkBoxButton: NSButton!
     @IBOutlet weak var titleTextField: NSTextField!
@@ -48,6 +50,8 @@ class VpnCollectionViewItem: NSCollectionViewItem {
             updateUI()
         }
     }
+    
+    // MARK: - UI
     
     fileprivate func updateUI() {
         updateStatus()

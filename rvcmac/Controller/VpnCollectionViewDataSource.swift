@@ -12,7 +12,9 @@ class VpnCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
     
     let itemIdentifier = VpnCollectionViewItem.identifier()
     
-    let items = Vpn.file()
+    lazy var items = {
+        return Vpn.file()
+    }()
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
@@ -22,6 +24,7 @@ class VpnCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
         
         let item = collectionView.makeItem(withIdentifier: self.itemIdentifier, for: indexPath) as! VpnCollectionViewItem
         item.item = self.items[indexPath.item]
+        item.collectionViewDataSource = self
         
         return item
     }
