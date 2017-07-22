@@ -731,6 +731,9 @@
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="actionConnectAll:" target="ZH3-qS-MNq" id="NN5-x8-Cu4"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -749,6 +752,9 @@
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="actoinDisconnectAll:" target="ZH3-qS-MNq" id="LGB-cq-idw"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -802,7 +808,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectAllButton" destination="wZb-rQ-YED" id="KCk-2r-crc"/>
                         <outlet property="containerView" destination="EC6-GP-k0N" id="cUA-WA-9sY"/>
+                        <outlet property="disconnectAllButton" destination="TGh-N3-xIb" id="dyK-bF-Jwc"/>
                         <outlet property="menuButton" destination="Tb7-x3-Skr" id="Baf-1A-zlJ"/>
                         <outlet property="menuRef" destination="7SU-Ia-UGB" id="WeX-gJ-KPB"/>
                     </connections>
