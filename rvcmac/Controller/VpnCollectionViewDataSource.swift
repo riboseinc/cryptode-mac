@@ -24,7 +24,6 @@ class VpnCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
         
         let item = collectionView.makeItem(withIdentifier: self.itemIdentifier, for: indexPath) as! VpnCollectionViewItem
         item.item = self.items[indexPath.item]
-        item.collectionViewDataSource = self
         
         return item
     }

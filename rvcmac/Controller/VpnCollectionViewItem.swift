@@ -10,8 +10,6 @@ import Cocoa
 import CocoaLumberjack
 
 class VpnCollectionViewItem: NSCollectionViewItem {
-
-    weak var collectionViewDataSource: VpnCollectionViewDataSource!
     
     @IBOutlet weak var statusView: NSView!
     @IBOutlet weak var checkBoxButton: NSButton!
