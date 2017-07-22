@@ -45,7 +45,43 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     var item: Vpn! {
         didSet {
-            titleTextField.stringValue = item.title
+            updateUI()
+        }
+    }
+    
+    fileprivate func updateUI() {
+        updateStatus()
+        updateState()
+        updateTitle()
+        updateToggleButton()
+    }
+    
+    fileprivate func updateStatus() {
+        switch item.status {
+        case .notConnected:
+            statusView.backgroundColor = NSColor.ribose.notConnected
+        case .connecting:
+            statusView.backgroundColor = NSColor.ribose.connecting
+        case .connected:
+            statusView.backgroundColor = NSColor.ribose.connected
+        case .error:
+            statusView.backgroundColor = NSColor.ribose.error
+        }
+    }
+    
+    fileprivate func updateState() {
+        checkBoxButton.state = item.connect ? NSOnState : NSOffState
+    }
+    
+    fileprivate func updateTitle() {
+        titleTextField.stringValue = item.title
+    }
+    
+    fileprivate func updateToggleButton() {
+        if item.status == .connected {
+            toggleButton.title =  "Disconnect"
+        } else {
+            toggleButton.title =  "Connect"
         }
     }
     
