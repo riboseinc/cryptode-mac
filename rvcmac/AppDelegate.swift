@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let rootController = VpnContainerViewController.instantiate()
     let popover = VpnPopover()
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+    let service = try! VpnService()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {

@@ -11,7 +11,7 @@ import Decodable
 import CocoaLumberjack
 
 enum VpnStatus {
-    case notConnected
+    case disconnected
     case connecting
     case connected
     case error
@@ -21,40 +21,24 @@ struct Vpn {
     
     let title: String
     let ovpn: String
-    var connect: Bool
+    var isSelected: Bool
     var status: VpnStatus
     
-    init(title: String, ovpn: String, connect: Bool) {
+    init(title: String, ovpn: String, isSelected: Bool) {
         self.title = title
         self.ovpn = ovpn
-        self.connect = connect
-        self.status = .notConnected
+        self.isSelected = isSelected
+        self.status = .disconnected
     }
     
-    static func demo() -> [Vpn] {
-        return [
-            Vpn(title: "staging.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-staging.ovpn", connect: false),
-            Vpn(title: "testing.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-testing.ovpn", connect: true),
-            Vpn(title: "production.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-product.ovpn", connect: true)
-        ]
+    mutating func connect() {
+        status = .connected
+    }
+
+    mutating func disconnect() {
+        status = .disconnected
     }
     
-    static func file() -> [Vpn] {
-        do {
-            let bundle = CFBundleGetMainBundle()
-            let name = "config.json" as CFString
-            let type = "example" as CFString
-            let url = CFBundleCopyResourceURL(bundle, name, type, nil) as URL
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            let vpns = try [Vpn].decode(json)
-            DDLogInfo(String(describing: vpns))
-            return vpns
-        } catch {
-            DDLogError(String(describing: error))
-            return []
-        }
-    }
 }
 
 extension Vpn: Decodable {
@@ -73,7 +57,7 @@ extension Vpn: Decodable {
         return try Vpn(
             title: json => "name",
             ovpn: json => "ovpn",
-            connect: json => "connect"
+            isSelected: json => "connect"
         )
     }
 

@@ -13,7 +13,7 @@ extension NSColor: RiboseExtensionsProvider {}
 
 extension Ribose where Base: NSColor {
     
-    static var notConnected: NSColor {
+    static var disconnected: NSColor {
         return NSColor.clear
     }
 
