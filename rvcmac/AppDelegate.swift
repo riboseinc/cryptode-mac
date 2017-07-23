@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let rootController = VpnContainerViewController.instantiate()
     let popover = VpnPopover()
     let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+    let service = try! VpnService()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {
@@ -27,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DDLog.add(fileLogger)
         }
         setupLogging()
+        rootController.service = service
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: "rvcmac")!
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in

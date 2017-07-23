@@ -11,55 +11,45 @@ import Decodable
 import CocoaLumberjack
 
 enum VpnStatus {
-    case notConnected
+    case disconnected
     case connecting
     case connected
     case error
 }
 
-struct Vpn {
+class Vpn {
     
     let title: String
     let ovpn: String
-    var connect: Bool
+    var isSelected: Bool
     var status: VpnStatus
     
-    init(title: String, ovpn: String, connect: Bool) {
-        self.title = title
-        self.ovpn = ovpn
-        self.connect = connect
-        self.status = .notConnected
-    }
-    
-    static func demo() -> [Vpn] {
-        return [
-            Vpn(title: "staging.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-staging.ovpn", connect: false),
-            Vpn(title: "testing.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-testing.ovpn", connect: true),
-            Vpn(title: "production.foobar.baz", ovpn: "/Users/test/.setup/vpn/test@foobar.baz-product.ovpn", connect: true)
-        ]
-    }
-    
-    static func file() -> [Vpn] {
-        do {
-            let bundle = CFBundleGetMainBundle()
-            let name = "config.json" as CFString
-            let type = "example" as CFString
-            let url = CFBundleCopyResourceURL(bundle, name, type, nil) as URL
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            let vpns = try [Vpn].decode(json)
-            DDLogInfo(String(describing: vpns))
-            return vpns
-        } catch {
-            DDLogError(String(describing: error))
-            return []
+    var isConnected: Bool {
+        get {
+            return status == .connected
         }
     }
+    
+    required init(title: String, ovpn: String, isSelected: Bool) {
+        self.title = title
+        self.ovpn = ovpn
+        self.isSelected = isSelected
+        self.status = .disconnected
+    }
+    
+    func connect() {
+        status = .connected
+    }
+
+    func disconnect() {
+        status = .disconnected
+    }
+    
 }
 
 extension Vpn: Decodable {
     
-    static func decode(_ json: Any) throws -> Vpn {
+    static func decode(_ json: Any) throws -> Self {
         Bool.decoder = { json in
             switch json {
             case let str as String where str == "true":
@@ -70,10 +60,10 @@ extension Vpn: Decodable {
                 return try cast(json)
             }
         }
-        return try Vpn(
+        return try self.init(
             title: json => "name",
             ovpn: json => "ovpn",
-            connect: json => "connect"
+            isSelected: json => "connect"
         )
     }
 

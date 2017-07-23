@@ -21,6 +21,7 @@ class VpnCollectionViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionViewDataSource.service = AppDelegate.shared.service
         self.collectionView.register(NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
     }
     

@@ -38,7 +38,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     override func prepareForReuse() {
         // super.prepareForReuse() leads to a crash
-        statusView.backgroundColor = NSColor.ribose.notConnected
+        statusView.backgroundColor = NSColor.ribose.disconnected
         titleTextField.stringValue = ""
         checkBoxButton.state = NSOffState
     }
@@ -60,8 +60,8 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     fileprivate func updateStatus() {
         switch item.status {
-        case .notConnected:
-            statusView.backgroundColor = NSColor.ribose.notConnected
+        case .disconnected:
+            statusView.backgroundColor = NSColor.ribose.disconnected
         case .connecting:
             statusView.backgroundColor = NSColor.ribose.connecting
         case .connected:
@@ -72,7 +72,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     fileprivate func updateState() {
-        checkBoxButton.state = item.connect ? NSOnState : NSOffState
+        checkBoxButton.state = item.isSelected ? NSOnState : NSOffState
     }
     
     fileprivate func updateTitle() {
@@ -80,7 +80,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     fileprivate func updateToggleButton() {
-        if item.status == .connected {
+        if item.isConnected {
             toggleButton.title =  "Disconnect"
         } else {
             toggleButton.title =  "Connect"
@@ -94,17 +94,17 @@ class VpnCollectionViewItem: NSCollectionViewItem {
         switch self.checkBoxButton.state {
         case NSOnState:
             DDLogInfo("on")
-            item.connect = true
+            item.isSelected = true
         default:
             DDLogInfo("off")
-            item.connect = false
+            item.isSelected = false
         }
     }
     
     @IBAction func actionToggleButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
-        if item.status == .connected {
-            item.status = .notConnected
+        if item.isConnected {
+            item.status = .disconnected
         } else {
             item.status = .connected
         }
