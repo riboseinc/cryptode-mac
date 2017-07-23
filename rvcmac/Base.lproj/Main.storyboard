@@ -697,8 +697,11 @@
                                         <rect key="frame" x="0.0" y="210" width="320" height="30"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-x3-Skr">
-                                                <rect key="frame" x="244" y="-2" width="74" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Menu" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s0l-bE-WTY">
+                                                <rect key="frame" x="276" y="-2" width="42" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="3uB-gM-q6D"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="settings" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s0l-bE-WTY">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -894,4 +897,7 @@
             <point key="canvasLocation" x="648" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="223" height="235"/>
+    </resources>
 </document>
