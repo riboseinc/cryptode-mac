@@ -17,25 +17,31 @@ enum VpnStatus {
     case error
 }
 
-struct Vpn {
+class Vpn {
     
     let title: String
     let ovpn: String
     var isSelected: Bool
     var status: VpnStatus
     
-    init(title: String, ovpn: String, isSelected: Bool) {
+    var isConnected: Bool {
+        get {
+            return status == .connected
+        }
+    }
+    
+    required init(title: String, ovpn: String, isSelected: Bool) {
         self.title = title
         self.ovpn = ovpn
         self.isSelected = isSelected
         self.status = .disconnected
     }
     
-    mutating func connect() {
+    func connect() {
         status = .connected
     }
 
-    mutating func disconnect() {
+    func disconnect() {
         status = .disconnected
     }
     
@@ -43,7 +49,7 @@ struct Vpn {
 
 extension Vpn: Decodable {
     
-    static func decode(_ json: Any) throws -> Vpn {
+    static func decode(_ json: Any) throws -> Self {
         Bool.decoder = { json in
             switch json {
             case let str as String where str == "true":
@@ -54,7 +60,7 @@ extension Vpn: Decodable {
                 return try cast(json)
             }
         }
-        return try Vpn(
+        return try self.init(
             title: json => "name",
             ovpn: json => "ovpn",
             isSelected: json => "connect"

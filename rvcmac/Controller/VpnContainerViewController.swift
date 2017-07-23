@@ -12,6 +12,7 @@ import CocoaLumberjack
 class VpnContainerViewController: NSViewController {
 
     let collection = VpnCollectionViewController.instantiate()
+    var service: VpnService!
     
     @IBOutlet var menuRef: NSMenu!
     @IBOutlet weak var menuButton: NSButton!
@@ -25,6 +26,8 @@ class VpnContainerViewController: NSViewController {
     }
 
     func assertCheck() {
+        assert(service != nil)
+
         assert(menuRef != nil)
         
         assert(menuButton != nil)
@@ -49,6 +52,8 @@ class VpnContainerViewController: NSViewController {
         containerView.addSubview(collection.view)
     }
     
+    // MARK: - Actions
+    
     @IBAction func actionMenu(_ sender: Any) {
         DDLogInfo("\(#function)")
         menuRef.popUp(positioning: nil, at: NSPoint(x: menuButton.bounds.midX + 4, y: 34), in: menuButton)
@@ -61,9 +66,13 @@ class VpnContainerViewController: NSViewController {
     
     @IBAction func actionConnectAll(_ sender: Any) {
         DDLogInfo("\(#function)")
+        service.connectAll()
+        collection.collectionView.reloadData()
     }
     
     @IBAction func actoinDisconnectAll(_ sender: Any) {
         DDLogInfo("\(#function)")
+        service.disconnectAll()
+        collection.collectionView.reloadData()
     }
 }

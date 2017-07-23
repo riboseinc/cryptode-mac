@@ -80,7 +80,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     fileprivate func updateToggleButton() {
-        if item.status == .connected {
+        if item.isConnected {
             toggleButton.title =  "Disconnect"
         } else {
             toggleButton.title =  "Connect"
@@ -103,7 +103,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     @IBAction func actionToggleButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
-        if item.status == .connected {
+        if item.isConnected {
             item.status = .disconnected
         } else {
             item.status = .connected

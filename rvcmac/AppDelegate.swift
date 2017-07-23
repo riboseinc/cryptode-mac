@@ -28,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DDLog.add(fileLogger)
         }
         setupLogging()
+        rootController.service = service
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: "rvcmac")!
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in
