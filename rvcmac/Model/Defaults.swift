@@ -8,25 +8,23 @@
 
 import AppKit
 
+fileprivate let kIsSetUp = "kIsSetUp"
+
 class Defaults {
     static var shared = Defaults()
     
-    private static let kIsFirstLaunch = "kIsFirstLaunch"
     private let userDefaults: UserDefaults
     
     init() {
         self.userDefaults = UserDefaults.standard
-        self.userDefaults.register(defaults: [
-            Defaults.kIsFirstLaunch: false
-        ])
     }
     
-    var isFirstLaunch: Bool {
+    var isSetUp: Bool {
         get {
-            return self.userDefaults.bool(forKey: Defaults.kIsFirstLaunch)
+            return self.userDefaults.bool(forKey: kIsSetUp)
         }
         set {
-            self.userDefaults.set(newValue, forKey: Defaults.kIsFirstLaunch)
+            self.userDefaults.set(newValue, forKey: kIsSetUp)
             self.userDefaults.synchronize()
         }
     }
