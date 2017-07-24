@@ -30,6 +30,7 @@
 		6FAFE3841F23CAC600F66AD3 /* VpnPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */; };
 		6FAFE3871F23DD7200F66AD3 /* config.json.example in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3861F23DD7200F66AD3 /* config.json.example */; };
 		6FBB8C671F268C79006838AC /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB8C661F268C79006838AC /* Defaults.swift */; };
+		6FBB8D001F26A232006838AC /* rvcmachelper.app in Copy Helper App */ = {isa = PBXBuildFile; fileRef = 6FBB8CF81F269D69006838AC /* rvcmachelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A191834B4F4D59FAF28CECDB /* Pods_rvcmac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */; };
 		AF3E14A3B0E970695DADB52B /* Pods_rvcmacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */; };
 		F5872F3C85E3E007CD0F25E2 /* Pods_rvcmacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */; };
@@ -50,7 +51,42 @@
 			remoteGlobalIDString = 6FAFE3211F237B9300F66AD3;
 			remoteInfo = rvcmac;
 		};
+		6FBB8CF71F269D69006838AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FBB8CF31F269D68006838AC /* rvcmachelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6FBB8CDC1F269D68006838AC;
+			remoteInfo = rvcmachelper;
+		};
+		6FBB8CFA1F26A1D4006838AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FBB8CF31F269D68006838AC /* rvcmachelper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FBB8CDB1F269D68006838AC;
+			remoteInfo = rvcmachelper;
+		};
+		6FBB8CFD1F26A1E3006838AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FBB8CF31F269D68006838AC /* rvcmachelper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FBB8CDB1F269D68006838AC;
+			remoteInfo = rvcmachelper;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6FBB8CFF1F26A218006838AC /* Copy Helper App */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				6FBB8D001F26A232006838AC /* rvcmachelper.app in Copy Helper App */,
+			);
+			name = "Copy Helper App";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +122,7 @@
 		6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnPopover.swift; sourceTree = "<group>"; };
 		6FAFE3861F23DD7200F66AD3 /* config.json.example */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.json.example; sourceTree = "<group>"; };
 		6FBB8C661F268C79006838AC /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		6FBB8CF31F269D68006838AC /* rvcmachelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = rvcmachelper.xcodeproj; path = rvcmachelper/rvcmachelper.xcodeproj; sourceTree = "<group>"; };
 		737EC4252273364B1096954E /* Pods-rvcmacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADFEF8EFBFB48716C9DF34EC /* Pods-rvcmacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB710A8174E86CC7F8605575 /* Pods_rvcmacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +183,7 @@
 		6FAFE3191F237B9300F66AD3 = {
 			isa = PBXGroup;
 			children = (
+				6FBB8CF31F269D68006838AC /* rvcmachelper.xcodeproj */,
 				6FAFE3241F237B9300F66AD3 /* rvcmac */,
 				6FAFE3361F237B9300F66AD3 /* rvcmacTests */,
 				6FAFE3411F237B9300F66AD3 /* rvcmacUITests */,
@@ -261,6 +299,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6FBB8CF41F269D68006838AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FBB8CF81F269D69006838AC /* rvcmachelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78EC4A8DAF357C15F4D982A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,10 +331,13 @@
 				6FAFE3201F237B9300F66AD3 /* Resources */,
 				975F4A3366B9F8F6C4318AEA /* [CP] Embed Pods Frameworks */,
 				5DE3DF0CB630BE996D611BCE /* [CP] Copy Pods Resources */,
+				6FBB8CFF1F26A218006838AC /* Copy Helper App */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6FBB8CFB1F26A1D4006838AC /* PBXTargetDependency */,
+				6FBB8CFE1F26A1E3006838AC /* PBXTargetDependency */,
 			);
 			name = rvcmac;
 			productName = rvcmac;
@@ -374,6 +423,12 @@
 			mainGroup = 6FAFE3191F237B9300F66AD3;
 			productRefGroup = 6FAFE3231F237B9300F66AD3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6FBB8CF41F269D68006838AC /* Products */;
+					ProjectRef = 6FBB8CF31F269D68006838AC /* rvcmachelper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6FAFE3211F237B9300F66AD3 /* rvcmac */,
@@ -382,6 +437,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6FBB8CF81F269D69006838AC /* rvcmachelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = rvcmachelper.app;
+			remoteRef = 6FBB8CF71F269D69006838AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6FAFE3201F237B9300F66AD3 /* Resources */ = {
@@ -616,6 +681,16 @@
 			isa = PBXTargetDependency;
 			target = 6FAFE3211F237B9300F66AD3 /* rvcmac */;
 			targetProxy = 6FAFE33F1F237B9300F66AD3 /* PBXContainerItemProxy */;
+		};
+		6FBB8CFB1F26A1D4006838AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = rvcmachelper;
+			targetProxy = 6FBB8CFA1F26A1D4006838AC /* PBXContainerItemProxy */;
+		};
+		6FBB8CFE1F26A1E3006838AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = rvcmachelper;
+			targetProxy = 6FBB8CFD1F26A1E3006838AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
