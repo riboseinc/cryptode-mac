@@ -8,6 +8,9 @@
 
 import Cocoa
 import CocoaLumberjack
+import ServiceManagement
+
+fileprivate let helperBundleId = "com.ribose.rvcmachelper"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -27,6 +30,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             fileLogger.logFileManager.maximumNumberOfLogFiles = 7
             DDLog.add(fileLogger)
         }
+        func setupAutostart() {
+            if Defaults.shared.isSetUp {
+                return
+            }
+            setAutostart(enabled: true)
+        }
         setupLogging()
         rootController.service = service
         popover.contentViewController = rootController
@@ -43,6 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             return event
         }
+        Defaults.shared.isSetUp = true
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -66,6 +76,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func toggle(sender: NSStatusBarButton) {
         DDLogInfo("\(#function)")
         popover.isShown ? hide(nil) : show(sender)
+    }
+    
+    func setAutostart(enabled: Bool) {
+        if SMLoginItemSetEnabled(helperBundleId as CFString, enabled) {
+            DDLogInfo("Successfully set login item enabled='\(enabled)'")
+        } else {
+            DDLogError("Successfully set login item enabled='\(enabled)'. Make sure app is running from /Applications or ~/Applications")
+        }
     }
     
     class var shared: AppDelegate {
