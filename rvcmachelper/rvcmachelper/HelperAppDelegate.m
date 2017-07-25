@@ -17,7 +17,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     for (NSRunningApplication *running in NSWorkspace.sharedWorkspace.runningApplications) {
-        if ([@"com.ribase.rvcmac" isEqualToString:running.bundleIdentifier]) {
+        if ([@"com.ribose.rvcmac" isEqualToString:running.bundleIdentifier]) {
             NSLog(@"rvcmac is already running");
             [NSApp terminate:nil];
             return;
