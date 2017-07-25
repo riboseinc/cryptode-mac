@@ -17,15 +17,16 @@ class Defaults {
     
     init() {
         self.userDefaults = UserDefaults.standard
+        self.userDefaults.register(defaults: [kIsSetUp: false])
     }
     
     var isSetUp: Bool {
         get {
-            return self.userDefaults.bool(forKey: kIsSetUp)
+            return userDefaults.bool(forKey: kIsSetUp)
         }
         set {
-            self.userDefaults.set(newValue, forKey: kIsSetUp)
-            self.userDefaults.synchronize()
+            userDefaults.set(newValue, forKey: kIsSetUp)
+            userDefaults.synchronize()
         }
     }
 }
