@@ -8,7 +8,7 @@
 
 import AppKit
 
-fileprivate let kIsSetUp = "kIsSetUp"
+fileprivate let KEY_IS_SET_UP = "isSetUp"
 
 class Defaults {
     static var shared = Defaults()
@@ -17,15 +17,15 @@ class Defaults {
     
     init() {
         self.userDefaults = UserDefaults.standard
-        self.userDefaults.register(defaults: [kIsSetUp: false])
+        self.userDefaults.register(defaults: [KEY_IS_SET_UP: false])
     }
     
     var isSetUp: Bool {
         get {
-            return userDefaults.bool(forKey: kIsSetUp)
+            return userDefaults.bool(forKey: KEY_IS_SET_UP)
         }
         set {
-            userDefaults.set(newValue, forKey: kIsSetUp)
+            userDefaults.set(newValue, forKey: KEY_IS_SET_UP)
             userDefaults.synchronize()
         }
     }
