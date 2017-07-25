@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = VpnPopover()
     let statusItem = NSStatusBar.system().statusItem(withLength: 24)
     let service = try! VpnService()
+    let loginItemsController = LoginItemsController()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {
@@ -31,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DDLog.add(fileLogger)
         }
         setupLogging()
-        startAtLogin = true
+        loginItemsController.add()
         rootController.service = service
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: "rvcmac2")!
@@ -47,8 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             return event
         }
-        Defaults.shared.isSetUp = true
-        DDLogInfo("Start at login is='\(startAtLogin)'")
+        DDLogInfo("Start at login is='\(loginItemsController.exists())'")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
