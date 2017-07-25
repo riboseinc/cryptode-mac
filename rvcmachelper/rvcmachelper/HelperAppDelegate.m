@@ -8,6 +8,8 @@
 
 #import "HelperAppDelegate.h"
 
+// This autostart method is not used at the moment.
+// See ../../rvcmac/Util/LoginItemsController.swift
 @interface HelperAppDelegate ()
 
 @end

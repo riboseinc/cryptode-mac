@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "HelperAppDelegate.h"
 
+// This autostart method is not used at the moment.
+// See ../../rvcmac/Util/LoginItemsController.swift
 int main(int argc, const char * argv[]) {
     NSApplication *application = NSApplication.sharedApplication;
     HelperAppDelegate *delegate = [[HelperAppDelegate alloc] init];
