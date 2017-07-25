@@ -10,7 +10,7 @@ import Cocoa
 import CocoaLumberjack
 import ServiceManagement
 
-fileprivate let helperBundleId = "com.ribose.rvcmachelper"
+fileprivate let helperBundleId = "com.ribose.rvcmac"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -30,15 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             fileLogger.logFileManager.maximumNumberOfLogFiles = 7
             DDLog.add(fileLogger)
         }
-        func setupAutostart() {
-            if Defaults.shared.isSetUp {
-                return
-            }
-            setAutostart(enabled: true)
-        }
         setupLogging()
-        setupAutostart()
-        setAutostart(enabled: true)
+        startAtLogin = true
         rootController.service = service
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: "rvcmac2")!
@@ -55,6 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return event
         }
         Defaults.shared.isSetUp = true
+        DDLogInfo("Start at login is='\(startAtLogin)'")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -80,11 +74,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.isShown ? hide(nil) : show(sender)
     }
     
-    func setAutostart(enabled: Bool) {
-        if SMLoginItemSetEnabled(helperBundleId as CFString, enabled) {
-            DDLogInfo("Successfully set login item enabled='\(enabled)'")
-        } else {
-            DDLogError("Successfully set login item enabled='\(enabled)'. Make sure app is running from /Applications or ~/Applications")
+    dynamic var startAtLogin: Bool {
+        get {
+            guard let xs = SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String:Any]] else {
+                return false
+            }
+            let x = xs.first(where: { $0["Label"] as! String == helperBundleId })
+            return x != nil
+        } set {
+            if SMLoginItemSetEnabled(helperBundleId as CFString, newValue) {
+                DDLogInfo("Successfully set startAtLogin='\(startAtLogin)'")
+            } else {
+                DDLogError("Error: startAtLogin='\(startAtLogin)'. Make sure app is running from /Applications or ~/Applications")
+            }
         }
     }
     
