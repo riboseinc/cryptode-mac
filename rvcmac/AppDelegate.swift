@@ -38,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         setupLogging()
         setupAutostart()
+        setAutostart(enabled: true)
         rootController.service = service
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: "rvcmac2")!
