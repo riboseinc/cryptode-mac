@@ -8,6 +8,7 @@
 
 import Foundation
 import AppKit
+import SwiftHEXColors
 
 extension NSColor: RiboseExtensionsProvider {}
 
@@ -50,7 +51,7 @@ extension Ribose where Base: NSColor {
     }
     
     static var popover: NSColor {
-        return NSColor(calibratedRed: 238, green: 238, blue: 238, alpha: 1)
+        return NSColor(hexString: "eeeeee")!
     }
     
 }
