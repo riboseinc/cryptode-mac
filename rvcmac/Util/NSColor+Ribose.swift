@@ -37,6 +37,10 @@ extension Ribose where Base: NSColor {
         return NSColor.darkGray
     }
 
+    static var shadow: NSColor {
+        return NSColor.lightGray
+    }
+    
 }
 
 /// Extenstion proxy inspired by ReactiveCocoa sources

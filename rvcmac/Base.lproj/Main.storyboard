@@ -696,7 +696,7 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="9FC-VJ-e6T">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                                         <subviews>
-                                            <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="menu" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-4J-6b7">
+                                            <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="menu" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-4J-6b7" customClass="HeaderView" customModule="rvcmac" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="210" width="320" height="30"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-x3-Skr" customClass="ImageButton" customModule="rvcmac" customModuleProvider="target">
@@ -722,7 +722,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="Tb7-x3-Skr" secondAttribute="trailing" constant="8" id="aGC-3u-WVk"/>
                                                 </constraints>
                                             </visualEffectView>
-                                            <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="menu" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SXz-vr-DVR" userLabel="Footer">
+                                            <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="menu" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SXz-vr-DVR" customClass="FooterView" customModule="rvcmac" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                                 <subviews>
                                                     <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-35-SHP">
