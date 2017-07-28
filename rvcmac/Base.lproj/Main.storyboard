@@ -696,22 +696,35 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="khJ-jK-VWN" userLabel="Header View">
                                         <rect key="frame" x="0.0" y="210" width="320" height="30"/>
                                         <subviews>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-x3-Skr">
-                                                <rect key="frame" x="276" y="-2" width="42" height="32"/>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-x3-Skr" customClass="ImageButton" customModule="rvcmac" customModuleProvider="target">
+                                                <rect key="frame" x="282" y="6" width="30" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="3uB-gM-q6D"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="settings" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s0l-bE-WTY">
+                                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="s0l-bE-WTY">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
+                                                    <font key="font" metaFont="cellTitle"/>
                                                 </buttonCell>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="displayImage" value="settings"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="actionMenu:" target="ZH3-qS-MNq" id="agn-i9-oti"/>
                                                 </connections>
                                             </button>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-mn-dnP">
+                                                <rect key="frame" x="150" y="5" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="IQv-W5-bPL"/>
+                                                    <constraint firstAttribute="height" constant="20" id="gnJ-Er-OUb"/>
+                                                </constraints>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="settings" id="qed-te-woN"/>
+                                            </imageView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="JIC-mn-dnP" firstAttribute="centerX" secondItem="khJ-jK-VWN" secondAttribute="centerX" id="4Z4-Hh-EFZ"/>
                                             <constraint firstAttribute="height" constant="30" id="R09-i1-6qe"/>
+                                            <constraint firstItem="JIC-mn-dnP" firstAttribute="centerY" secondItem="khJ-jK-VWN" secondAttribute="centerY" id="XyH-p2-m7L"/>
                                             <constraint firstAttribute="trailing" secondItem="Tb7-x3-Skr" secondAttribute="trailing" constant="8" id="jSV-RD-zJM"/>
                                             <constraint firstItem="Tb7-x3-Skr" firstAttribute="centerY" secondItem="khJ-jK-VWN" secondAttribute="centerY" id="wKc-LZ-F2T"/>
                                         </constraints>
