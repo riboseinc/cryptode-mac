@@ -45,12 +45,9 @@ class LoginItemsController {
         var seed: UInt32 = 0
         let currentItems = LSSharedFileListCopySnapshot(loginItems, &seed).takeRetainedValue() as NSArray
         
-        for item in currentItems {
-            let resolutionFlags: UInt32 = UInt32(kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes)
-            let existingUrl = LSSharedFileListItemCopyResolvedURL(item as! LSSharedFileListItem, resolutionFlags, nil).takeRetainedValue() as NSURL
-            if existingUrl.isEqual(url) {
-                let result = item as! LSSharedFileListItem
-                return result
+        for case let item as LSSharedFileListItem in currentItems {
+            if let itemUrl = LSSharedFileListItemCopyResolvedURL(item, UInt32(kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes), nil)?.takeRetainedValue() as? NSURL, itemUrl.isEqual(url) {
+                return item
             }
         }
         
