@@ -33,7 +33,7 @@ class ImageButton: VpnButton {
         }()
         
         imageView = {
-            let imageView = NSImageView(image: displayImage.tinted(NSColor.ribose.buttonTextNormal))
+            let imageView = NSImageView(image: displayImage.tinted(NSColor.ribose.buttonImageNormal))
             imageView.frame = view.bounds
             imageView.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(imageView)
@@ -55,10 +55,10 @@ class ImageButton: VpnButton {
             super.isPressed = newValue
             if newValue {
                 DDLogInfo("Set highlighted")
-                imageView.image = displayImage.tinted(NSColor.ribose.buttonTextHighlighted)
+                imageView.image = displayImage.tinted(NSColor.ribose.buttonImageHighlighted)
             } else {
                 DDLogInfo("Set normal")
-                imageView.image = displayImage.tinted(NSColor.ribose.buttonTextNormal)
+                imageView.image = displayImage.tinted(NSColor.ribose.buttonImageNormal)
             }
         }
     }

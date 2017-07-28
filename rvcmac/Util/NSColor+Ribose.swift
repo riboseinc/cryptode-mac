@@ -37,6 +37,14 @@ extension Ribose where Base: NSColor {
         return NSColor.darkGray
     }
 
+    static var buttonImageNormal: NSColor {
+        return NSColor.darkGray
+    }
+    
+    static var buttonImageHighlighted: NSColor {
+        return NSColor.black
+    }
+    
     static var shadow: NSColor {
         return NSColor.lightGray
     }
