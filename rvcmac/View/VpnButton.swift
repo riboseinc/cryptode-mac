@@ -22,7 +22,6 @@ class VpnButton: NSButton {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configure()
     }
     
     override func awakeFromNib() {
