@@ -11,6 +11,25 @@ import CocoaLumberjack
 
 class VpnButton: NSButton {
 
+    func configure() {
+        DDLogInfo("\(#function)")
+    }
+    
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configure()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configure()
+    }
+    
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
         DDLogInfo("\(#function)")
