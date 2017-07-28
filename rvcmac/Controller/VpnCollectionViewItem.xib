@@ -69,7 +69,7 @@
                                     <rect key="frame" x="220" y="0.0" width="100" height="50"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4tB-eC-0nw" customClass="TextButton" customModule="rvcmac" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                            <rect key="frame" x="0.0" y="9" width="100" height="32"/>
                                             <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="8p6-to-v6N">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -84,10 +84,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4tB-eC-0nw" firstAttribute="leading" secondItem="6yE-zq-6WA" secondAttribute="leading" id="A3k-3a-fla"/>
-                                        <constraint firstItem="4tB-eC-0nw" firstAttribute="top" secondItem="6yE-zq-6WA" secondAttribute="top" id="Wx9-RW-y6V"/>
-                                        <constraint firstAttribute="bottom" secondItem="4tB-eC-0nw" secondAttribute="bottom" id="YJ9-6Y-MNz"/>
-                                        <constraint firstItem="4tB-eC-0nw" firstAttribute="leading" secondItem="6yE-zq-6WA" secondAttribute="leading" id="YmY-Yl-rt2"/>
-                                        <constraint firstAttribute="trailing" secondItem="4tB-eC-0nw" secondAttribute="trailing" id="a3G-0b-3dx"/>
+                                        <constraint firstItem="4tB-eC-0nw" firstAttribute="centerY" secondItem="6yE-zq-6WA" secondAttribute="centerY" id="FXE-uu-rdK"/>
                                         <constraint firstAttribute="width" constant="100" id="ar1-U8-M8D"/>
                                         <constraint firstAttribute="trailing" secondItem="4tB-eC-0nw" secondAttribute="trailing" id="qqe-g5-Qhb"/>
                                     </constraints>
