@@ -10,7 +10,11 @@ import Cocoa
 
 class TextButton: VpnButton {
     
-    @IBInspectable var text: String!
+    @IBInspectable var text: String! {
+        didSet {
+            textField?.stringValue = text
+        }
+    }
     
     var view: NSView!
     var textField: NSTextField!

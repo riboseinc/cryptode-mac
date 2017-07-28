@@ -14,7 +14,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     @IBOutlet weak var statusView: NSView!
     @IBOutlet weak var checkBoxButton: NSButton!
     @IBOutlet weak var titleTextField: NSTextField!
-    @IBOutlet weak var toggleButton: NSButton!
+    @IBOutlet weak var toggleButton: TextButton!
     
     func assertCheck() {
         assert(statusView != nil)
@@ -81,9 +81,9 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     fileprivate func updateToggleButton() {
         if item.isConnected {
-            toggleButton.title =  "Disconnect"
+            toggleButton.text = "Disconnect"
         } else {
-            toggleButton.title =  "Connect"
+            toggleButton.text = "Connect"
         }
     }
     
