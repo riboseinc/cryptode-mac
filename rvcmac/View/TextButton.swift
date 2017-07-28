@@ -33,6 +33,7 @@ class TextButton: VpnButton {
         
         textField = {
             let textField = NSTextField(labelWithString: text)
+            textField.textColor = NSColor.ribose.buttonTextNormal
             textField.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(textField)
 
@@ -42,5 +43,18 @@ class TextButton: VpnButton {
             return textField
         }()
     }
-    
+
+    override var isPressed: Bool {
+        get {
+            return super.isPressed
+        }
+        set {
+            super.isPressed = newValue
+            if isPressed {
+                textField.textColor = NSColor.ribose.buttonTextHighlighted
+            } else {
+                textField.textColor = NSColor.ribose.buttonTextNormal
+            }
+        }
+    }
 }

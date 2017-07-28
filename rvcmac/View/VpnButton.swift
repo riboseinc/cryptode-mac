@@ -30,13 +30,13 @@ class VpnButton: NSButton {
     }
     
     override func mouseDown(with event: NSEvent) {
+        DDLogInfo("\(#function) down")
+        isPressed = true
         super.mouseDown(with: event)
-        DDLogInfo("\(#function)")
+        DDLogInfo("\(#function) up")
+        isPressed = false
     }
     
-    override func mouseUp(with event: NSEvent) {
-        super.mouseUp(with: event)
-        DDLogInfo("\(#function)")
-    }
+    var isPressed = false
     
 }
