@@ -693,122 +693,125 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="jxh-Lo-wye">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                                 <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="khJ-jK-VWN" userLabel="Header View">
-                                        <rect key="frame" x="0.0" y="210" width="320" height="30"/>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="9FC-VJ-e6T">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                                         <subviews>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-x3-Skr" customClass="ImageButton" customModule="rvcmac" customModuleProvider="target">
-                                                <rect key="frame" x="282" y="6" width="30" height="19"/>
+                                            <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="menu" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-4J-6b7">
+                                                <rect key="frame" x="0.0" y="210" width="320" height="30"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-x3-Skr" customClass="ImageButton" customModule="rvcmac" customModuleProvider="target">
+                                                        <rect key="frame" x="282" y="6" width="30" height="19"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="3uB-gM-q6D"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="s0l-bE-WTY">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="cellTitle"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="displayImage" value="settings"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="actionMenu:" target="ZH3-qS-MNq" id="agn-i9-oti"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="3uB-gM-q6D"/>
+                                                    <constraint firstItem="Tb7-x3-Skr" firstAttribute="centerY" secondItem="HlO-4J-6b7" secondAttribute="centerY" id="BeU-hb-uUg"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Fe0-Oz-iKA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Tb7-x3-Skr" secondAttribute="trailing" constant="8" id="aGC-3u-WVk"/>
                                                 </constraints>
-                                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="s0l-bE-WTY">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="cellTitle"/>
-                                                </buttonCell>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="displayImage" value="settings"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionMenu:" target="ZH3-qS-MNq" id="agn-i9-oti"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="R09-i1-6qe"/>
-                                            <constraint firstAttribute="trailing" secondItem="Tb7-x3-Skr" secondAttribute="trailing" constant="8" id="jSV-RD-zJM"/>
-                                            <constraint firstItem="Tb7-x3-Skr" firstAttribute="centerY" secondItem="khJ-jK-VWN" secondAttribute="centerY" id="wKc-LZ-F2T"/>
-                                        </constraints>
-                                    </customView>
-                                    <containerView translatesAutoresizingMaskIntoConstraints="NO" id="EC6-GP-k0N">
-                                        <rect key="frame" x="0.0" y="30" width="320" height="180"/>
-                                    </containerView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="FgO-eV-kam" userLabel="Footer View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
-                                        <subviews>
-                                            <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-35-SHP">
+                                            </visualEffectView>
+                                            <visualEffectView appearanceType="vibrantLight" blendingMode="withinWindow" material="menu" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SXz-vr-DVR" userLabel="Footer">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                                 <subviews>
-                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="iue-f2-nvn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                    <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-35-SHP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                                         <subviews>
-                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-rQ-YED" customClass="TextButton" customModule="rvcmac" customModuleProvider="target">
+                                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="iue-f2-nvn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
-                                                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" state="on" transparent="YES" imageScaling="proportionallyDown" inset="2" id="Vyd-LC-jMm">
-                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                    <font key="font" metaFont="cellTitle"/>
-                                                                </buttonCell>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Connect All"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="actionConnectAll:" target="ZH3-qS-MNq" id="NN5-x8-Cu4"/>
-                                                                </connections>
-                                                            </button>
+                                                                <subviews>
+                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-rQ-YED" customClass="TextButton" customModule="rvcmac" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                                        <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" state="on" transparent="YES" imageScaling="proportionallyDown" inset="2" id="Vyd-LC-jMm">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="cellTitle"/>
+                                                                        </buttonCell>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Connect All"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="actionConnectAll:" target="ZH3-qS-MNq" id="NN5-x8-Cu4"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="wZb-rQ-YED" secondAttribute="trailing" id="Ye4-hh-X6j"/>
+                                                                    <constraint firstItem="wZb-rQ-YED" firstAttribute="top" secondItem="iue-f2-nvn" secondAttribute="top" id="ahx-Ht-D6m"/>
+                                                                    <constraint firstItem="wZb-rQ-YED" firstAttribute="leading" secondItem="iue-f2-nvn" secondAttribute="leading" id="cdc-99-8MB"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="wZb-rQ-YED" secondAttribute="bottom" id="ofx-74-aRU"/>
+                                                                </constraints>
+                                                            </customView>
+                                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="X0E-lB-dpS">
+                                                                <rect key="frame" x="160" y="0.0" width="160" height="30"/>
+                                                                <subviews>
+                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-N3-xIb" customClass="TextButton" customModule="rvcmac" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                                        <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="AA0-bs-pkO">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="cellTitle"/>
+                                                                        </buttonCell>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Disconnect All"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="actoinDisconnectAll:" target="ZH3-qS-MNq" id="LGB-cq-idw"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="TGh-N3-xIb" secondAttribute="bottom" id="JGi-vr-dPx"/>
+                                                                    <constraint firstItem="TGh-N3-xIb" firstAttribute="top" secondItem="X0E-lB-dpS" secondAttribute="top" id="aUg-7H-WD3"/>
+                                                                    <constraint firstItem="TGh-N3-xIb" firstAttribute="leading" secondItem="X0E-lB-dpS" secondAttribute="leading" id="fqT-0S-Inm"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="TGh-N3-xIb" secondAttribute="trailing" id="yOu-8j-Z6u"/>
+                                                                </constraints>
+                                                            </customView>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="wZb-rQ-YED" secondAttribute="trailing" id="Ye4-hh-X6j"/>
-                                                            <constraint firstItem="wZb-rQ-YED" firstAttribute="top" secondItem="iue-f2-nvn" secondAttribute="top" id="ahx-Ht-D6m"/>
-                                                            <constraint firstItem="wZb-rQ-YED" firstAttribute="leading" secondItem="iue-f2-nvn" secondAttribute="leading" id="cdc-99-8MB"/>
-                                                            <constraint firstAttribute="bottom" secondItem="wZb-rQ-YED" secondAttribute="bottom" id="ofx-74-aRU"/>
-                                                        </constraints>
-                                                    </customView>
-                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="X0E-lB-dpS">
-                                                        <rect key="frame" x="160" y="0.0" width="160" height="30"/>
-                                                        <subviews>
-                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-N3-xIb" customClass="TextButton" customModule="rvcmac" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
-                                                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="AA0-bs-pkO">
-                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                    <font key="font" metaFont="cellTitle"/>
-                                                                </buttonCell>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Disconnect All"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="actoinDisconnectAll:" target="ZH3-qS-MNq" id="LGB-cq-idw"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="TGh-N3-xIb" secondAttribute="bottom" id="JGi-vr-dPx"/>
-                                                            <constraint firstItem="TGh-N3-xIb" firstAttribute="top" secondItem="X0E-lB-dpS" secondAttribute="top" id="aUg-7H-WD3"/>
-                                                            <constraint firstItem="TGh-N3-xIb" firstAttribute="leading" secondItem="X0E-lB-dpS" secondAttribute="leading" id="fqT-0S-Inm"/>
-                                                            <constraint firstAttribute="trailing" secondItem="TGh-N3-xIb" secondAttribute="trailing" id="yOu-8j-Z6u"/>
-                                                        </constraints>
-                                                    </customView>
+                                                        <visibilityPriorities>
+                                                            <integer value="1000"/>
+                                                            <integer value="1000"/>
+                                                        </visibilityPriorities>
+                                                        <customSpacing>
+                                                            <real value="3.4028234663852886e+38"/>
+                                                            <real value="3.4028234663852886e+38"/>
+                                                        </customSpacing>
+                                                    </stackView>
                                                 </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
+                                                <constraints>
+                                                    <constraint firstItem="Ecz-35-SHP" firstAttribute="leading" secondItem="SXz-vr-DVR" secondAttribute="leading" id="3Vf-bA-TQc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ecz-35-SHP" secondAttribute="trailing" id="CYk-cw-w8N"/>
+                                                    <constraint firstAttribute="height" constant="30" id="YmY-mU-wpd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ecz-35-SHP" secondAttribute="bottom" id="lAL-Bk-YMN"/>
+                                                    <constraint firstItem="Ecz-35-SHP" firstAttribute="top" secondItem="SXz-vr-DVR" secondAttribute="top" id="oCR-vy-m3p"/>
+                                                </constraints>
+                                            </visualEffectView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Ecz-35-SHP" secondAttribute="bottom" id="0Jc-RU-5wY"/>
-                                            <constraint firstItem="Ecz-35-SHP" firstAttribute="top" secondItem="FgO-eV-kam" secondAttribute="top" id="1sx-wX-p0q"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ecz-35-SHP" secondAttribute="trailing" id="7ol-40-azZ"/>
-                                            <constraint firstAttribute="height" constant="30" id="Gru-G7-1q4"/>
-                                            <constraint firstItem="Ecz-35-SHP" firstAttribute="leading" secondItem="FgO-eV-kam" secondAttribute="leading" id="ZVg-X7-XqT"/>
+                                            <constraint firstAttribute="trailing" secondItem="SXz-vr-DVR" secondAttribute="trailing" id="EpB-oR-ZoC"/>
+                                            <constraint firstItem="HlO-4J-6b7" firstAttribute="leading" secondItem="9FC-VJ-e6T" secondAttribute="leading" id="FjM-lY-cr7"/>
+                                            <constraint firstAttribute="bottom" secondItem="SXz-vr-DVR" secondAttribute="bottom" id="LHq-i3-co5"/>
+                                            <constraint firstAttribute="trailing" secondItem="HlO-4J-6b7" secondAttribute="trailing" id="S2i-JT-BCO"/>
+                                            <constraint firstItem="HlO-4J-6b7" firstAttribute="top" secondItem="9FC-VJ-e6T" secondAttribute="top" id="Ygu-tN-32q"/>
+                                            <constraint firstItem="SXz-vr-DVR" firstAttribute="leading" secondItem="9FC-VJ-e6T" secondAttribute="leading" id="bMc-rX-q3M"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="khJ-jK-VWN" secondAttribute="trailing" id="0Ti-Vj-tjb"/>
-                                    <constraint firstItem="khJ-jK-VWN" firstAttribute="leading" secondItem="jxh-Lo-wye" secondAttribute="leading" id="8TZ-ao-gRG"/>
-                                    <constraint firstItem="FgO-eV-kam" firstAttribute="leading" secondItem="jxh-Lo-wye" secondAttribute="leading" id="EOI-yX-eSY"/>
-                                    <constraint firstItem="FgO-eV-kam" firstAttribute="top" secondItem="EC6-GP-k0N" secondAttribute="bottom" id="ESI-EQ-Dfb"/>
-                                    <constraint firstAttribute="trailing" secondItem="FgO-eV-kam" secondAttribute="trailing" id="GQ3-RX-Pza"/>
-                                    <constraint firstItem="EC6-GP-k0N" firstAttribute="top" secondItem="khJ-jK-VWN" secondAttribute="bottom" id="T8e-iR-z6U"/>
-                                    <constraint firstAttribute="trailing" secondItem="EC6-GP-k0N" secondAttribute="trailing" id="YfS-1R-tzM"/>
+                                    <constraint firstAttribute="trailing" secondItem="9FC-VJ-e6T" secondAttribute="trailing" id="BTb-Ha-BGT"/>
+                                    <constraint firstItem="9FC-VJ-e6T" firstAttribute="top" secondItem="jxh-Lo-wye" secondAttribute="top" id="GLh-k7-2fd"/>
+                                    <constraint firstAttribute="bottom" secondItem="9FC-VJ-e6T" secondAttribute="bottom" id="SfL-Z5-dUg"/>
                                     <constraint firstAttribute="width" constant="320" id="aFP-Cr-6Za"/>
-                                    <constraint firstItem="EC6-GP-k0N" firstAttribute="top" secondItem="khJ-jK-VWN" secondAttribute="bottom" id="dTJ-uo-KJw"/>
-                                    <constraint firstAttribute="bottom" secondItem="FgO-eV-kam" secondAttribute="bottom" id="dgZ-V0-Hsb"/>
-                                    <constraint firstItem="EC6-GP-k0N" firstAttribute="leading" secondItem="jxh-Lo-wye" secondAttribute="leading" id="jOc-h2-rpW"/>
-                                    <constraint firstItem="khJ-jK-VWN" firstAttribute="top" secondItem="jxh-Lo-wye" secondAttribute="top" id="qLx-O2-gQf"/>
+                                    <constraint firstItem="9FC-VJ-e6T" firstAttribute="leading" secondItem="jxh-Lo-wye" secondAttribute="leading" id="dTz-gg-9cT"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -821,8 +824,9 @@
                     </view>
                     <connections>
                         <outlet property="connectAllButton" destination="wZb-rQ-YED" id="KCk-2r-crc"/>
-                        <outlet property="containerView" destination="EC6-GP-k0N" id="cUA-WA-9sY"/>
+                        <outlet property="containerView" destination="9FC-VJ-e6T" id="Znw-1J-mkW"/>
                         <outlet property="disconnectAllButton" destination="TGh-N3-xIb" id="dyK-bF-Jwc"/>
+                        <outlet property="headerView" destination="HlO-4J-6b7" id="Qf9-rQ-NXg"/>
                         <outlet property="menuButton" destination="Tb7-x3-Skr" id="Baf-1A-zlJ"/>
                         <outlet property="menuRef" destination="7SU-Ia-UGB" id="WeX-gJ-KPB"/>
                     </connections>

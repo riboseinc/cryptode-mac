@@ -23,6 +23,8 @@ class VpnCollectionViewController: NSViewController {
         super.viewDidLoad()
         self.collectionViewDataSource.service = AppDelegate.shared.service
         self.collectionView.register(NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
+        collectionView.enclosingScrollView!.contentInsets = EdgeInsets(top: 30, left: 0, bottom: 30, right: 0)
+        collectionView.enclosingScrollView!.scrollerInsets = collectionView.enclosingScrollView!.contentInsets
     }
     
     override func viewWillAppear() {

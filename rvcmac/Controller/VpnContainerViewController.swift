@@ -14,6 +14,7 @@ class VpnContainerViewController: NSViewController {
     let collection = VpnCollectionViewController.instantiate()
     var service: VpnService!
     
+    @IBOutlet weak var headerView: NSVisualEffectView!
     @IBOutlet var menuRef: NSMenu!
     @IBOutlet weak var menuButton: NSButton!
     @IBOutlet weak var connectAllButton: NSButton!
@@ -28,6 +29,8 @@ class VpnContainerViewController: NSViewController {
     func assertCheck() {
         assert(service != nil)
 
+        assert(headerView != nil)
+        
         assert(menuRef != nil)
         
         assert(menuButton != nil)
@@ -49,7 +52,7 @@ class VpnContainerViewController: NSViewController {
         super.viewDidLoad()
         assertCheck()
         collection.view.frame = containerView.bounds
-        containerView.addSubview(collection.view)
+        containerView.addSubview(collection.view, positioned: .below, relativeTo: headerView)
     }
     
     // MARK: - Actions
