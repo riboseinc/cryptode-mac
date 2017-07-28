@@ -728,12 +728,15 @@
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="iue-f2-nvn">
                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
                                                         <subviews>
-                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-rQ-YED">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-rQ-YED" customClass="TextButton" customModule="rvcmac" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
-                                                                <buttonCell key="cell" type="roundRect" title="Connect All" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Vyd-LC-jMm">
+                                                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" state="on" transparent="YES" imageScaling="proportionallyDown" inset="2" id="Vyd-LC-jMm">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="cellTitle"/>
                                                                 </buttonCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Connect All"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="actionConnectAll:" target="ZH3-qS-MNq" id="NN5-x8-Cu4"/>
                                                                 </connections>
@@ -749,12 +752,15 @@
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="X0E-lB-dpS">
                                                         <rect key="frame" x="160" y="0.0" width="160" height="30"/>
                                                         <subviews>
-                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-N3-xIb">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TGh-N3-xIb" customClass="TextButton" customModule="rvcmac" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
-                                                                <buttonCell key="cell" type="roundRect" title="Disconnect All" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="AA0-bs-pkO">
-                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="AA0-bs-pkO">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="cellTitle"/>
                                                                 </buttonCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Disconnect All"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="actoinDisconnectAll:" target="ZH3-qS-MNq" id="LGB-cq-idw"/>
                                                                 </connections>

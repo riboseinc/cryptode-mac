@@ -10,6 +10,8 @@
 		6F7E44D01F23E4540093F37E /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */; };
 		6F7E44D21F23E66E0093F37E /* NSColor+Ribose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */; };
 		6F7E44D71F2499290093F37E /* VpnService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44D61F2499290093F37E /* VpnService.swift */; };
+		6F8B79121F2BD3ED004F469D /* VpnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8B79111F2BD3ED004F469D /* VpnButton.swift */; };
+		6F8B79151F2BD4F6004F469D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8B79141F2BD4F6004F469D /* TextButton.swift */; };
 		6FAFE3261F237B9300F66AD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */; };
 		6FAFE32A1F237B9300F66AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3291F237B9300F66AD3 /* Assets.xcassets */; };
 		6FAFE32D1F237B9300F66AD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE32B1F237B9300F66AD3 /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Ribose.swift"; sourceTree = "<group>"; };
 		6F7E44D61F2499290093F37E /* VpnService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnService.swift; sourceTree = "<group>"; };
+		6F8B79111F2BD3ED004F469D /* VpnButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnButton.swift; sourceTree = "<group>"; };
+		6F8B79141F2BD4F6004F469D /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		6FAFE3221F237B9300F66AD3 /* rvcmac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rvcmac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FAFE3291F237B9300F66AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 			children = (
 				6FAFE36A1F2387C800F66AD3 /* VpnCollectionView.swift */,
 				6FAFE36D1F2387C800F66AD3 /* VpnWindow.swift */,
+				6F8B79111F2BD3ED004F469D /* VpnButton.swift */,
+				6F8B79141F2BD4F6004F469D /* TextButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -620,6 +626,8 @@
 				6FAFE36E1F2387C800F66AD3 /* VpnCollectionView.swift in Sources */,
 				6FAFE3651F2387C200F66AD3 /* VpnCollectionViewController.swift in Sources */,
 				6FAFE3681F2387C200F66AD3 /* VpnCollectionViewFlowLayout.swift in Sources */,
+				6F8B79151F2BD4F6004F469D /* TextButton.swift in Sources */,
+				6F8B79121F2BD3ED004F469D /* VpnButton.swift in Sources */,
 				6FAFE3841F23CAC600F66AD3 /* VpnPopover.swift in Sources */,
 				6F7E44D01F23E4540093F37E /* NSView+BackgroundColor.swift in Sources */,
 			);

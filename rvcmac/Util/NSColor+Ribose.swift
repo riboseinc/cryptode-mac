@@ -28,6 +28,14 @@ extension Ribose where Base: NSColor {
     static var error: NSColor {
         return NSColor.red
     }
+    
+    static var buttonTextNormal: NSColor {
+        return NSColor.lightGray
+    }
+    
+    static var buttonTextHighlighted: NSColor {
+        return NSColor.darkGray
+    }
 
 }
 
