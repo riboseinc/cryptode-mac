@@ -3,18 +3,21 @@ PODS:
   - CocoaLumberjack/Swift (3.2.0):
     - CocoaLumberjack/Default
   - Decodable (0.5)
+  - SwiftHEXColors (1.1.0)
   - SwiftLint (0.20.1)
 
 DEPENDENCIES:
   - CocoaLumberjack/Swift
   - Decodable (~> 0.5)
+  - SwiftHEXColors (~> 1.1.0)
   - SwiftLint
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
+  SwiftHEXColors: 8f7e364df7929e32cff9f9eeb044bb215167d6be
   SwiftLint: f60095dc173a3f3ec505bb34f5229c3dfd779a54
 
-PODFILE CHECKSUM: 33a5f843fab5602211939767c1a1f6cedc2b8544
+PODFILE CHECKSUM: b5f3058ed2fa5be83d5a554f464ec58ff384d047
 
 COCOAPODS: 1.2.1

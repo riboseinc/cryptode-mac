@@ -7,6 +7,7 @@ target 'rvcmac' do
   pod 'SwiftLint'
   pod 'CocoaLumberjack/Swift'
   pod 'Decodable', '~> 0.5'
+  pod 'SwiftHEXColors', '~> 1.1.0'
 
   target 'rvcmacTests' do
     inherit! :search_paths

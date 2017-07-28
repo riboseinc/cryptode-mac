@@ -7,64 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FA6CDEAA42744B41FBE90A14ABD1D3A /* DecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A17639528B663A5E6C80E8006F0011F /* DecodingError.swift */; };
-		1B8FD89DB5C034999670A62E59FE204C /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BE76318BD684C1AC15FDEFC46847FB /* DDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BFA637285F1DD4336CE95AD6388C708 /* CocoaLumberjack-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C1FDCE258F7E04C21AFF698248462BA /* CocoaLumberjack-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FA6CDEAA42744B41FBE90A14ABD1D3A /* DecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D3F9AF6C695C9561C68A78F2D6A101 /* DecodingError.swift */; };
+		1B8FD89DB5C034999670A62E59FE204C /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B27A35759CA92E9815F886F602503A3 /* DDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BFA637285F1DD4336CE95AD6388C708 /* CocoaLumberjack-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15E28A312CC3654F3DB4CD57D1F3920B /* CocoaLumberjack-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D2991DEF9C314BA34ED3A88045B0938 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
-		1E834E931C5E18291CAE7C94258B1818 /* Overloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF19435F617F2E7CCBB8E5E497AD94 /* Overloads.swift */; };
-		28FBC28D36036D41C29E013D25E9DEEC /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3727A9F925DFCA6679C1C08454395DF /* CocoaLumberjack.swift */; };
+		1E834E931C5E18291CAE7C94258B1818 /* Overloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416AB75AA132E2342334BBB4F118BA5 /* Overloads.swift */; };
+		224CC7684C3E4172893DEAFDFA1777C0 /* Pods-rvcmac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CADE09EF7B9974C0ADBF78B7BC063D0E /* Pods-rvcmac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28FBC28D36036D41C29E013D25E9DEEC /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178C721379D07525C0CF136615EBBC7 /* CocoaLumberjack.swift */; };
 		32AB6AD9EBB09CECDBE531DC8B107B2A /* Pods-rvcmacTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 003DCA37187F44775AFDD3D02F9AAF0C /* Pods-rvcmacTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32ECC76C334E7EAC4B06E78002BB39F4 /* Pods-rvcmac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E28EFE393036D16FAEAB150A27DAF /* Pods-rvcmac-dummy.m */; };
 		34AC2CF01624E1C3C3ED0C8BCC2D2ADD /* Pods-rvcmacUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E59168C227AB8B088172B4D00C9593 /* Pods-rvcmacUITests-dummy.m */; };
+		35591F656870D61B8A96C130A87574EB /* SwiftHEXColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 012F6CBD598201621FD96EA1D3EEAE52 /* SwiftHEXColors-dummy.m */; };
 		3922322F2EBB48602A21E71278F8C75A /* Pods-rvcmacTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD36ECBAAB4B9A2DC4C15405696AA9E9 /* Pods-rvcmacTests-dummy.m */; };
-		443F513AF10D4F59E750C56B245B00A6 /* OptionalKeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12899D05F683701283444C395786C1 /* OptionalKeyPath.swift */; };
-		45606CAA08DF35568C1876E7DF138AA8 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A0A447CB498275286585135B9953807 /* DDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4855C2590FF573BA3FAF1E545480E09E /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 12996CB765519C21D52F8438FA1D4FCB /* DDASLLogCapture.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4FAEFF0A5CEED742FDB9FFC7F451AF5E /* Castable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566C9021C3F7A6A0C3ED9A37A0953F8 /* Castable.swift */; };
-		5257B25AE7FA80EDF9393955214CB5DF /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E73A558AE563709950F1FD9A80CBC1F /* DDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5630AA4579C157E87F55FD5D2A859E5C /* Decodable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBEB2CEF06D42319D10CDEC38674ABC8 /* Decodable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57BEA4D205AFD36C7C4A769906B274F6 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A7D57DBFFC242EE71861B435FA78B3 /* DDASLLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		581A092307A0B122DF504DC784F9852E /* CocoaLumberjack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B591853B67C41C6269126F68512E3 /* CocoaLumberjack-dummy.m */; };
-		58B9FC409507183D2BBC861737C239A3 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB5A781DEF18BEBB585650F05B97E2 /* Operators.swift */; };
+		3DD6EAFC00713361E15D6E6821062725 /* SwiftHEXColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E503FF9CC62BC13865E17F75BD3D73C9 /* SwiftHEXColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		443F513AF10D4F59E750C56B245B00A6 /* OptionalKeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2CE4AF555EB1328FD6797177A4BE2 /* OptionalKeyPath.swift */; };
+		45606CAA08DF35568C1876E7DF138AA8 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B583154D36DB38BCE63F1F14D3B2E8A /* DDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4855C2590FF573BA3FAF1E545480E09E /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D719C4050F9BD66D3FF951B9A008358 /* DDASLLogCapture.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4FAEFF0A5CEED742FDB9FFC7F451AF5E /* Castable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510170252154F3C2F2FD2C412A0E917 /* Castable.swift */; };
+		5257B25AE7FA80EDF9393955214CB5DF /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D0082B1883C0B517807CF300C345F7 /* DDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5630AA4579C157E87F55FD5D2A859E5C /* Decodable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D1C0104C562E3DD584BCCCE976AE574 /* Decodable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57BEA4D205AFD36C7C4A769906B274F6 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 177C95CDB7DAEB6544A36F6418CC645E /* DDASLLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		581A092307A0B122DF504DC784F9852E /* CocoaLumberjack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251244600CFBEEE3C4FAF8A990AC790 /* CocoaLumberjack-dummy.m */; };
+		58B9FC409507183D2BBC861737C239A3 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B984ADBFE7B52EF3912C38B8B4F052 /* Operators.swift */; };
 		5B17F813F6DE9AAA0E46CEAF8C45BC57 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
-		5C99E337DF117E16DCDDF40C9257D6FB /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC663ACD34A4A8257046146A061D6AF /* Decodable.swift */; };
-		60EA58D1CA86BF5DC343E9CDA6A570AC /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = C0ED367717A1B7F3031DE545A3EC2541 /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6191C4E81E6AB822B9CB167B45255882 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A75C553FA662F98D315650E53AD58FE5 /* DDFileLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		687E46B4B732076D982C8D184A140C42 /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A3293718161E83B809D264CC21EAA5B /* DDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74C2AECE11C340CEDC21A989F8F2A476 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F595560BDB45EB50EE2FD6971FA42064 /* DDLog.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7CB8D6438E2E909E969AEBCF1D06C1DF /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C4E3656C16B57DA33DA5E1C6AEDC46 /* DDAbstractDatabaseLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7F9F8FD7F2899FADEC588085A1E4CEC8 /* Decodable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1E0F2C23A1BD952E8FE749E0C651FA /* Decodable-dummy.m */; };
-		863BC0903D11BD7B8D1C7FCB5A68C42B /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E237CC1AA1B6B55A180A5393C3049043 /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		923ADAFF031712D1A320214453D0C8D2 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF1E8DB36204C6FB2936172F910BD55 /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9750B9CDBC4C78AD3CA4B22E4AA5A541 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 64157422C549DF06B92191325C4E5867 /* DDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A86AD3317AAA224787A6A83190AF64A /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A6A8340854A90C20F32D4C8A30792247 /* DDTTYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4FAD7B56BB6246130490C9421D32081 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE80E93156FE8E016FFFAC6677FD50 /* KeyPath.swift */; };
-		A7355AF5974A754C6499FA7F822256DC /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = F8341525EC7918C382B73D1A85530C68 /* DDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC68489677763AFF7949E7E1D1BC9984 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B874891A2DE343F9C9657724B430C43 /* CocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B12EA224A84CD73BDEC499FF04F6A0AB /* Pods-rvcmac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CADE09EF7B9974C0ADBF78B7BC063D0E /* Pods-rvcmac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7A0207BF8805A91A55FDB3B14E6E3D0 /* Decodable.h in Headers */ = {isa = PBXBuildFile; fileRef = C12FF957971062F35A752DD18D53296C /* Decodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8604A7901896BBC2D3BD4ABA2267AF4 /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6738A592D19C0BCF0F9D72E6D67676A7 /* Decoders.swift */; };
+		5C99E337DF117E16DCDDF40C9257D6FB /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE07227B2B5ACBA7A4EA6A2C3302FE /* Decodable.swift */; };
+		60EA58D1CA86BF5DC343E9CDA6A570AC /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 684B8CB40E688087398427EC3EC0550C /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6191C4E81E6AB822B9CB167B45255882 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C7A9FDA3DF0384643F9B0628A379D4 /* DDFileLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		687E46B4B732076D982C8D184A140C42 /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D65193943416A243A9D1B8A65A193B6 /* DDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74C2AECE11C340CEDC21A989F8F2A476 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C00E8CDBEA4BE3DAB0C1D1E2F78162 /* DDLog.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7CB8D6438E2E909E969AEBCF1D06C1DF /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B7AE6B112CF78DEACDBBBFEA4AF320 /* DDAbstractDatabaseLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7F9F8FD7F2899FADEC588085A1E4CEC8 /* Decodable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2587A0152F58AA1101291825C0A83792 /* Decodable-dummy.m */; };
+		863BC0903D11BD7B8D1C7FCB5A68C42B /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E9E8C295813B99A6DA58950BB6FD /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		923ADAFF031712D1A320214453D0C8D2 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D497203D0A2EB92CC3803A52C47AFAF4 /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9750B9CDBC4C78AD3CA4B22E4AA5A541 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 512817E028EB494ED38C497752047FC2 /* DDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A86AD3317AAA224787A6A83190AF64A /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EACD3B0C106A6D97DCDF20F3A6DF6E /* DDTTYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4F1856600D20AF7E87B77C8545D16AD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
+		A4FAD7B56BB6246130490C9421D32081 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B3773106BB6685A43CFD7555B61EA /* KeyPath.swift */; };
+		A7355AF5974A754C6499FA7F822256DC /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DC55B4266B8E5A27D934D6242449CA /* DDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC68489677763AFF7949E7E1D1BC9984 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 76ADDFBB97EE42FF73BB76C90AE9F447 /* CocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7A0207BF8805A91A55FDB3B14E6E3D0 /* Decodable.h in Headers */ = {isa = PBXBuildFile; fileRef = BD3863DCCA6EA0A4333BF688248F0096 /* Decodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7A49109263CB0DE3F06495A67277931 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
+		B8604A7901896BBC2D3BD4ABA2267AF4 /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A452F6830B0845338899ACDB52EB77 /* Decoders.swift */; };
 		BA6915D7A134F61B66C7C68F8F2BF164 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
 		BDFE26C408B654DFB64BFDD2025D40C2 /* Pods-rvcmacUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC14757759788B983C184152445232 /* Pods-rvcmacUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C00A753304B2DAB17D1878C791D7CEA0 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3568B86613357813BE80978D608C699 /* Parse.swift */; };
-		C0785B5F740BDEC50396CE9494F26053 /* RawRepresentableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487740511ECAC3DC5522A6772DC34091 /* RawRepresentableDecodable.swift */; };
-		DCB7227941C30E9D935C579CB9469E68 /* DDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2AD90A5D33187F40C5D47971F0B00B /* DDOSLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E1B89B92B9A85D4BF536DF52F128F4D1 /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 3562B50E50EAF5A1CCC8D7173712A8BA /* DDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E801B84206BF31A4EE024D6C09043C72 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
-		EE6FA2289CBD0AD78ABA32A4895B4977 /* NSValueCastable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC563B9955C55B3BC4F752E226B9BB /* NSValueCastable.swift */; };
-		F5E9B74F708B8E832B9097EEFEA36778 /* DDOSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B2B6C1CAB7DE16A74A87972C8AB8E0D2 /* DDOSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C00A753304B2DAB17D1878C791D7CEA0 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20DD1690E9439E1C26C05AA552A5466 /* Parse.swift */; };
+		C0785B5F740BDEC50396CE9494F26053 /* RawRepresentableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E50473E9341B645C4ADA2C5B51A9A /* RawRepresentableDecodable.swift */; };
+		DCB7227941C30E9D935C579CB9469E68 /* DDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A380B00981C9C4CB9C52FE818C16E69 /* DDOSLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E1B89B92B9A85D4BF536DF52F128F4D1 /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB8B80C104143E7F954951B41FBCEF4 /* DDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3C60C2645FB2E643CF676DA472D3312 /* SwiftHEXColors.h in Headers */ = {isa = PBXBuildFile; fileRef = BE5C20D4E9A6D70125782A7DC1DB4991 /* SwiftHEXColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6FB107515EA04CDDF474B38CD2C702B /* Pods-rvcmac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E28EFE393036D16FAEAB150A27DAF /* Pods-rvcmac-dummy.m */; };
+		ECFE7DEAB429F7470B272CB09D461883 /* SwiftHEXColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637DE4A4A0CF3C16DED31BE06AD9DE7E /* SwiftHEXColors.swift */; };
+		EE6FA2289CBD0AD78ABA32A4895B4977 /* NSValueCastable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD55F7F48BE74BA6B212BEF8002B22 /* NSValueCastable.swift */; };
+		F5E9B74F708B8E832B9097EEFEA36778 /* DDOSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B704FB923E798B713C05DCFD7E3541B4 /* DDOSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7AD2C84A7E22A385D5FAAE511BE4B5E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AE80431B1A37AB487E8CFD692D38C7E4 /* PBXContainerItemProxy */ = {
+		96C443EA064DEA9DC8D28F96F9C60962 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F576CDA8BD3AD8026EE98EC1469D63FA;
+			remoteInfo = SwiftHEXColors;
+		};
+		F5B2B7A2CB4D834B2863D7F5D51F6CE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9E9C4779DC6B318D9904FE09C21437E3;
 			remoteInfo = Decodable;
 		};
-		EB672D0B24110F0392D2217B58E83569 /* PBXContainerItemProxy */ = {
+		FB170526B80A70046A9A1B4A9B0323BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -75,97 +87,98 @@
 
 /* Begin PBXFileReference section */
 		003DCA37187F44775AFDD3D02F9AAF0C /* Pods-rvcmacTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-rvcmacTests-umbrella.h"; sourceTree = "<group>"; };
+		012F6CBD598201621FD96EA1D3EEAE52 /* SwiftHEXColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHEXColors-dummy.m"; sourceTree = "<group>"; };
 		03C3CAFF0DC32045D016B443115BC846 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0607077D7402FE087842529001CE2CF6 /* Decodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Decodable.framework; path = Decodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D3F9AF6C695C9561C68A78F2D6A101 /* DecodingError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecodingError.swift; path = Sources/DecodingError.swift; sourceTree = "<group>"; };
 		0A632EF0E2F4DFDEA7A6B764A3C8B9EE /* Pods-rvcmacUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rvcmacUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0C487B5C6CB36B33D1C4C712EABAF2CD /* Pods-rvcmacTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rvcmacTests-frameworks.sh"; sourceTree = "<group>"; };
 		0E4C69796E5B76016C89D31583876D8F /* Pods-rvcmacTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-rvcmacTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0E73A558AE563709950F1FD9A80CBC1F /* DDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = Classes/DDFileLogger.h; sourceTree = "<group>"; };
-		12996CB765519C21D52F8438FA1D4FCB /* DDASLLogCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogCapture.m; path = Classes/DDASLLogCapture.m; sourceTree = "<group>"; };
-		1A3293718161E83B809D264CC21EAA5B /* DDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogCapture.h; path = Classes/DDASLLogCapture.h; sourceTree = "<group>"; };
-		1B874891A2DE343F9C9657724B430C43 /* CocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaLumberjack.h; path = Classes/CocoaLumberjack.h; sourceTree = "<group>"; };
+		13344FB42284542A7619C127DC4C7E19 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaLumberjack.framework; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E28A312CC3654F3DB4CD57D1F3920B /* CocoaLumberjack-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-umbrella.h"; sourceTree = "<group>"; };
+		16A452F6830B0845338899ACDB52EB77 /* Decoders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decoders.swift; path = Sources/Decoders.swift; sourceTree = "<group>"; };
+		177C95CDB7DAEB6544A36F6418CC645E /* DDASLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Classes/DDASLLogger.m; sourceTree = "<group>"; };
+		1A380B00981C9C4CB9C52FE818C16E69 /* DDOSLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDOSLogger.m; path = Classes/DDOSLogger.m; sourceTree = "<group>"; };
+		2587A0152F58AA1101291825C0A83792 /* Decodable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Decodable-dummy.m"; sourceTree = "<group>"; };
 		270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		3562B50E50EAF5A1CCC8D7173712A8BA /* DDLogMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLogMacros.h; path = Classes/DDLogMacros.h; sourceTree = "<group>"; };
+		27C7A9FDA3DF0384643F9B0628A379D4 /* DDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = Classes/DDFileLogger.m; sourceTree = "<group>"; };
+		28AE07227B2B5ACBA7A4EA6A2C3302FE /* Decodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decodable.swift; path = Sources/Decodable.swift; sourceTree = "<group>"; };
+		2BB8B80C104143E7F954951B41FBCEF4 /* DDLogMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLogMacros.h; path = Classes/DDLogMacros.h; sourceTree = "<group>"; };
+		308569111881C06D61095BB241682F8E /* Decodable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Decodable.xcconfig; sourceTree = "<group>"; };
+		3120E89474CA3202192EA5D035F761F3 /* CocoaLumberjack.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CocoaLumberjack.modulemap; sourceTree = "<group>"; };
 		3602F08A0CF93735587651B686AF0414 /* Pods-rvcmacTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rvcmacTests-resources.sh"; sourceTree = "<group>"; };
-		363B591853B67C41C6269126F68512E3 /* CocoaLumberjack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaLumberjack-dummy.m"; sourceTree = "<group>"; };
-		3779446D9AD80DA946BC16352C14913F /* CocoaLumberjack.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CocoaLumberjack.modulemap; sourceTree = "<group>"; };
+		37D0082B1883C0B517807CF300C345F7 /* DDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = Classes/DDFileLogger.h; sourceTree = "<group>"; };
 		3DAA2E5728F5E9F76BB63A787D8961E7 /* Pods-rvcmacTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-rvcmacTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3E3542E162C764FBFDDBFDE96467477B /* Decodable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Decodable.modulemap; sourceTree = "<group>"; };
 		3F941A35BDE12463D1DFA9F294DEB538 /* Pods-rvcmacTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-rvcmacTests.modulemap"; sourceTree = "<group>"; };
-		40E23A5458BF46B08FD89D63544E4ACF /* CocoaLumberjack-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-prefix.pch"; sourceTree = "<group>"; };
 		41367F9ADC0D20EA1810DD7E4E3F2384 /* Pods-rvcmac-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-rvcmac-acknowledgements.plist"; sourceTree = "<group>"; };
-		487740511ECAC3DC5522A6772DC34091 /* RawRepresentableDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RawRepresentableDecodable.swift; path = Sources/RawRepresentableDecodable.swift; sourceTree = "<group>"; };
+		4178C721379D07525C0CF136615EBBC7 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CocoaLumberjack.swift; path = Classes/CocoaLumberjack.swift; sourceTree = "<group>"; };
+		46C00E8CDBEA4BE3DAB0C1D1E2F78162 /* DDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Classes/DDLog.m; sourceTree = "<group>"; };
+		46C89066AE8B46E9BD6F025F2C2E9EE8 /* CocoaLumberjack.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaLumberjack.xcconfig; sourceTree = "<group>"; };
+		49EACD3B0C106A6D97DCDF20F3A6DF6E /* DDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Classes/DDTTYLogger.h; sourceTree = "<group>"; };
+		4B583154D36DB38BCE63F1F14D3B2E8A /* DDLegacyMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLegacyMacros.h; path = Classes/DDLegacyMacros.h; sourceTree = "<group>"; };
 		4B637F61C7883E9ACB4E7BDC6AEF4E59 /* Pods-rvcmac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rvcmac.release.xcconfig"; sourceTree = "<group>"; };
-		4C1FDCE258F7E04C21AFF698248462BA /* CocoaLumberjack-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-umbrella.h"; sourceTree = "<group>"; };
+		4D65193943416A243A9D1B8A65A193B6 /* DDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogCapture.h; path = Classes/DDASLLogCapture.h; sourceTree = "<group>"; };
+		512817E028EB494ED38C497752047FC2 /* DDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDLog+LOGV.h"; path = "Classes/DDLog+LOGV.h"; sourceTree = "<group>"; };
+		5251244600CFBEEE3C4FAF8A990AC790 /* CocoaLumberjack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaLumberjack-dummy.m"; sourceTree = "<group>"; };
+		5416AB75AA132E2342334BBB4F118BA5 /* Overloads.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Overloads.swift; path = Sources/Overloads.swift; sourceTree = "<group>"; };
 		564CA63AC59A9064D733CEE83D8C9C2E /* Pods-rvcmacUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-rvcmacUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		59EFCD241F0CEDA473E751902FA08796 /* Pods-rvcmac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-rvcmac.modulemap"; sourceTree = "<group>"; };
-		5BF1E8DB36204C6FB2936172F910BD55 /* DDAssertMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAssertMacros.h; path = Classes/DDAssertMacros.h; sourceTree = "<group>"; };
+		5CCD55F7F48BE74BA6B212BEF8002B22 /* NSValueCastable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSValueCastable.swift; path = Sources/NSValueCastable.swift; sourceTree = "<group>"; };
 		5F8278CAA6E38F76448725F057242D8C /* Pods-rvcmacUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-rvcmacUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		62FF85874448C92C5C53191C9CD30F64 /* Pods_rvcmacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_rvcmacTests.framework; path = "Pods-rvcmacTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		64157422C549DF06B92191325C4E5867 /* DDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDLog+LOGV.h"; path = "Classes/DDLog+LOGV.h"; sourceTree = "<group>"; };
-		65DC563B9955C55B3BC4F752E226B9BB /* NSValueCastable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSValueCastable.swift; path = Sources/NSValueCastable.swift; sourceTree = "<group>"; };
-		6738A592D19C0BCF0F9D72E6D67676A7 /* Decoders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decoders.swift; path = Sources/Decoders.swift; sourceTree = "<group>"; };
-		6A0A447CB498275286585135B9953807 /* DDLegacyMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLegacyMacros.h; path = Classes/DDLegacyMacros.h; sourceTree = "<group>"; };
-		6C2AD90A5D33187F40C5D47971F0B00B /* DDOSLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDOSLogger.m; path = Classes/DDOSLogger.m; sourceTree = "<group>"; };
+		637DE4A4A0CF3C16DED31BE06AD9DE7E /* SwiftHEXColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftHEXColors.swift; path = Sources/SwiftHEXColors.swift; sourceTree = "<group>"; };
+		6510170252154F3C2F2FD2C412A0E917 /* Castable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Castable.swift; path = Sources/Castable.swift; sourceTree = "<group>"; };
+		654862BE815EA06880C8D8C2FAA79C56 /* SwiftHEXColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftHEXColors.framework; path = SwiftHEXColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		684B8CB40E688087398427EC3EC0550C /* DDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Classes/DDLog.h; sourceTree = "<group>"; };
+		6B27A35759CA92E9815F886F602503A3 /* DDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Classes/DDASLLogger.h; sourceTree = "<group>"; };
+		6D719C4050F9BD66D3FF951B9A008358 /* DDASLLogCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogCapture.m; path = Classes/DDASLLogCapture.m; sourceTree = "<group>"; };
+		745EFF63D02AACE4E9E9D878241F277D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76ADDFBB97EE42FF73BB76C90AE9F447 /* CocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaLumberjack.h; path = Classes/CocoaLumberjack.h; sourceTree = "<group>"; };
 		7C21E12ADEC9ED14E2C2931C552CB1FC /* Pods-rvcmacUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rvcmacUITests-frameworks.sh"; sourceTree = "<group>"; };
+		7EE6130BC5511FBF55E5D21C798FE55A /* SwiftHEXColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftHEXColors.modulemap; sourceTree = "<group>"; };
 		7FD6F71BF86E1BB785459497487591CE /* Pods-rvcmac-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rvcmac-resources.sh"; sourceTree = "<group>"; };
-		8A17639528B663A5E6C80E8006F0011F /* DecodingError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecodingError.swift; path = Sources/DecodingError.swift; sourceTree = "<group>"; };
-		9198FF58A497927BC2C2B31A4D6F706C /* CocoaLumberjack.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaLumberjack.xcconfig; sourceTree = "<group>"; };
+		88B984ADBFE7B52EF3912C38B8B4F052 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
+		8D1C0104C562E3DD584BCCCE976AE574 /* Decodable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Decodable-umbrella.h"; sourceTree = "<group>"; };
+		8F932398D1E944C69E14A5E6DA765265 /* SwiftHEXColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHEXColors.xcconfig; sourceTree = "<group>"; };
 		91A8A05F3E5BDCE3202C7A5C7B353981 /* Pods-rvcmacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rvcmacTests.release.xcconfig"; sourceTree = "<group>"; };
+		93609096E2DA44F2559BFD621CA7D049 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD122207B8B9867B0D6B3A4CFEE5042 /* Pods-rvcmac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rvcmac.debug.xcconfig"; sourceTree = "<group>"; };
-		A6A8340854A90C20F32D4C8A30792247 /* DDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Classes/DDTTYLogger.h; sourceTree = "<group>"; };
-		A75C553FA662F98D315650E53AD58FE5 /* DDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = Classes/DDFileLogger.m; sourceTree = "<group>"; };
-		A9CB5A781DEF18BEBB585650F05B97E2 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
-		AAA8B99EE0043882A2B8A506E91A7820 /* Pods_rvcmacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_rvcmacUITests.framework; path = "Pods-rvcmacUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2B6C1CAB7DE16A74A87972C8AB8E0D2 /* DDOSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDOSLogger.h; path = Classes/DDOSLogger.h; sourceTree = "<group>"; };
-		B3BE76318BD684C1AC15FDEFC46847FB /* DDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Classes/DDASLLogger.h; sourceTree = "<group>"; };
-		B773BEDB23F1F8C01AEEB53F460FD82D /* Decodable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Decodable-prefix.pch"; sourceTree = "<group>"; };
+		A16911F15781410C348E81A59E6AF0C8 /* CocoaLumberjack-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-prefix.pch"; sourceTree = "<group>"; };
+		A97BA44F9593AD4D9D13ECF57603C48C /* Decodable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Decodable.framework; path = Decodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B704FB923E798B713C05DCFD7E3541B4 /* DDOSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDOSLogger.h; path = Classes/DDOSLogger.h; sourceTree = "<group>"; };
 		B9FC14757759788B983C184152445232 /* Pods-rvcmacUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-rvcmacUITests-umbrella.h"; sourceTree = "<group>"; };
-		C0ED367717A1B7F3031DE545A3EC2541 /* DDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Classes/DDLog.h; sourceTree = "<group>"; };
-		C12FF957971062F35A752DD18D53296C /* Decodable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Decodable.h; path = Sources/Decodable.h; sourceTree = "<group>"; };
-		C19186A64AFBAA383C5BB18C6E25BDA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3568B86613357813BE80978D608C699 /* Parse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parse.swift; path = Sources/Parse.swift; sourceTree = "<group>"; };
-		C5233C677BDDDA01645EAF337F0B86DB /* Pods_rvcmac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_rvcmac.framework; path = "Pods-rvcmac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7C4E3656C16B57DA33DA5E1C6AEDC46 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDAbstractDatabaseLogger.m; path = Classes/DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		BD3863DCCA6EA0A4333BF688248F0096 /* Decodable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Decodable.h; path = Sources/Decodable.h; sourceTree = "<group>"; };
+		BD68A7F8CB5E5C2836D4B5EA66569526 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5C20D4E9A6D70125782A7DC1DB4991 /* SwiftHEXColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftHEXColors.h; path = Sources/SwiftHEXColors.h; sourceTree = "<group>"; };
+		C16E50473E9341B645C4ADA2C5B51A9A /* RawRepresentableDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RawRepresentableDecodable.swift; path = Sources/RawRepresentableDecodable.swift; sourceTree = "<group>"; };
+		C20DD1690E9439E1C26C05AA552A5466 /* Parse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parse.swift; path = Sources/Parse.swift; sourceTree = "<group>"; };
+		C3CF3B1535B8F5C98A41DF0BA318D383 /* Pods_rvcmac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_rvcmac.framework; path = "Pods-rvcmac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C415400A77B53DD714FCB2C135E888B5 /* SwiftHEXColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHEXColors-prefix.pch"; sourceTree = "<group>"; };
+		C597FD0B7D972CD967A4177D26939709 /* Pods_rvcmacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_rvcmacTests.framework; path = "Pods-rvcmacTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7DC55B4266B8E5A27D934D6242449CA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAbstractDatabaseLogger.h; path = Classes/DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		C7DC7BA5B4670038EAE174F4F46CDC31 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B1A56E84D9E58A483725FF9F48ED86 /* Pods-rvcmac-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-rvcmac-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CADE09EF7B9974C0ADBF78B7BC063D0E /* Pods-rvcmac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-rvcmac-umbrella.h"; sourceTree = "<group>"; };
+		CF4B3773106BB6685A43CFD7555B61EA /* KeyPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Sources/KeyPath.swift; sourceTree = "<group>"; };
+		D0596C00BD7993CBD79A4E145F39B7E3 /* Decodable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Decodable-prefix.pch"; sourceTree = "<group>"; };
 		D3E59168C227AB8B088172B4D00C9593 /* Pods-rvcmacUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-rvcmacUITests-dummy.m"; sourceTree = "<group>"; };
-		D3F60933F13765406C7289A9E3BE610E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D497203D0A2EB92CC3803A52C47AFAF4 /* DDAssertMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAssertMacros.h; path = Classes/DDAssertMacros.h; sourceTree = "<group>"; };
+		D5E2EBBA98DF5E6945F8ED8BF5B20FDD /* Decodable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Decodable.modulemap; sourceTree = "<group>"; };
+		D8D2CE4AF555EB1328FD6797177A4BE2 /* OptionalKeyPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionalKeyPath.swift; path = Sources/OptionalKeyPath.swift; sourceTree = "<group>"; };
 		DD36ECBAAB4B9A2DC4C15405696AA9E9 /* Pods-rvcmacTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-rvcmacTests-dummy.m"; sourceTree = "<group>"; };
-		DFC663ACD34A4A8257046146A061D6AF /* Decodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decodable.swift; path = Sources/Decodable.swift; sourceTree = "<group>"; };
 		E13E4EAD9D78E67769B80085A07003D8 /* Pods-rvcmacUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-rvcmacUITests.modulemap"; sourceTree = "<group>"; };
 		E193ACFDF61F0D3E8117F967D48A4A03 /* Pods-rvcmacUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rvcmacUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E1A7D57DBFFC242EE71861B435FA78B3 /* DDASLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Classes/DDASLLogger.m; sourceTree = "<group>"; };
-		E237CC1AA1B6B55A180A5393C3049043 /* DDTTYLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Classes/DDTTYLogger.m; sourceTree = "<group>"; };
-		E3727A9F925DFCA6679C1C08454395DF /* CocoaLumberjack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CocoaLumberjack.swift; path = Classes/CocoaLumberjack.swift; sourceTree = "<group>"; };
+		E2BAB73771662DF12EFEB78C1B6F029F /* Pods_rvcmacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_rvcmacUITests.framework; path = "Pods-rvcmacUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E006AB05AAB40624A86106C527B7A0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E566C9021C3F7A6A0C3ED9A37A0953F8 /* Castable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Castable.swift; path = Sources/Castable.swift; sourceTree = "<group>"; };
+		E503FF9CC62BC13865E17F75BD3D73C9 /* SwiftHEXColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHEXColors-umbrella.h"; sourceTree = "<group>"; };
 		E60E28EFE393036D16FAEAB150A27DAF /* Pods-rvcmac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-rvcmac-dummy.m"; sourceTree = "<group>"; };
-		EB1E0F2C23A1BD952E8FE749E0C651FA /* Decodable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Decodable-dummy.m"; sourceTree = "<group>"; };
-		EBEB2CEF06D42319D10CDEC38674ABC8 /* Decodable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Decodable-umbrella.h"; sourceTree = "<group>"; };
-		F0E8E727CD54A1084CC630F10CE9D181 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaLumberjack.framework; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B7AE6B112CF78DEACDBBBFEA4AF320 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDAbstractDatabaseLogger.m; path = Classes/DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		F118766754196BD9AE230D3E84F32287 /* Pods-rvcmacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-rvcmacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F35712E21F54DF30B24E2C3BD31A35F7 /* Pods-rvcmac-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rvcmac-frameworks.sh"; sourceTree = "<group>"; };
-		F595560BDB45EB50EE2FD6971FA42064 /* DDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Classes/DDLog.m; sourceTree = "<group>"; };
-		F8341525EC7918C382B73D1A85530C68 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAbstractDatabaseLogger.h; path = Classes/DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		F638E9E8C295813B99A6DA58950BB6FD /* DDTTYLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Classes/DDTTYLogger.m; sourceTree = "<group>"; };
 		FB92317640FB0A2188BFBAE96661E81C /* Pods-rvcmacUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-rvcmacUITests-resources.sh"; sourceTree = "<group>"; };
-		FCEE80E93156FE8E016FFFAC6677FD50 /* KeyPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Sources/KeyPath.swift; sourceTree = "<group>"; };
-		FDE0DF22978AF198B37A8A262D077175 /* Decodable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Decodable.xcconfig; sourceTree = "<group>"; };
-		FE12899D05F683701283444C395786C1 /* OptionalKeyPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionalKeyPath.swift; path = Sources/OptionalKeyPath.swift; sourceTree = "<group>"; };
-		FFCF19435F617F2E7CCBB8E5E497AD94 /* Overloads.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Overloads.swift; path = Sources/Overloads.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		08469A7054CD74CE1CC2C6AF19D467B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E801B84206BF31A4EE024D6C09043C72 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		382FCA1598BC3597A5B27192C685B8E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,11 +195,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		992C5B68C74A4D30AFFDCCB0F27D3FE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4F1856600D20AF7E87B77C8545D16AD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC1CB17D0AE017776CCDF449337ADFED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F7AD2C84A7E22A385D5FAAE511BE4B5E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF86F9356226AA2F05027B35F36733C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7A49109263CB0DE3F06495A67277931 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,29 +238,7 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				04C068A18C5413F804A2959126093416 /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		48C6F9A81409DEA418CF347ECE1F4902 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3E3542E162C764FBFDDBFDE96467477B /* Decodable.modulemap */,
-				FDE0DF22978AF198B37A8A262D077175 /* Decodable.xcconfig */,
-				EB1E0F2C23A1BD952E8FE749E0C651FA /* Decodable-dummy.m */,
-				B773BEDB23F1F8C01AEEB53F460FD82D /* Decodable-prefix.pch */,
-				EBEB2CEF06D42319D10CDEC38674ABC8 /* Decodable-umbrella.h */,
-				D3F60933F13765406C7289A9E3BE610E /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Decodable";
-			sourceTree = "<group>";
-		};
-		4A316287A4D522D83A76BAC4538E0F10 /* SwiftLint */ = {
+		2675289C92B4E0CD9241945CE102E043 /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -239,15 +246,12 @@
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
-		6086F90FB7E3A0DBB4B7BF5F6D6E2C75 /* CocoaLumberjack */ = {
+		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ECBF005FE41D58820F0A6EBC18004F8A /* Default */,
-				BCCFC107E27F3BE68799539AD9E42DD5 /* Support Files */,
-				959B8E757AD438A20DE6D301C6FFF079 /* Swift */,
+				04C068A18C5413F804A2959126093416 /* OS X */,
 			);
-			name = CocoaLumberjack;
-			path = CocoaLumberjack;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		616BB642A08DF29BD3373D4935D8DA94 /* Pods-rvcmac */ = {
@@ -286,68 +290,144 @@
 			path = "Target Support Files/Pods-rvcmacUITests";
 			sourceTree = "<group>";
 		};
+		70E3FE60AB6263E08D5636CC3F485657 /* SwiftHEXColors */ = {
+			isa = PBXGroup;
+			children = (
+				BE5C20D4E9A6D70125782A7DC1DB4991 /* SwiftHEXColors.h */,
+				637DE4A4A0CF3C16DED31BE06AD9DE7E /* SwiftHEXColors.swift */,
+				858DE69A7D3F58BD2DBCC7F49E6D5530 /* Support Files */,
+			);
+			name = SwiftHEXColors;
+			path = SwiftHEXColors;
+			sourceTree = "<group>";
+		};
+		78665C2730D42E506D54F3283F5EA059 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD2CB69473AE65FAF93517F7BF993A18 /* CocoaLumberjack */,
+				A8B8FFECC1C227FC74A33D11FED15DD9 /* Decodable */,
+				70E3FE60AB6263E08D5636CC3F485657 /* SwiftHEXColors */,
+				2675289C92B4E0CD9241945CE102E043 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B04505B01F5EDA7A04A15488FBEC257 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3120E89474CA3202192EA5D035F761F3 /* CocoaLumberjack.modulemap */,
+				46C89066AE8B46E9BD6F025F2C2E9EE8 /* CocoaLumberjack.xcconfig */,
+				5251244600CFBEEE3C4FAF8A990AC790 /* CocoaLumberjack-dummy.m */,
+				A16911F15781410C348E81A59E6AF0C8 /* CocoaLumberjack-prefix.pch */,
+				15E28A312CC3654F3DB4CD57D1F3920B /* CocoaLumberjack-umbrella.h */,
+				BD68A7F8CB5E5C2836D4B5EA66569526 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CocoaLumberjack";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
-				94548E51D9B0CF8D043C756900C88A8D /* Pods */,
-				E5488E501C2A7285310DF521EA2AB517 /* Products */,
+				78665C2730D42E506D54F3283F5EA059 /* Pods */,
+				909BD132EA916A92DC4214BEE5620A46 /* Products */,
 				E19D824F3E8F2545FCC7EB524F349FC9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		94548E51D9B0CF8D043C756900C88A8D /* Pods */ = {
+		858DE69A7D3F58BD2DBCC7F49E6D5530 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6086F90FB7E3A0DBB4B7BF5F6D6E2C75 /* CocoaLumberjack */,
-				AEED8AB7854E5CED73671A7D8428CFF2 /* Decodable */,
-				4A316287A4D522D83A76BAC4538E0F10 /* SwiftLint */,
+				745EFF63D02AACE4E9E9D878241F277D /* Info.plist */,
+				7EE6130BC5511FBF55E5D21C798FE55A /* SwiftHEXColors.modulemap */,
+				8F932398D1E944C69E14A5E6DA765265 /* SwiftHEXColors.xcconfig */,
+				012F6CBD598201621FD96EA1D3EEAE52 /* SwiftHEXColors-dummy.m */,
+				C415400A77B53DD714FCB2C135E888B5 /* SwiftHEXColors-prefix.pch */,
+				E503FF9CC62BC13865E17F75BD3D73C9 /* SwiftHEXColors-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftHEXColors";
 			sourceTree = "<group>";
 		};
-		959B8E757AD438A20DE6D301C6FFF079 /* Swift */ = {
+		909BD132EA916A92DC4214BEE5620A46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3727A9F925DFCA6679C1C08454395DF /* CocoaLumberjack.swift */,
+				13344FB42284542A7619C127DC4C7E19 /* CocoaLumberjack.framework */,
+				A97BA44F9593AD4D9D13ECF57603C48C /* Decodable.framework */,
+				C3CF3B1535B8F5C98A41DF0BA318D383 /* Pods_rvcmac.framework */,
+				C597FD0B7D972CD967A4177D26939709 /* Pods_rvcmacTests.framework */,
+				E2BAB73771662DF12EFEB78C1B6F029F /* Pods_rvcmacUITests.framework */,
+				654862BE815EA06880C8D8C2FAA79C56 /* SwiftHEXColors.framework */,
 			);
-			name = Swift;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		AEED8AB7854E5CED73671A7D8428CFF2 /* Decodable */ = {
+		A3E23F38DCFAAA4429D994ED85AAF659 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				E566C9021C3F7A6A0C3ED9A37A0953F8 /* Castable.swift */,
-				C12FF957971062F35A752DD18D53296C /* Decodable.h */,
-				DFC663ACD34A4A8257046146A061D6AF /* Decodable.swift */,
-				6738A592D19C0BCF0F9D72E6D67676A7 /* Decoders.swift */,
-				8A17639528B663A5E6C80E8006F0011F /* DecodingError.swift */,
-				FCEE80E93156FE8E016FFFAC6677FD50 /* KeyPath.swift */,
-				65DC563B9955C55B3BC4F752E226B9BB /* NSValueCastable.swift */,
-				A9CB5A781DEF18BEBB585650F05B97E2 /* Operators.swift */,
-				FE12899D05F683701283444C395786C1 /* OptionalKeyPath.swift */,
-				FFCF19435F617F2E7CCBB8E5E497AD94 /* Overloads.swift */,
-				C3568B86613357813BE80978D608C699 /* Parse.swift */,
-				487740511ECAC3DC5522A6772DC34091 /* RawRepresentableDecodable.swift */,
-				48C6F9A81409DEA418CF347ECE1F4902 /* Support Files */,
+				76ADDFBB97EE42FF73BB76C90AE9F447 /* CocoaLumberjack.h */,
+				C7DC55B4266B8E5A27D934D6242449CA /* DDAbstractDatabaseLogger.h */,
+				E6B7AE6B112CF78DEACDBBBFEA4AF320 /* DDAbstractDatabaseLogger.m */,
+				4D65193943416A243A9D1B8A65A193B6 /* DDASLLogCapture.h */,
+				6D719C4050F9BD66D3FF951B9A008358 /* DDASLLogCapture.m */,
+				6B27A35759CA92E9815F886F602503A3 /* DDASLLogger.h */,
+				177C95CDB7DAEB6544A36F6418CC645E /* DDASLLogger.m */,
+				D497203D0A2EB92CC3803A52C47AFAF4 /* DDAssertMacros.h */,
+				37D0082B1883C0B517807CF300C345F7 /* DDFileLogger.h */,
+				27C7A9FDA3DF0384643F9B0628A379D4 /* DDFileLogger.m */,
+				4B583154D36DB38BCE63F1F14D3B2E8A /* DDLegacyMacros.h */,
+				684B8CB40E688087398427EC3EC0550C /* DDLog.h */,
+				46C00E8CDBEA4BE3DAB0C1D1E2F78162 /* DDLog.m */,
+				512817E028EB494ED38C497752047FC2 /* DDLog+LOGV.h */,
+				2BB8B80C104143E7F954951B41FBCEF4 /* DDLogMacros.h */,
+				B704FB923E798B713C05DCFD7E3541B4 /* DDOSLogger.h */,
+				1A380B00981C9C4CB9C52FE818C16E69 /* DDOSLogger.m */,
+				49EACD3B0C106A6D97DCDF20F3A6DF6E /* DDTTYLogger.h */,
+				F638E9E8C295813B99A6DA58950BB6FD /* DDTTYLogger.m */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		A8B8FFECC1C227FC74A33D11FED15DD9 /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				6510170252154F3C2F2FD2C412A0E917 /* Castable.swift */,
+				BD3863DCCA6EA0A4333BF688248F0096 /* Decodable.h */,
+				28AE07227B2B5ACBA7A4EA6A2C3302FE /* Decodable.swift */,
+				16A452F6830B0845338899ACDB52EB77 /* Decoders.swift */,
+				05D3F9AF6C695C9561C68A78F2D6A101 /* DecodingError.swift */,
+				CF4B3773106BB6685A43CFD7555B61EA /* KeyPath.swift */,
+				5CCD55F7F48BE74BA6B212BEF8002B22 /* NSValueCastable.swift */,
+				88B984ADBFE7B52EF3912C38B8B4F052 /* Operators.swift */,
+				D8D2CE4AF555EB1328FD6797177A4BE2 /* OptionalKeyPath.swift */,
+				5416AB75AA132E2342334BBB4F118BA5 /* Overloads.swift */,
+				C20DD1690E9439E1C26C05AA552A5466 /* Parse.swift */,
+				C16E50473E9341B645C4ADA2C5B51A9A /* RawRepresentableDecodable.swift */,
+				EE133D0E6146FEE1F4081CF2DD7A8A05 /* Support Files */,
 			);
 			name = Decodable;
 			path = Decodable;
 			sourceTree = "<group>";
 		};
-		BCCFC107E27F3BE68799539AD9E42DD5 /* Support Files */ = {
+		BD2CB69473AE65FAF93517F7BF993A18 /* CocoaLumberjack */ = {
 			isa = PBXGroup;
 			children = (
-				3779446D9AD80DA946BC16352C14913F /* CocoaLumberjack.modulemap */,
-				9198FF58A497927BC2C2B31A4D6F706C /* CocoaLumberjack.xcconfig */,
-				363B591853B67C41C6269126F68512E3 /* CocoaLumberjack-dummy.m */,
-				40E23A5458BF46B08FD89D63544E4ACF /* CocoaLumberjack-prefix.pch */,
-				4C1FDCE258F7E04C21AFF698248462BA /* CocoaLumberjack-umbrella.h */,
-				C19186A64AFBAA383C5BB18C6E25BDA3 /* Info.plist */,
+				A3E23F38DCFAAA4429D994ED85AAF659 /* Default */,
+				7B04505B01F5EDA7A04A15488FBEC257 /* Support Files */,
+				C4E18D12E50CE447AE1518C86A075DA5 /* Swift */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CocoaLumberjack";
+			name = CocoaLumberjack;
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		C4E18D12E50CE447AE1518C86A075DA5 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				4178C721379D07525C0CF136615EBBC7 /* CocoaLumberjack.swift */,
+			);
+			name = Swift;
 			sourceTree = "<group>";
 		};
 		DC12F23FB16020542ABCFD8FD35CFF68 /* Pods-rvcmacTests */ = {
@@ -378,42 +458,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E5488E501C2A7285310DF521EA2AB517 /* Products */ = {
+		EE133D0E6146FEE1F4081CF2DD7A8A05 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F0E8E727CD54A1084CC630F10CE9D181 /* CocoaLumberjack.framework */,
-				0607077D7402FE087842529001CE2CF6 /* Decodable.framework */,
-				C5233C677BDDDA01645EAF337F0B86DB /* Pods_rvcmac.framework */,
-				62FF85874448C92C5C53191C9CD30F64 /* Pods_rvcmacTests.framework */,
-				AAA8B99EE0043882A2B8A506E91A7820 /* Pods_rvcmacUITests.framework */,
+				D5E2EBBA98DF5E6945F8ED8BF5B20FDD /* Decodable.modulemap */,
+				308569111881C06D61095BB241682F8E /* Decodable.xcconfig */,
+				2587A0152F58AA1101291825C0A83792 /* Decodable-dummy.m */,
+				D0596C00BD7993CBD79A4E145F39B7E3 /* Decodable-prefix.pch */,
+				8D1C0104C562E3DD584BCCCE976AE574 /* Decodable-umbrella.h */,
+				93609096E2DA44F2559BFD621CA7D049 /* Info.plist */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		ECBF005FE41D58820F0A6EBC18004F8A /* Default */ = {
-			isa = PBXGroup;
-			children = (
-				1B874891A2DE343F9C9657724B430C43 /* CocoaLumberjack.h */,
-				F8341525EC7918C382B73D1A85530C68 /* DDAbstractDatabaseLogger.h */,
-				C7C4E3656C16B57DA33DA5E1C6AEDC46 /* DDAbstractDatabaseLogger.m */,
-				1A3293718161E83B809D264CC21EAA5B /* DDASLLogCapture.h */,
-				12996CB765519C21D52F8438FA1D4FCB /* DDASLLogCapture.m */,
-				B3BE76318BD684C1AC15FDEFC46847FB /* DDASLLogger.h */,
-				E1A7D57DBFFC242EE71861B435FA78B3 /* DDASLLogger.m */,
-				5BF1E8DB36204C6FB2936172F910BD55 /* DDAssertMacros.h */,
-				0E73A558AE563709950F1FD9A80CBC1F /* DDFileLogger.h */,
-				A75C553FA662F98D315650E53AD58FE5 /* DDFileLogger.m */,
-				6A0A447CB498275286585135B9953807 /* DDLegacyMacros.h */,
-				C0ED367717A1B7F3031DE545A3EC2541 /* DDLog.h */,
-				F595560BDB45EB50EE2FD6971FA42064 /* DDLog.m */,
-				64157422C549DF06B92191325C4E5867 /* DDLog+LOGV.h */,
-				3562B50E50EAF5A1CCC8D7173712A8BA /* DDLogMacros.h */,
-				B2B6C1CAB7DE16A74A87972C8AB8E0D2 /* DDOSLogger.h */,
-				6C2AD90A5D33187F40C5D47971F0B00B /* DDOSLogger.m */,
-				A6A8340854A90C20F32D4C8A30792247 /* DDTTYLogger.h */,
-				E237CC1AA1B6B55A180A5393C3049043 /* DDTTYLogger.m */,
-			);
-			name = Default;
+			name = "Support Files";
+			path = "../Target Support Files/Decodable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,11 +483,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41B82855A3254971B37AE5568DAD3875 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DD6EAFC00713361E15D6E6821062725 /* SwiftHEXColors-umbrella.h in Headers */,
+				E3C60C2645FB2E643CF676DA472D3312 /* SwiftHEXColors.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43F2347F4074E38D2837DB1E7A441738 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BDFE26C408B654DFB64BFDD2025D40C2 /* Pods-rvcmacUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465A876151F314A67222E50FAC68C61E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224CC7684C3E4172893DEAFDFA1777C0 /* Pods-rvcmac-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,17 +537,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6A6D499D7B0D97A8B8C2B5170F87F37 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B12EA224A84CD73BDEC499FF04F6A0AB /* Pods-rvcmac-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		611068BA6F3DB1921B870CE1295AB24E /* Pods-rvcmac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5411A3414D585855D1FECC43FEF76077 /* Build configuration list for PBXNativeTarget "Pods-rvcmac" */;
+			buildPhases = (
+				431809633029A00CC1544DF1D82D984B /* Sources */,
+				CEF86F9356226AA2F05027B35F36733C /* Frameworks */,
+				465A876151F314A67222E50FAC68C61E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DAE322284A6E74F942CF665359DA508 /* PBXTargetDependency */,
+				32906B5857F058A6BC393B967F0FFD7B /* PBXTargetDependency */,
+				EB1CA7A4D20EAEDAB92DA632785CBD3D /* PBXTargetDependency */,
+			);
+			name = "Pods-rvcmac";
+			productName = "Pods-rvcmac";
+			productReference = C3CF3B1535B8F5C98A41DF0BA318D383 /* Pods_rvcmac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		68DD8E5CD88184B02D9CDE70E1788FD2 /* Pods-rvcmacUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8F2EF9118938BCD02359426AA1B1305 /* Build configuration list for PBXNativeTarget "Pods-rvcmacUITests" */;
@@ -489,7 +574,7 @@
 			);
 			name = "Pods-rvcmacUITests";
 			productName = "Pods-rvcmacUITests";
-			productReference = AAA8B99EE0043882A2B8A506E91A7820 /* Pods_rvcmacUITests.framework */;
+			productReference = E2BAB73771662DF12EFEB78C1B6F029F /* Pods_rvcmacUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9709635CA61F7F72E71552ACC5E71EC3 /* CocoaLumberjack */ = {
@@ -506,7 +591,7 @@
 			);
 			name = CocoaLumberjack;
 			productName = CocoaLumberjack;
-			productReference = F0E8E727CD54A1084CC630F10CE9D181 /* CocoaLumberjack.framework */;
+			productReference = 13344FB42284542A7619C127DC4C7E19 /* CocoaLumberjack.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9E9C4779DC6B318D9904FE09C21437E3 /* Decodable */ = {
@@ -523,26 +608,7 @@
 			);
 			name = Decodable;
 			productName = Decodable;
-			productReference = 0607077D7402FE087842529001CE2CF6 /* Decodable.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A419DF89B33D9C28688D7A93C3A27721 /* Pods-rvcmac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B17F79B8A1362076711194F3E5F1570 /* Build configuration list for PBXNativeTarget "Pods-rvcmac" */;
-			buildPhases = (
-				E9870B37443F6BA63D4B6120FA895A63 /* Sources */,
-				08469A7054CD74CE1CC2C6AF19D467B4 /* Frameworks */,
-				A6A6D499D7B0D97A8B8C2B5170F87F37 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				953D2C30C5645CDABF7EE18F71B4B5F8 /* PBXTargetDependency */,
-				23B93C9A9FF91775FDE2E4D662EC39F3 /* PBXTargetDependency */,
-			);
-			name = "Pods-rvcmac";
-			productName = "Pods-rvcmac";
-			productReference = C5233C677BDDDA01645EAF337F0B86DB /* Pods_rvcmac.framework */;
+			productReference = A97BA44F9593AD4D9D13ECF57603C48C /* Decodable.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D89D533BD6A7D0C859E87F02CEDD7FE4 /* Pods-rvcmacTests */ = {
@@ -559,7 +625,24 @@
 			);
 			name = "Pods-rvcmacTests";
 			productName = "Pods-rvcmacTests";
-			productReference = 62FF85874448C92C5C53191C9CD30F64 /* Pods_rvcmacTests.framework */;
+			productReference = C597FD0B7D972CD967A4177D26939709 /* Pods_rvcmacTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F576CDA8BD3AD8026EE98EC1469D63FA /* SwiftHEXColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14E87D96EC208F8C321035AA751ECBB4 /* Build configuration list for PBXNativeTarget "SwiftHEXColors" */;
+			buildPhases = (
+				B1C1A7C1580D596D7A9187C27699FC7B /* Sources */,
+				992C5B68C74A4D30AFFDCCB0F27D3FE7 /* Frameworks */,
+				41B82855A3254971B37AE5568DAD3875 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftHEXColors;
+			productName = SwiftHEXColors;
+			productReference = 654862BE815EA06880C8D8C2FAA79C56 /* SwiftHEXColors.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -579,15 +662,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E5488E501C2A7285310DF521EA2AB517 /* Products */;
+			productRefGroup = 909BD132EA916A92DC4214BEE5620A46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9709635CA61F7F72E71552ACC5E71EC3 /* CocoaLumberjack */,
 				9E9C4779DC6B318D9904FE09C21437E3 /* Decodable */,
-				A419DF89B33D9C28688D7A93C3A27721 /* Pods-rvcmac */,
+				611068BA6F3DB1921B870CE1295AB24E /* Pods-rvcmac */,
 				D89D533BD6A7D0C859E87F02CEDD7FE4 /* Pods-rvcmacTests */,
 				68DD8E5CD88184B02D9CDE70E1788FD2 /* Pods-rvcmacUITests */,
+				F576CDA8BD3AD8026EE98EC1469D63FA /* SwiftHEXColors */,
 			);
 		};
 /* End PBXProject section */
@@ -598,6 +682,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				34AC2CF01624E1C3C3ED0C8BCC2D2ADD /* Pods-rvcmacUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431809633029A00CC1544DF1D82D984B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6FB107515EA04CDDF474B38CD2C702B /* Pods-rvcmac-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,11 +720,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9870B37443F6BA63D4B6120FA895A63 /* Sources */ = {
+		B1C1A7C1580D596D7A9187C27699FC7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32ECC76C334E7EAC4B06E78002BB39F4 /* Pods-rvcmac-dummy.m in Sources */,
+				35591F656870D61B8A96C130A87574EB /* SwiftHEXColors-dummy.m in Sources */,
+				ECFE7DEAB429F7470B272CB09D461883 /* SwiftHEXColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,63 +748,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		23B93C9A9FF91775FDE2E4D662EC39F3 /* PBXTargetDependency */ = {
+		32906B5857F058A6BC393B967F0FFD7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Decodable;
 			target = 9E9C4779DC6B318D9904FE09C21437E3 /* Decodable */;
-			targetProxy = AE80431B1A37AB487E8CFD692D38C7E4 /* PBXContainerItemProxy */;
+			targetProxy = F5B2B7A2CB4D834B2863D7F5D51F6CE6 /* PBXContainerItemProxy */;
 		};
-		953D2C30C5645CDABF7EE18F71B4B5F8 /* PBXTargetDependency */ = {
+		3DAE322284A6E74F942CF665359DA508 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaLumberjack;
 			target = 9709635CA61F7F72E71552ACC5E71EC3 /* CocoaLumberjack */;
-			targetProxy = EB672D0B24110F0392D2217B58E83569 /* PBXContainerItemProxy */;
+			targetProxy = FB170526B80A70046A9A1B4A9B0323BC /* PBXContainerItemProxy */;
+		};
+		EB1CA7A4D20EAEDAB92DA632785CBD3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftHEXColors;
+			target = F576CDA8BD3AD8026EE98EC1469D63FA /* SwiftHEXColors */;
+			targetProxy = 96C443EA064DEA9DC8D28F96F9C60962 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1E6C5AB7C28154F252F4C89AC9B47029 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B637F61C7883E9ACB4E7BDC6AEF4E59 /* Pods-rvcmac.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-rvcmac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MODULEMAP_FILE = "Target Support Files/Pods-rvcmac/Pods-rvcmac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_rvcmac;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		248C3DECF7AB11DAE03CA7A00A9BE10F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDE0DF22978AF198B37A8A262D077175 /* Decodable.xcconfig */;
+			baseConfigurationReference = 308569111881C06D61095BB241682F8E /* Decodable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -744,6 +804,41 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		30798796CE90546D87AE103C05DB6E30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F932398D1E944C69E14A5E6DA765265 /* SwiftHEXColors.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftHEXColors/SwiftHEXColors-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftHEXColors/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/SwiftHEXColors/SwiftHEXColors.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftHEXColors;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		337AD37B27D7FFADF01DD8D7FE35B27B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -869,7 +964,7 @@
 		};
 		5BA32ECDFC6E872D8CBBC07CFD387C77 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9198FF58A497927BC2C2B31A4D6F706C /* CocoaLumberjack.xcconfig */;
+			baseConfigurationReference = 46C89066AE8B46E9BD6F025F2C2E9EE8 /* CocoaLumberjack.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -893,6 +988,45 @@
 				MODULEMAP_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = CocoaLumberjack;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5E1EA1359324B4A1341B212049B0F9CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B637F61C7883E9ACB4E7BDC6AEF4E59 /* Pods-rvcmac.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-rvcmac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Pods-rvcmac/Pods-rvcmac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_rvcmac;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -941,7 +1075,7 @@
 		};
 		64F3E6628CF70A2CB8A39DA197FD1E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9198FF58A497927BC2C2B31A4D6F706C /* CocoaLumberjack.xcconfig */;
+			baseConfigurationReference = 46C89066AE8B46E9BD6F025F2C2E9EE8 /* CocoaLumberjack.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -965,46 +1099,6 @@
 				MODULEMAP_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = CocoaLumberjack;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B90168E2762EA35622C64503D8F60C5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DD122207B8B9867B0D6B3A4CFEE5042 /* Pods-rvcmac.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-rvcmac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MODULEMAP_FILE = "Target Support Files/Pods-rvcmac/Pods-rvcmac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_rvcmac;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1052,6 +1146,82 @@
 			};
 			name = Release;
 		};
+		E0EA2082CD452B1AFD6FBFD91A12C459 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD122207B8B9867B0D6B3A4CFEE5042 /* Pods-rvcmac.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-rvcmac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Pods-rvcmac/Pods-rvcmac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_rvcmac;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB04A819AC54707B0D3545BB136BC55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F932398D1E944C69E14A5E6DA765265 /* SwiftHEXColors.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftHEXColors/SwiftHEXColors-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftHEXColors/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/SwiftHEXColors/SwiftHEXColors.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftHEXColors;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		FC4738C3605827B2CD972C349A860865 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1098,7 +1268,7 @@
 		};
 		FCDAAF781BB8EAB3D71CA77C36DCF9D9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDE0DF22978AF198B37A8A262D077175 /* Decodable.xcconfig */;
+			baseConfigurationReference = 308569111881C06D61095BB241682F8E /* Decodable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1143,6 +1313,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		14E87D96EC208F8C321035AA751ECBB4 /* Build configuration list for PBXNativeTarget "SwiftHEXColors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB04A819AC54707B0D3545BB136BC55F /* Debug */,
+				30798796CE90546D87AE103C05DB6E30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1152,20 +1331,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5411A3414D585855D1FECC43FEF76077 /* Build configuration list for PBXNativeTarget "Pods-rvcmac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0EA2082CD452B1AFD6FBFD91A12C459 /* Debug */,
+				5E1EA1359324B4A1341B212049B0F9CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		569311C5C0CD8B96389B860163CA85F0 /* Build configuration list for PBXNativeTarget "Decodable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				248C3DECF7AB11DAE03CA7A00A9BE10F /* Debug */,
 				FCDAAF781BB8EAB3D71CA77C36DCF9D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9B17F79B8A1362076711194F3E5F1570 /* Build configuration list for PBXNativeTarget "Pods-rvcmac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B90168E2762EA35622C64503D8F60C5C /* Debug */,
-				1E6C5AB7C28154F252F4C89AC9B47029 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
