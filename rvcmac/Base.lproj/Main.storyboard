@@ -686,7 +686,7 @@
         <scene sceneID="3Uk-EM-a4D">
             <objects>
                 <viewController storyboardIdentifier="VpnContainerViewController" id="ZH3-qS-MNq" customClass="VpnContainerViewController" customModule="rvcmac" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="p3w-QC-Rip">
+                    <view key="view" wantsLayer="YES" id="p3w-QC-Rip" customClass="VpnContainerView" customModule="rvcmac" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

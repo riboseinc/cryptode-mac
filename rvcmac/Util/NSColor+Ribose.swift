@@ -49,6 +49,10 @@ extension Ribose where Base: NSColor {
         return NSColor.lightGray
     }
     
+    static var popover: NSColor {
+        return NSColor(calibratedRed: 238, green: 238, blue: 238, alpha: 1)
+    }
+    
 }
 
 /// Extenstion proxy inspired by ReactiveCocoa sources
