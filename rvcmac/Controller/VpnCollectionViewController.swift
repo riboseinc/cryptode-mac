@@ -21,10 +21,19 @@ class VpnCollectionViewController: NSViewController {
         return sb.instantiateController(withIdentifier: self.identifier()) as! VpnCollectionViewController
     }
 
+    func assertCheck() {
+        assert(collectionView != nil)
+        assert(collectionViewDataSource != nil)
+        assert(collectionViewDelegate != nil)
+        assert(collectionView.dataSource != nil)
+        assert(collectionView.delegate != nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionViewDataSource.service = AppDelegate.shared.service
-        self.collectionView.register(NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
+        assertCheck()
+        collectionViewDataSource.service = AppDelegate.shared.service
+        collectionView.register(NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
         collectionView.enclosingScrollView!.automaticallyAdjustsContentInsets = false
         collectionView.enclosingScrollView!.contentInsets = EdgeInsets(top: padding, left: 0, bottom: padding, right: 0)
     }
@@ -34,7 +43,7 @@ class VpnCollectionViewController: NSViewController {
     override func viewWillAppear() {
         let w = view.window!.minSize.width
         let h = self.collectionView.minItemSize.height
-        self.collectionView.minItemSize = NSSize(width: w, height: h)
+        collectionView.minItemSize = NSSize(width: w, height: h)
         if shouldScroll {
             collectionView.enclosingScrollView!.contentView.scroll(NSPoint(x: 0, y: -padding))
             shouldScroll = false
