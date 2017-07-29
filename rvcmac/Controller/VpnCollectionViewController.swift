@@ -9,6 +9,8 @@
 import Cocoa
 
 class VpnCollectionViewController: NSViewController {
+    
+    let padding: CGFloat = 30
 
     @IBOutlet weak var collectionView: VpnCollectionView!
     @IBOutlet var collectionViewDataSource: VpnCollectionViewDataSource!
@@ -23,14 +25,20 @@ class VpnCollectionViewController: NSViewController {
         super.viewDidLoad()
         self.collectionViewDataSource.service = AppDelegate.shared.service
         self.collectionView.register(NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
-        collectionView.enclosingScrollView!.contentInsets = EdgeInsets(top: 30, left: 0, bottom: 30, right: 0)
-        collectionView.enclosingScrollView!.scrollerInsets = collectionView.enclosingScrollView!.contentInsets
+        collectionView.enclosingScrollView!.automaticallyAdjustsContentInsets = false
+        collectionView.enclosingScrollView!.contentInsets = EdgeInsets(top: padding, left: 0, bottom: padding, right: 0)
     }
     
+    var shouldScroll = true
+
     override func viewWillAppear() {
         let w = view.window!.minSize.width
         let h = self.collectionView.minItemSize.height
         self.collectionView.minItemSize = NSSize(width: w, height: h)
+        if shouldScroll {
+            collectionView.enclosingScrollView!.contentView.scroll(NSPoint(x: 0, y: -padding))
+            shouldScroll = false
+        }
     }
 
 }
