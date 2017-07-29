@@ -31,11 +31,11 @@ extension Ribose where Base: NSColor {
     }
     
     static var buttonTextNormal: NSColor {
-        return NSColor.lightGray
+        return NSColor.darkGray
     }
     
     static var buttonTextHighlighted: NSColor {
-        return NSColor.darkGray
+        return NSColor.black
     }
 
     static var buttonImageNormal: NSColor {

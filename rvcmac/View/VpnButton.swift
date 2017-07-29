@@ -29,6 +29,8 @@ class VpnButton: NSButton {
         configure()
     }
     
+    var isPressed = false
+
     override func mouseDown(with event: NSEvent) {
         DDLogInfo("\(#function) down")
         isPressed = true
@@ -36,7 +38,5 @@ class VpnButton: NSButton {
         DDLogInfo("\(#function) up")
         isPressed = false
     }
-    
-    var isPressed = false
     
 }

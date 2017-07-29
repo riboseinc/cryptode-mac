@@ -37,6 +37,7 @@ class TextButton: VpnButton {
         
         textField = {
             let textField = NSTextField(labelWithString: text)
+            textField.font = NSFont.systemFont(ofSize: 11)
             textField.textColor = NSColor.ribose.buttonTextNormal
             textField.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(textField)
