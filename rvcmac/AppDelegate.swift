@@ -75,22 +75,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.isShown ? hide(nil) : show(sender)
     }
     
-//    dynamic var startAtLogin: Bool {
-//        get {
-//            guard let xs = SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String:Any]] else {
-//                return false
-//            }
-//            let x = xs.first(where: { $0["Label"] as! String == helperBundleId })
-//            return x != nil
-//        } set {
-//            if SMLoginItemSetEnabled(helperBundleId as CFString, newValue) {
-//                DDLogInfo("Successfully set startAtLogin='\(startAtLogin)'")
-//            } else {
-//                DDLogError("Error: startAtLogin='\(startAtLogin)'. Make sure app is running from /Applications or ~/Applications")
-//            }
-//        }
-//    }
-    
     class var shared: AppDelegate {
         return NSApplication.shared().delegate! as! AppDelegate
     }
