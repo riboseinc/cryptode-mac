@@ -1,6 +1,6 @@
-### rvc-mac
+# rvc-mac
 
-# Build instructions
+## Build instructions
 
 1. Open `rvcmac.xcworkspace`
 2. Press `cmd+R`
