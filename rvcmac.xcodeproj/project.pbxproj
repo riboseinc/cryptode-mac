@@ -63,6 +63,8 @@
 		0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1BD772BB019AA984952CD1 /* Pods-rvcmacUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacUITests/Pods-rvcmacUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F42C7441F36141700EF8913 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
+		6F42C7451F36141700EF8913 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
 		6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Ribose.swift"; sourceTree = "<group>"; };
 		6F7E44D61F2499290093F37E /* VpnService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnService.swift; sourceTree = "<group>"; };
@@ -149,6 +151,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6F42C7481F36141B00EF8913 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				6F42C7441F36141700EF8913 /* Appfile */,
+				6F42C7451F36141700EF8913 /* Fastfile */,
+			);
+			name = fastlane;
+			sourceTree = "<group>";
+		};
 		6F7E44D51F2498F60093F37E /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +171,7 @@
 		6FAFE3191F237B9300F66AD3 = {
 			isa = PBXGroup;
 			children = (
+				6F42C7481F36141B00EF8913 /* fastlane */,
 				6FAFE3241F237B9300F66AD3 /* rvcmac */,
 				6FAFE3361F237B9300F66AD3 /* rvcmacTests */,
 				6FAFE3411F237B9300F66AD3 /* rvcmacUITests */,

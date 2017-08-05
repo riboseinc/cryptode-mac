@@ -247,3 +247,7 @@ elm-stuff
 repl-temp-*
 
 
+rvcmac.app/
+rvcmac.app.dSYM.zip
+fastlane/report.xml
+
