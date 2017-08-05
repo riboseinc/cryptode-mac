@@ -15,19 +15,19 @@ extension NSColor: RiboseExtensionsProvider {}
 extension Ribose where Base: NSColor {
     
     static var disconnected: NSColor {
-        return NSColor.clear
+        return NSColor(hexString: "e0ffff", alpha: 0.5)!
     }
 
     static var connecting: NSColor {
-        return NSColor.yellow
+        return NSColor(hexString: "ffff33")!
     }
 
     static var connected: NSColor {
-        return NSColor.green
+        return NSColor(hexString: "50c878")!
     }
 
     static var error: NSColor {
-        return NSColor.red
+        return NSColor(hexString: "d10047")!
     }
     
     static var buttonTextNormal: NSColor {
