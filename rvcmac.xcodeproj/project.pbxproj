@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F42C74A1F3615E400EF8913 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42C7491F3615E400EF8913 /* CircleView.swift */; };
 		6F7E44D01F23E4540093F37E /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */; };
 		6F7E44D21F23E66E0093F37E /* NSColor+Ribose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */; };
 		6F7E44D71F2499290093F37E /* VpnService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44D61F2499290093F37E /* VpnService.swift */; };
@@ -65,6 +66,7 @@
 		58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rvcmac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F42C7441F36141700EF8913 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
 		6F42C7451F36141700EF8913 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
+		6F42C7491F3615E400EF8913 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Ribose.swift"; sourceTree = "<group>"; };
 		6F7E44D61F2499290093F37E /* VpnService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnService.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				6F8B79181F2BE253004F469D /* ImageButton.swift */,
 				6F8B791D1F2BEE89004F469D /* HeaderView.swift */,
 				6F8B79201F2BEFF5004F469D /* FooterView.swift */,
+				6F42C7491F3615E400EF8913 /* CircleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				6FAFE3681F2387C200F66AD3 /* VpnCollectionViewFlowLayout.swift in Sources */,
 				6F8B79151F2BD4F6004F469D /* TextButton.swift in Sources */,
 				6F8B79121F2BD3ED004F469D /* VpnButton.swift in Sources */,
+				6F42C74A1F3615E400EF8913 /* CircleView.swift in Sources */,
 				6FAFE3841F23CAC600F66AD3 /* VpnPopover.swift in Sources */,
 				6F7E44D01F23E4540093F37E /* NSView+BackgroundColor.swift in Sources */,
 				6F8B79211F2BEFF5004F469D /* FooterView.swift in Sources */,

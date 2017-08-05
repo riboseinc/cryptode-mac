@@ -22,8 +22,19 @@
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Ht-gT-Dgq" userLabel="Status View">
                                     <rect key="frame" x="0.0" y="0.0" width="10" height="50"/>
+                                    <subviews>
+                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="pvx-P6-0zj" customClass="CircleView" customModule="rvcmac" customModuleProvider="target">
+                                            <rect key="frame" x="4" y="22" width="6" height="6"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="6" id="IQD-I0-pUf"/>
+                                                <constraint firstAttribute="width" constant="6" id="mYh-Xa-Fbn"/>
+                                            </constraints>
+                                        </customView>
+                                    </subviews>
                                     <constraints>
+                                        <constraint firstItem="pvx-P6-0zj" firstAttribute="centerY" secondItem="7Ht-gT-Dgq" secondAttribute="centerY" id="4Od-Sq-AId"/>
                                         <constraint firstAttribute="width" constant="10" id="CeW-5Q-ad8"/>
+                                        <constraint firstItem="pvx-P6-0zj" firstAttribute="centerX" secondItem="7Ht-gT-Dgq" secondAttribute="centerX" constant="2" id="zjY-J7-fzS"/>
                                     </constraints>
                                 </customView>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="hSp-B1-6JA" userLabel="Check Box Container">
@@ -128,7 +139,7 @@
         <collectionViewItem nibName="VpnCollectionViewItem" id="WkK-Ds-H2F" customClass="VpnCollectionViewItem" customModule="rvcmac" customModuleProvider="target">
             <connections>
                 <outlet property="checkBoxButton" destination="qdu-l7-cAj" id="Eux-uw-IaD"/>
-                <outlet property="statusView" destination="7Ht-gT-Dgq" id="6lF-1k-4jl"/>
+                <outlet property="statusView" destination="pvx-P6-0zj" id="KQh-gE-bCt"/>
                 <outlet property="titleTextField" destination="UsC-bY-VAP" id="Q8L-6q-4wI"/>
                 <outlet property="toggleButton" destination="4tB-eC-0nw" id="XX7-G2-k8J"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="xkb-cn-TBe"/>
