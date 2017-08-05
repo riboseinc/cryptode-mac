@@ -10,18 +10,10 @@ generated_fastfile_id "aadd3440-8763-4c29-bac1-fa01a0494656"
 
 default_platform :mac
 
-# Fastfile actions accept additional configuration, but
-# don't worry, fastlane will prompt you for required
-# info which you can add here later
-lane :beta do
-  # cocoapods
-
-  # build your iOS app
+lane :adhoc do
+  # build your macOS app
   gym(
-    # scheme: "YourScheme",
-    export_method: "app-store"
+    scheme: "rvcmac",
+    export_method: "ad-hoc"
   )
-
-  # upload to Testflight
-  pilot(skip_waiting_for_build_processing: true)
 end

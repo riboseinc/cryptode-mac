@@ -29,9 +29,9 @@ xcode-select --install
 </table>
 
 # Available Actions
-### beta
+### adhoc
 ```
-fastlane beta
+fastlane adhoc
 ```
 
 
