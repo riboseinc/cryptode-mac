@@ -21,10 +21,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Ht-gT-Dgq" userLabel="Status View">
-                                    <rect key="frame" x="0.0" y="0.0" width="10" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="21" height="50"/>
                                     <subviews>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="pvx-P6-0zj" customClass="CircleView" customModule="rvcmac" customModuleProvider="target">
-                                            <rect key="frame" x="4" y="22" width="6" height="6"/>
+                                            <rect key="frame" x="10" y="22" width="6" height="6"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="6" id="IQD-I0-pUf"/>
                                                 <constraint firstAttribute="width" constant="6" id="mYh-Xa-Fbn"/>
@@ -33,12 +33,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="pvx-P6-0zj" firstAttribute="centerY" secondItem="7Ht-gT-Dgq" secondAttribute="centerY" id="4Od-Sq-AId"/>
-                                        <constraint firstAttribute="width" constant="10" id="CeW-5Q-ad8"/>
+                                        <constraint firstAttribute="width" constant="21" id="CeW-5Q-ad8"/>
                                         <constraint firstItem="pvx-P6-0zj" firstAttribute="centerX" secondItem="7Ht-gT-Dgq" secondAttribute="centerX" constant="2" id="zjY-J7-fzS"/>
                                     </constraints>
                                 </customView>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="hSp-B1-6JA" userLabel="Check Box Container">
-                                    <rect key="frame" x="10" y="18" width="24" height="14"/>
+                                    <rect key="frame" x="21" y="18" width="24" height="14"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="qdu-l7-cAj">
                                             <rect key="frame" x="3" y="-2" width="18" height="18"/>
@@ -59,10 +59,10 @@
                                     </constraints>
                                 </customView>
                                 <customView horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cc-wI-B0z" userLabel="Title Container">
-                                    <rect key="frame" x="34" y="0.0" width="186" height="50"/>
+                                    <rect key="frame" x="45" y="0.0" width="175" height="50"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsC-bY-VAP">
-                                            <rect key="frame" x="18" y="17" width="150" height="17"/>
+                                            <rect key="frame" x="6" y="17" width="163" height="17"/>
                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Multiline Label" id="PV1-ak-9KA">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -72,8 +72,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UsC-bY-VAP" firstAttribute="centerY" secondItem="8cc-wI-B0z" secondAttribute="centerY" id="6jF-xd-J0J"/>
-                                        <constraint firstItem="UsC-bY-VAP" firstAttribute="leading" secondItem="8cc-wI-B0z" secondAttribute="leading" constant="20" symbolic="YES" id="dRQ-LW-wlI"/>
-                                        <constraint firstAttribute="trailing" secondItem="UsC-bY-VAP" secondAttribute="trailing" constant="20" symbolic="YES" id="o8g-25-ylU"/>
+                                        <constraint firstItem="UsC-bY-VAP" firstAttribute="leading" secondItem="8cc-wI-B0z" secondAttribute="leading" constant="8" id="dRQ-LW-wlI"/>
+                                        <constraint firstAttribute="trailing" secondItem="UsC-bY-VAP" secondAttribute="trailing" constant="8" id="o8g-25-ylU"/>
                                     </constraints>
                                 </customView>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="6yE-zq-6WA" userLabel="Button Container">
