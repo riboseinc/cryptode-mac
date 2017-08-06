@@ -60,7 +60,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func show(_ sender: NSStatusBarButton) {
         DDLogInfo("\(#function)")
         popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .minY)
-        popover.contentViewController?.view.window?.makeKey()
+        NSApplication.shared().activate(ignoringOtherApps: true)
+        popover.contentViewController?.view.window?.makeKeyAndOrderFront(self)
         statusItem.button!.highlight(true)
     }
     
