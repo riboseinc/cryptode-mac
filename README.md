@@ -1,6 +1,6 @@
 # rvc-mac
 
-GUI for *rvd* daemon.
+GUI for `rvd` daemon.
 
 ## Build instructions
 
