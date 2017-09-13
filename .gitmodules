@@ -1,0 +1,4 @@
+[submodule "deps/rvc"]
+	path = deps/rvc
+	url = https://github.com/riboseinc/rvc.git
+	branch = master
