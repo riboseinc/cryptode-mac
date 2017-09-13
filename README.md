@@ -4,6 +4,10 @@ GUI for `rvd` daemon.
 
 ## Build instructions
 
-1. Open `rvcmac.xcworkspace`
-2. Press `cmd+R`
+1. Fetch submodules:
+
+`git submodule update --init --recursive`
+
+2. Open `rvcmac.xcworkspace`
+3. Press `cmd+R`
 
