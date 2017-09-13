@@ -4,10 +4,14 @@ GUI for `rvd` daemon.
 
 ## Build instructions
 
-1. Fetch submodules:
+1. Install development environment:
+
+`brew install json-c`
+
+2. Fetch submodules:
 
 `git submodule update --init --recursive`
 
-2. Open `rvcmac.xcworkspace`
-3. Press `cmd+R`
+3. Open `rvcmac.xcworkspace`
+4. Press `cmd+R`
 
