@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "92879F58A1B89541926F60DFC73862173C28D491",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7B499D4C33E52EF5B8A63C08C0CA7F9628C9EEAC" : 9223372036854775807,
+    "92879F58A1B89541926F60DFC73862173C28D491" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BC0F8005-CBDE-4B13-9F6F-68E80A3F416F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7B499D4C33E52EF5B8A63C08C0CA7F9628C9EEAC" : "rvcmac\/deps\/rvc\/",
+    "92879F58A1B89541926F60DFC73862173C28D491" : "rvcmac\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "rvcmac",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "rvcmac.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/riboseinc\/rvc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B499D4C33E52EF5B8A63C08C0CA7F9628C9EEAC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:riboseinc\/rvc-mac.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "92879F58A1B89541926F60DFC73862173C28D491"
+    }
+  ]
+}
