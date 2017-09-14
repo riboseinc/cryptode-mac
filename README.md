@@ -15,3 +15,7 @@ GUI for `rvd` daemon.
 3. Open `rvcmac.xcworkspace`
 4. Press `cmd+R`
 
+## Updating submodules
+
+1. `git submodule update --recursive --remote`
+
