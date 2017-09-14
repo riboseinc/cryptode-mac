@@ -85,6 +85,7 @@
 		6FAC60911F6A7ED400D65CC5 /* rvc_shared.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rvc_shared.c; sourceTree = "<group>"; };
 		6FAC60921F6A7ED400D65CC5 /* rvc_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rvc_shared.h; sourceTree = "<group>"; };
 		6FAC60941F6A7F6700D65CC5 /* libjson-c.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libjson-c.2.dylib"; path = "../../../../../../../usr/local/Cellar/json-c/0.12.1/lib/libjson-c.2.dylib"; sourceTree = "<group>"; };
+		6FAC60961F6A92C200D65CC5 /* bridging_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridging_header.h; sourceTree = "<group>"; };
 		6FAFE3221F237B9300F66AD3 /* rvcmac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rvcmac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFE3251F237B9300F66AD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FAFE3291F237B9300F66AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 				6FAFE3851F23DD4300F66AD3 /* Resources */,
 				6FAFE32B1F237B9300F66AD3 /* Main.storyboard */,
 				6FAFE32E1F237B9300F66AD3 /* Info.plist */,
+				6FAC60961F6A92C200D65CC5 /* bridging_header.h */,
 			);
 			path = rvcmac;
 			sourceTree = "<group>";
@@ -829,6 +831,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ribose.rvcmac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = rvcmac/bridging_header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -853,6 +856,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ribose.rvcmac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = rvcmac/bridging_header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
