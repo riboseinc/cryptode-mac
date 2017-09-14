@@ -10,7 +10,7 @@ import Cocoa
 import CocoaLumberjack
 import ServiceManagement
 
-fileprivate let helperBundleId = "com.ribose.rvcmac"
+private let helperBundleId = "com.ribose.rvcmac"
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

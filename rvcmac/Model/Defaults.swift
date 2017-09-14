@@ -8,7 +8,7 @@
 
 import AppKit
 
-fileprivate let KEY_IS_SET_UP = "isSetUp"
+private let KEY_IS_SET_UP = "isSetUp"
 
 class Defaults {
     static var shared = Defaults()
