@@ -51,14 +51,14 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     // MARK: - UI
     
-    fileprivate func updateUI() {
+    private func updateUI() {
         updateStatus()
         updateState()
         updateTitle()
         updateToggleButton()
     }
     
-    fileprivate func updateStatus() {
+    private func updateStatus() {
         switch item.status {
         case .disconnected:
             statusView.backgroundColor = NSColor.ribose.disconnected
@@ -71,15 +71,15 @@ class VpnCollectionViewItem: NSCollectionViewItem {
         }
     }
     
-    fileprivate func updateState() {
+    private func updateState() {
         checkBoxButton.state = item.isSelected ? NSOnState : NSOffState
     }
     
-    fileprivate func updateTitle() {
+    private func updateTitle() {
         titleTextField.stringValue = item.title
     }
     
-    fileprivate func updateToggleButton() {
+    private func updateToggleButton() {
         if item.isConnected {
             toggleButton.text = "Disconnect"
         } else {
