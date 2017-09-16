@@ -49,6 +49,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return event
         }
         DDLogInfo("Start at login is='\(loginItemsController.exists())'")
+
+        var buffer: [Int8] = []
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            rvc_list_connections(Int32(true), &ptr)
+            let response = String(cString: ptr)
+            print(response)
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

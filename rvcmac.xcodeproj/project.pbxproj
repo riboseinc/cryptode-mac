@@ -40,6 +40,8 @@
 		6FAFE3841F23CAC600F66AD3 /* VpnPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */; };
 		6FAFE3871F23DD7200F66AD3 /* config.json.example in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3861F23DD7200F66AD3 /* config.json.example */; };
 		6FBB8C671F268C79006838AC /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB8C661F268C79006838AC /* Defaults.swift */; };
+		6FC72DCE1F6DD38A00B7438E /* libssl.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC72DCD1F6DD38A00B7438E /* libssl.1.0.0.dylib */; };
+		6FC72DD01F6DD3A100B7438E /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC72DCF1F6DD3A100B7438E /* libcrypto.1.0.0.dylib */; };
 		6FE97E761F274A0000374207 /* LoginItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE97E751F274A0000374207 /* LoginItemsController.swift */; };
 		A191834B4F4D59FAF28CECDB /* Pods_rvcmac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */; };
 		AF3E14A3B0E970695DADB52B /* Pods_rvcmacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */; };
@@ -113,6 +115,8 @@
 		6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnPopover.swift; sourceTree = "<group>"; };
 		6FAFE3861F23DD7200F66AD3 /* config.json.example */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.json.example; sourceTree = "<group>"; };
 		6FBB8C661F268C79006838AC /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		6FC72DCD1F6DD38A00B7438E /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = ../../../../../../../usr/local/Cellar/openssl/1.0.2l/lib/libssl.1.0.0.dylib; sourceTree = "<group>"; };
+		6FC72DCF1F6DD3A100B7438E /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = ../../../../../../../usr/local/Cellar/openssl/1.0.2l/lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
 		6FE97E751F274A0000374207 /* LoginItemsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginItemsController.swift; sourceTree = "<group>"; };
 		737EC4252273364B1096954E /* Pods-rvcmacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADFEF8EFBFB48716C9DF34EC /* Pods-rvcmacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rvcmacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rvcmacTests/Pods-rvcmacTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			files = (
 				A191834B4F4D59FAF28CECDB /* Pods_rvcmac.framework in Frameworks */,
 				6FAC60951F6A7F6700D65CC5 /* libjson-c.2.dylib in Frameworks */,
+				6FC72DCE1F6DD38A00B7438E /* libssl.1.0.0.dylib in Frameworks */,
+				6FC72DD01F6DD3A100B7438E /* libcrypto.1.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +347,8 @@
 		78EC4A8DAF357C15F4D982A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6FC72DCF1F6DD3A100B7438E /* libcrypto.1.0.0.dylib */,
+				6FC72DCD1F6DD38A00B7438E /* libssl.1.0.0.dylib */,
 				6FAC60941F6A7F6700D65CC5 /* libjson-c.2.dylib */,
 				58331DAC87E400EC10A06CE3 /* Pods_rvcmac.framework */,
 				0F5E752F5D554967FF0ED681 /* Pods_rvcmacTests.framework */,
@@ -822,12 +830,14 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/SwiftLint\"",
 					/usr/local/include,
+					/usr/local/Cellar/openssl/1.0.2l/include,
 				);
 				INFOPLIST_FILE = rvcmac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					"/usr/local/Cellar/json-c/0.12.1/lib",
+					/usr/local/Cellar/openssl/1.0.2l/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ribose.rvcmac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -847,12 +857,14 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/SwiftLint\"",
 					/usr/local/include,
+					/usr/local/Cellar/openssl/1.0.2l/include,
 				);
 				INFOPLIST_FILE = rvcmac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					"/usr/local/Cellar/json-c/0.12.1/lib",
+					/usr/local/Cellar/openssl/1.0.2l/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ribose.rvcmac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
