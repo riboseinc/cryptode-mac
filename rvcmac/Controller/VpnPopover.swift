@@ -13,7 +13,7 @@ class VpnPopover: NSPopover {
     override init() {
         super.init()
         animates = false
-        appearance = NSAppearance(named: NSAppearanceNameAqua)
+        appearance = NSAppearance(named: NSAppearance.Name.aqua)
 //        contentSize = NSSize(width: 320, height: 120)
     }
     

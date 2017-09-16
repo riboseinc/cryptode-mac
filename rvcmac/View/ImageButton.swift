@@ -72,7 +72,7 @@ extension NSImage {
         color.set()
         
         let imageRect = NSRect(origin: .zero, size: tinted.size)
-        NSRectFillUsingOperation(imageRect, .sourceAtop)
+        imageRect.fill(using: .sourceAtop)
 
         tinted.unlockFocus()
         return tinted

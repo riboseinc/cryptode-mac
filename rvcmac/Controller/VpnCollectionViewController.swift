@@ -17,8 +17,8 @@ class VpnCollectionViewController: NSViewController {
     @IBOutlet var collectionViewDelegate: VpnCollectionViewDelegate!
     
     static func instantiate() -> VpnCollectionViewController {
-        let sb = NSStoryboard(name: "Main", bundle: nil)
-        return sb.instantiateController(withIdentifier: self.identifier()) as! VpnCollectionViewController
+        let sb = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        return sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: self.identifier())) as! VpnCollectionViewController
     }
 
     func assertCheck() {
@@ -33,9 +33,9 @@ class VpnCollectionViewController: NSViewController {
         super.viewDidLoad()
         assertCheck()
         collectionViewDataSource.service = AppDelegate.shared.service
-        collectionView.register(NSNib(nibNamed: self.collectionViewDataSource.itemIdentifier, bundle: nil)!, forItemWithIdentifier: self.collectionViewDataSource.itemIdentifier)
+        collectionView.register(NSNib(nibNamed: NSNib.Name(rawValue: self.collectionViewDataSource.itemIdentifier), bundle: nil)!, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.collectionViewDataSource.itemIdentifier))
         collectionView.enclosingScrollView!.automaticallyAdjustsContentInsets = false
-        collectionView.enclosingScrollView!.contentInsets = EdgeInsets(top: padding, left: 0, bottom: padding, right: 0)
+        collectionView.enclosingScrollView!.contentInsets = NSEdgeInsets(top: padding, left: 0, bottom: padding, right: 0)
     }
     
     var shouldScroll = true
