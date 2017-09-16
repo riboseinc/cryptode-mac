@@ -20,7 +20,7 @@ class VpnCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         
-        let item = collectionView.makeItem(withIdentifier: self.itemIdentifier, for: indexPath) as! VpnCollectionViewItem
+        let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.itemIdentifier), for: indexPath) as! VpnCollectionViewItem
         item.item = self.service.items[indexPath.item]
         
         return item

@@ -40,7 +40,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
         // super.prepareForReuse() leads to a crash
         statusView.backgroundColor = NSColor.ribose.disconnected
         titleTextField.stringValue = ""
-        checkBoxButton.state = NSOffState
+        checkBoxButton.state = .off
     }
     
     var item: Vpn! {
@@ -72,7 +72,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     private func updateState() {
-        checkBoxButton.state = item.isSelected ? NSOnState : NSOffState
+        checkBoxButton.state = item.isSelected ? .on : .off
     }
     
     private func updateTitle() {
@@ -92,7 +92,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     @IBAction func actionCheckBoxButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
         switch self.checkBoxButton.state {
-        case NSOnState:
+        case .on:
             DDLogInfo("on")
             item.isSelected = true
         default:

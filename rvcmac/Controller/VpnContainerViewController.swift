@@ -22,8 +22,8 @@ class VpnContainerViewController: NSViewController {
     @IBOutlet weak var containerView: NSView!
     
     static func instantiate() -> VpnContainerViewController {
-        let sb = NSStoryboard(name: "Main", bundle: nil)
-        return sb.instantiateController(withIdentifier: self.identifier()) as! VpnContainerViewController
+        let sb = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        return sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: self.identifier())) as! VpnContainerViewController
     }
 
     func assertCheck() {

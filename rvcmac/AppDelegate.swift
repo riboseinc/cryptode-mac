@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     let rootController = VpnContainerViewController.instantiate()
     let popover = VpnPopover()
-    let statusItem = NSStatusBar.system().statusItem(withLength: 24)
+    let statusItem = NSStatusBar.system.statusItem(withLength: 24)
     let service = try! VpnService()
     let loginItemsController = LoginItemsController()
     
@@ -35,13 +35,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         loginItemsController.add()
         rootController.service = service
         popover.contentViewController = rootController
-        statusItem.button!.image = NSImage(named: "rvcmac-status-item")!
-        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in
+        statusItem.button!.image = NSImage(named: NSImage.Name(rawValue: "rvcmac-status-item"))!
+        NSEvent.addGlobalMonitorForEvents(matching: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown], handler: { event in
             if self.popover.isShown {
                 self.hide(event)
             }
         })
-        NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { event -> NSEvent? in
+        NSEvent.addLocalMonitorForEvents(matching: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { event -> NSEvent? in
             if event.window == self.statusItem.button!.window {
                 self.toggle(sender: self.statusItem.button!)
                 return nil
@@ -53,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var buffer: [Int8] = []
         buffer.withUnsafeMutableBufferPointer { bptr in
             var ptr = bptr.baseAddress!
-            rvc_list_connections(Int32(true), &ptr)
+            rvc_list_connections(1, &ptr)
             let response = String(cString: ptr)
             print(response)
         }

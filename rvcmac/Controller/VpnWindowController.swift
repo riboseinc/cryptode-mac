@@ -12,8 +12,8 @@ import CocoaLumberjack
 class VpnWindowController: NSWindowController, NSWindowDelegate {
 
     static func instantiate() -> VpnWindowController {
-        let sb = NSStoryboard(name: "Main", bundle: nil)
-        return sb.instantiateController(withIdentifier: self.identifier()) as! VpnWindowController
+        let sb = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        return sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: self.identifier())) as! VpnWindowController
     }
     
     override func windowDidLoad() {
