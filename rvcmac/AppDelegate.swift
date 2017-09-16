@@ -53,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var buffer: [Int8] = []
         buffer.withUnsafeMutableBufferPointer { bptr in
             var ptr = bptr.baseAddress!
-            rvc_list_connections(Int32(true), &ptr)
+            rvc_list_connections(1, &ptr)
             let response = String(cString: ptr)
             print(response)
         }
