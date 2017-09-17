@@ -35,6 +35,24 @@ class RVDClient {
     }
     
     private func request() {
-        print("Request")
+        func handle(_ data: Data?) throws {
+            guard let data = data else {
+                return
+            }
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            let connectionList = try RVCVpnConnectionList.decode(json)
+            connectionList.data.forEach { print($0.name) }
+        }
+        var buffer: [Int8] = []
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            rvc_list_connections(1, &ptr)
+            let response = String(cString: ptr)
+            do {
+                try handle(response.data(using: .utf8))
+            } catch {
+                print(error)
+            }
+        }
     }
 }

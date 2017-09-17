@@ -50,24 +50,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return event
         }
         DDLogInfo("Start at login is='\(loginItemsController.exists())'")
-
-        var buffer: [Int8] = []
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_list_connections(1, &ptr)
-            let response = String(cString: ptr)
-            do {
-                if let data = response.data(using: .utf8) {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    let connectionList = try RVCVpnConnectionList.decode(json)
-                    connectionList.data.forEach { print($0.name) }
-                }
-            } catch {
-                print(error)
-            }
-
-        }
-        
         rvdClient.start()
     }
 
