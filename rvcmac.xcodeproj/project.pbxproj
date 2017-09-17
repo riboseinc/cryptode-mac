@@ -855,6 +855,7 @@
 			baseConfigurationReference = E68D58D7007443E8919E7B22 /* Pods-rvcmac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -883,6 +884,7 @@
 			baseConfigurationReference = F94EBE3C7CC8DAE2037AABEF /* Pods-rvcmac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
