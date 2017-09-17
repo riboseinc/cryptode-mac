@@ -44,18 +44,19 @@ class RVCVpnConnection: Decodable {
         return try self.init(
             name: json => "name",
             profile: json => "profile",
-            autoConnect: json => "autoConnect",
-            preExecCmd: json => "preExecCmd"
+            autoConnect: json => "auto-connect",
+            preExecCmd: json => "pre-exec-cmd"
         )
     }
+
 }
 
 class RVCVpnConnectionList: Decodable {
     
-    let code: String
+    let code: Int
     let data: [RVCVpnConnection]
     
-    required init(code: String, data: [RVCVpnConnection]) {
+    required init(code: Int, data: [RVCVpnConnection]) {
         self.code = code
         self.data = data
     }

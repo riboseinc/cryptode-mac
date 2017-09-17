@@ -55,7 +55,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             var ptr = bptr.baseAddress!
             rvc_list_connections(1, &ptr)
             let response = String(cString: ptr)
-            print(response)
+            do {
+                if let data = response.data(using: .utf8) {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    let connectionList = try RVCVpnConnectionList.decode(json)
+                    connectionList.data.forEach { print($0.name) }
+                }
+            } catch {
+                print(error)
+            }
+
         }
     }
 
