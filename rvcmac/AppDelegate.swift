@@ -36,12 +36,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         rootController.service = service
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: NSImage.Name(rawValue: "rvcmac-status-item"))!
-        NSEvent.addGlobalMonitorForEvents(matching: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown], handler: { event in
+        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in
             if self.popover.isShown {
                 self.hide(event)
             }
         })
-        NSEvent.addLocalMonitorForEvents(matching: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { event -> NSEvent? in
+        NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { event -> NSEvent? in
             if event.window == self.statusItem.button!.window {
                 self.toggle(sender: self.statusItem.button!)
                 return nil
