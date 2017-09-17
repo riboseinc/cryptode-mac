@@ -90,7 +90,7 @@ class RVDClient {
             }
             print(vpnConnections)
         }
-        var buffer: [Int8] = []
+        var buffer = [Int8]()
         buffer.withUnsafeMutableBufferPointer { bptr in
             var ptr = bptr.baseAddress!
             rvc_list_connections(1, &ptr)
