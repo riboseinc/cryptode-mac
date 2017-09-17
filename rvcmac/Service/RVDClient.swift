@@ -42,7 +42,7 @@ class RVDClient {
         }
     }
     
-    private var vpnConnections = [String: RVCVpnConnection]()
+    var vpnConnections = [String: RVCVpnConnection]()
     
     private func request() {
         func handle(_ data: Data?) {
