@@ -28,7 +28,9 @@ class RVDClient {
     
     func start() {
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: dt, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+            let t = Timer.scheduledTimer(timeInterval: dt, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+            RunLoop.current.add(t, forMode: .commonModes)
+            timer = t
         }
     }
     
