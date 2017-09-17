@@ -43,7 +43,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
         checkBoxButton.state = .off
     }
     
-    var item: Vpn! {
+    var item: RVCVpnConnection! {
         didSet {
             updateUI()
         }
@@ -59,56 +59,56 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     private func updateStatus() {
-        switch item.status {
-        case .disconnected:
-            statusView.backgroundColor = NSColor.ribose.disconnected
-        case .connecting:
-            statusView.backgroundColor = NSColor.ribose.connecting
-        case .connected:
-            statusView.backgroundColor = NSColor.ribose.connected
-        case .error:
-            statusView.backgroundColor = NSColor.ribose.error
-        }
+//        switch item.status {
+//        case .disconnected:
+//            statusView.backgroundColor = NSColor.ribose.disconnected
+//        case .connecting:
+//            statusView.backgroundColor = NSColor.ribose.connecting
+//        case .connected:
+//            statusView.backgroundColor = NSColor.ribose.connected
+//        case .error:
+//            statusView.backgroundColor = NSColor.ribose.error
+//        }
     }
     
     private func updateState() {
-        checkBoxButton.state = item.isSelected ? .on : .off
+//        checkBoxButton.state = item.isSelected ? .on : .off
     }
     
     private func updateTitle() {
-        titleTextField.stringValue = item.title
+        titleTextField.stringValue = item.name
     }
     
     private func updateToggleButton() {
-        if item.isConnected {
-            toggleButton.text = "Disconnect"
-        } else {
-            toggleButton.text = "Connect"
-        }
+//        if item.isConnected {
+//            toggleButton.text = "Disconnect"
+//        } else {
+//            toggleButton.text = "Connect"
+//        }
     }
     
     // MARK: - Actions
     
     @IBAction func actionCheckBoxButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
-        switch self.checkBoxButton.state {
-        case .on:
-            DDLogInfo("on")
-            item.isSelected = true
-        default:
-            DDLogInfo("off")
-            item.isSelected = false
-        }
+//        switch self.checkBoxButton.state {
+//        case .on:
+//            DDLogInfo("on")
+//            item.isSelected = true
+//        default:
+//            DDLogInfo("off")
+//            item.isSelected = false
+//        }
     }
     
     @IBAction func actionToggleButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
-        if item.isConnected {
-            item.status = .disconnected
-        } else {
-            item.status = .connected
-        }
-        updateStatus()
-        updateToggleButton()
+//        if item.isConnected {
+//            item.status = .disconnected
+//        } else {
+//            item.status = .connected
+//        }
+//        updateStatus()
+//        updateToggleButton()
     }
 }

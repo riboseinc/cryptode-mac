@@ -18,7 +18,7 @@ class VpnContainerView: NSView {
         let backgroundView = NSView(frame: frameView.bounds)
         backgroundView.wantsLayer = true
         backgroundView.layer?.backgroundColor = NSColor.ribose.popover.cgColor
-        backgroundView.autoresizingMask = [NSView.AutoresizingMask.width, NSView.AutoresizingMask.height]
+        backgroundView.autoresizingMask = [.width, .height]
         backgroundView.translatesAutoresizingMaskIntoConstraints = true
         
         frameView.addSubview(backgroundView, positioned: .below, relativeTo: frameView)

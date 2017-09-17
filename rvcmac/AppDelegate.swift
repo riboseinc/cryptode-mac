@@ -20,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: 24)
     let service = try! VpnService()
     let loginItemsController = LoginItemsController()
+    let rvdClient = RVDClient()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {
@@ -36,12 +37,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         rootController.service = service
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: NSImage.Name(rawValue: "rvcmac-status-item"))!
-        NSEvent.addGlobalMonitorForEvents(matching: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown], handler: { event in
+        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in
             if self.popover.isShown {
                 self.hide(event)
             }
         })
-        NSEvent.addLocalMonitorForEvents(matching: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { event -> NSEvent? in
+        NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { event -> NSEvent? in
             if event.window == self.statusItem.button!.window {
                 self.toggle(sender: self.statusItem.button!)
                 return nil
@@ -49,14 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return event
         }
         DDLogInfo("Start at login is='\(loginItemsController.exists())'")
-
-        var buffer: [Int8] = []
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_list_connections(1, &ptr)
-            let response = String(cString: ptr)
-            print(response)
-        }
+        rvdClient.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
