@@ -69,10 +69,7 @@ class RVDClient {
                     }
                 }
                 vpnConnections.forEach { (k, v) in
-                    let first = connectionList.data.first(where: { (conn) -> Bool in
-                        return v.name == conn.name
-                    })
-                    if first == nil {
+                    if nil == connectionList.data.first { v.name == $0.name } {
                         vpnConnections.removeValue(forKey: k)
                     }
                 }
@@ -95,7 +92,8 @@ class RVDClient {
             var ptr = bptr.baseAddress!
             rvc_list_connections(1, &ptr)
             let response = String(cString: ptr)
-            handle(response.data(using: .utf8))
+            let data = response.data(using: .utf8)
+            handle(data)
         }
     }
 }
