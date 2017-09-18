@@ -49,22 +49,13 @@ class RVDClient {
     var storedConnections = [String: RVCVpnConnection]()
     
     private func list() {
+        var buffer = [Int8]()
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            rvc_list_connections(1, &ptr)
+            handle(String(cString: ptr))
+        }
         func handle(_ response: String) {
-            func insert(_ connection: RVCVpnConnection) {
-                storedConnections[connection.name] = connection
-                notificationCenter.post(name: RVCConnectionInsert, object: connection)
-            }
-            func update(_ connection: RVCVpnConnection) {
-                storedConnections[connection.name] = connection
-                notificationCenter.post(name: RVCConnectionUpdate, object: connection)
-            }
-            func delete(_ connection: RVCVpnConnection) {
-                storedConnections.removeValue(forKey: connection.name)
-                notificationCenter.post(name: RVCConnectionDelete, object: nil)
-            }
-            func deleteAll() {
-                storedConnections.values.forEach(delete(_:))
-            }
             do {
                 defer {
                     DDLogInfo("Stored connections: \(storedConnections)")
@@ -89,14 +80,22 @@ class RVDClient {
                 }
             } catch {
                 DDLogError("\(error)")
-                deleteAll()
+                storedConnections.values.forEach { connection in
+                    delete(connection)
+                }
             }
-        }
-        var buffer = [Int8]()
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_list_connections(1, &ptr)
-            handle(String(cString: ptr))
+            func insert(_ connection: RVCVpnConnection) {
+                storedConnections[connection.name] = connection
+                notificationCenter.post(name: RVCConnectionInsert, object: connection)
+            }
+            func update(_ connection: RVCVpnConnection) {
+                storedConnections[connection.name] = connection
+                notificationCenter.post(name: RVCConnectionUpdate, object: connection)
+            }
+            func delete(_ connection: RVCVpnConnection) {
+                storedConnections.removeValue(forKey: connection.name)
+                notificationCenter.post(name: RVCConnectionDelete, object: nil)
+            }
         }
     }
 }
