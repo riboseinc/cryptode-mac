@@ -15,12 +15,12 @@ class VpnCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
     var rvdClient: RVDClient!
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return rvdClient.vpnConnections.count
+        return rvdClient.storedConnections.count
     }
     
     func item(at index: Int) -> RVCVpnConnection {
-        let key = Array(rvdClient.vpnConnections.keys)[index]
-        return rvdClient.vpnConnections[key]!
+        let key = Array(rvdClient.storedConnections.keys)[index]
+        return rvdClient.storedConnections[key]!
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {

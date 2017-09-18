@@ -21,6 +21,10 @@ class VpnCollectionViewController: NSViewController {
         return sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: self.identifier())) as! VpnCollectionViewController
     }
 
+    deinit {
+        unsubscribe()
+    }
+    
     func assertCheck() {
         assert(collectionView != nil)
         assert(collectionViewDataSource != nil)
@@ -53,7 +57,6 @@ class VpnCollectionViewController: NSViewController {
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
-        unsubscribe()
     }
     
     // MARK: - Notifications
@@ -64,7 +67,6 @@ class VpnCollectionViewController: NSViewController {
         notificationCenter.addObserver(self, selector: #selector(insert), name: RVCConnectionInsert, object: nil)
         notificationCenter.addObserver(self, selector: #selector(update), name: RVCConnectionUpdate, object: nil)
         notificationCenter.addObserver(self, selector: #selector(delete), name: RVCConnectionDelete, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(deleteAll), name: RVCConnectionDeleteAll, object: nil)
     }
     
     private func unsubscribe() {
@@ -83,7 +85,4 @@ class VpnCollectionViewController: NSViewController {
         collectionView.reloadData()
     }
     
-    @objc private func deleteAll() {
-        collectionView.reloadData()
-    }
 }

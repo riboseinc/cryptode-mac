@@ -9,13 +9,15 @@
 import Foundation
 
 let RVCConnectionInsert = NSNotification.Name(rawValue: "RVCConnectionInsert")
-let RVCConnectionDelete = NSNotification.Name(rawValue: "RVCConnectionDelete")
 let RVCConnectionUpdate = NSNotification.Name(rawValue: "RVCConnectionUpdate")
-let RVCConnectionDeleteAll = NSNotification.Name(rawValue: "RVCConnectionDeleteAll")
+let RVCConnectionDelete = NSNotification.Name(rawValue: "RVCConnectionDelete")
+
+enum RVDClientError: Error {
+    case ServerError(String)
+}
 
 class RVDClient {
     
-    let notificationCenter = NotificationCenter.default
     var timer: Timer?
     
     deinit {
@@ -42,52 +44,56 @@ class RVDClient {
         }
     }
     
-    var vpnConnections = [String: RVCVpnConnection]()
+    let notificationCenter = NotificationCenter.default
+    var storedConnections = [String: RVCVpnConnection]()
     
     private func request() {
         func handle(_ data: Data?) {
+            func insert(_ connection: RVCVpnConnection) {
+                storedConnections[connection.name] = connection
+                notificationCenter.post(name: RVCConnectionInsert, object: connection)
+            }
+            func update(_ connection: RVCVpnConnection) {
+                storedConnections[connection.name] = connection
+                notificationCenter.post(name: RVCConnectionUpdate, object: connection)
+            }
+            func delete(_ connection: RVCVpnConnection) {
+                storedConnections.removeValue(forKey: connection.name)
+                notificationCenter.post(name: RVCConnectionDelete, object: nil)
+            }
+            func deleteAll() {
+                storedConnections.values.forEach { connection in
+                    delete(connection)
+                }
+            }
             guard let data = data else {
                 return
             }
             do {
+                defer {
+                    print("Stored connections: \(storedConnections)")
+                }
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 let connectionList = try RVCVpnConnectionList.decode(json)
                 if connectionList.code != 0 {
-                    return
+                    throw RVDClientError.ServerError("Error: code=\(connectionList.code)")
                 }
-                let isEmptyBefore = vpnConnections.isEmpty
-                connectionList.data.forEach {
-                    let key = $0.name
-                    if vpnConnections.keys.contains(key) {
-                        notificationCenter.post(name: RVCConnectionUpdate, object: $0)
-                        print("Update")
-                        vpnConnections[key] = $0
+                connectionList.data.forEach { connection in
+                    if !storedConnections.keys.contains(connection.name) {
+                        insert(connection)
                     } else {
-                        notificationCenter.post(name: RVCConnectionInsert, object: $0)
-                        print("Insert")
-                        vpnConnections[key] = $0
+                        update(connection)
                     }
                 }
-                vpnConnections.forEach { (k, v) in
-                    let first = connectionList.data.first { v.name == $0.name }
-                    if first == nil {
-                        let connection = vpnConnections.removeValue(forKey: k)
-                        notificationCenter.post(name: RVCConnectionDelete, object: connection)
+                storedConnections.values.forEach { connection in
+                    if nil == connectionList.data.first { $0.name == connection.name } {
+                        delete(connection)
                     }
-                }
-                
-                if isEmptyBefore && !vpnConnections.isEmpty {
-                    
-                }
-                if isEmptyBefore && !vpnConnections.isEmpty {
-                    
                 }
             } catch {
-                vpnConnections.removeAll()
-                notificationCenter.post(name: RVCConnectionDeleteAll, object: nil)
                 print(error)
+                deleteAll()
             }
-            print(vpnConnections)
         }
         var buffer = [Int8]()
         buffer.withUnsafeMutableBufferPointer { bptr in
