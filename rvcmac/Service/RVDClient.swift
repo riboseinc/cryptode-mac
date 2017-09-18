@@ -89,8 +89,8 @@ class RVDClient {
                 notificationCenter.post(name: RVCConnectionInsert, object: connection)
             }
             func update(_ connection: RVCVpnConnection) {
-                storedConnections[connection.name] = connection
-                notificationCenter.post(name: RVCConnectionUpdate, object: connection)
+//                storedConnections[connection.name] = connection
+//                notificationCenter.post(name: RVCConnectionUpdate, object: connection)
             }
             func delete(_ connection: RVCVpnConnection) {
                 storedConnections.removeValue(forKey: connection.name)
