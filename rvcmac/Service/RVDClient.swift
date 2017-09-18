@@ -48,7 +48,7 @@ class RVDClient {
     var storedConnections = [String: RVCVpnConnection]()
     
     private func request() {
-        func handle(_ data: Data?) {
+        func handle(_ response: String) {
             func insert(_ connection: RVCVpnConnection) {
                 storedConnections[connection.name] = connection
                 notificationCenter.post(name: RVCConnectionInsert, object: connection)
@@ -66,13 +66,11 @@ class RVDClient {
                     delete(connection)
                 }
             }
-            guard let data = data else {
-                return
-            }
             do {
                 defer {
                     print("Stored connections: \(storedConnections)")
                 }
+                let data = response.data(using: .utf8)!
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 let connectionList = try RVCVpnConnectionList.decode(json)
                 if connectionList.code != 0 {
@@ -99,9 +97,7 @@ class RVDClient {
         buffer.withUnsafeMutableBufferPointer { bptr in
             var ptr = bptr.baseAddress!
             rvc_list_connections(1, &ptr)
-            let response = String(cString: ptr)
-            let data = response.data(using: .utf8)
-            handle(data)
+            handle(String(cString: ptr))
         }
     }
 }
