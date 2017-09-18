@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CocoaLumberjack
 
 let RVCConnectionInsert = NSNotification.Name(rawValue: "RVCConnectionInsert")
 let RVCConnectionUpdate = NSNotification.Name(rawValue: "RVCConnectionUpdate")
@@ -68,7 +69,7 @@ class RVDClient {
             }
             do {
                 defer {
-                    print("Stored connections: \(storedConnections)")
+                    DDLogInfo("Stored connections: \(storedConnections)")
                 }
                 let data = response.data(using: .utf8)!
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
@@ -89,7 +90,7 @@ class RVDClient {
                     }
                 }
             } catch {
-                print(error)
+                DDLogError("\(error)")
                 deleteAll()
             }
         }
