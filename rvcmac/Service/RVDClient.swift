@@ -63,9 +63,7 @@ class RVDClient {
                 notificationCenter.post(name: RVCConnectionDelete, object: nil)
             }
             func deleteAll() {
-                storedConnections.values.forEach { connection in
-                    delete(connection)
-                }
+                storedConnections.values.forEach(delete(_:))
             }
             do {
                 defer {
