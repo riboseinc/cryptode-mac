@@ -41,14 +41,14 @@ class RVDClient {
         timeSinceLastRequest += dt
         if timeSinceLastRequest > requestCooldown {
             timeSinceLastRequest = 0
-            request()
+            list()
         }
     }
     
     let notificationCenter = NotificationCenter.default
     var storedConnections = [String: RVCVpnConnection]()
     
-    private func request() {
+    private func list() {
         func handle(_ response: String) {
             func insert(_ connection: RVCVpnConnection) {
                 storedConnections[connection.name] = connection
