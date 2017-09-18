@@ -69,8 +69,10 @@ class RVDClient {
                     }
                 }
                 vpnConnections.forEach { (k, v) in
-                    if nil == connectionList.data.first { v.name == $0.name } {
-                        vpnConnections.removeValue(forKey: k)
+                    let first = connectionList.data.first { v.name == $0.name }
+                    if first == nil {
+                        let connection = vpnConnections.removeValue(forKey: k)
+                        notificationCenter.post(name: RVCConnectionDelete, object: connection)
                     }
                 }
                 
