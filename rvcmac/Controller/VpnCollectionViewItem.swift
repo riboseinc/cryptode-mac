@@ -10,11 +10,15 @@ import Cocoa
 import CocoaLumberjack
 
 class VpnCollectionViewItem: NSCollectionViewItem {
-    
+
+    private var observerContext = 0
+
     @IBOutlet weak var statusView: NSView!
     @IBOutlet weak var checkBoxButton: NSButton!
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var toggleButton: TextButton!
+    
+    var token: NSKeyValueObservation?
     
     func assertCheck() {
         assert(statusView != nil)
@@ -38,6 +42,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     override func prepareForReuse() {
         // super.prepareForReuse() leads to a crash
+        token?.invalidate()
         statusView.backgroundColor = NSColor.ribose.disconnected
         titleTextField.stringValue = ""
         checkBoxButton.state = .off
@@ -46,6 +51,9 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     var item: RvcStatus! {
         didSet {
             updateUI()
+            token = item.observe(\.status) { _, _ in
+                self.updateStatus()
+            }
         }
     }
     
@@ -59,16 +67,18 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     private func updateStatus() {
-//        switch item.status {
-//        case .disconnected:
-//            statusView.backgroundColor = NSColor.ribose.disconnected
-//        case .connecting:
-//            statusView.backgroundColor = NSColor.ribose.connecting
-//        case .connected:
-//            statusView.backgroundColor = NSColor.ribose.connected
-//        case .error:
-//            statusView.backgroundColor = NSColor.ribose.error
-//        }
+        switch item.status {
+        case "DISCONNECTED":
+            statusView.backgroundColor = NSColor.ribose.disconnected
+        case "CONNECTING":
+            statusView.backgroundColor = NSColor.ribose.connecting
+        case "CONNECTED":
+            statusView.backgroundColor = NSColor.ribose.connected
+        case "ERROR":
+            statusView.backgroundColor = NSColor.ribose.error
+        default:
+            statusView.backgroundColor = NSColor.ribose.disconnected
+        }
     }
     
     private func updateState() {

@@ -26,14 +26,14 @@ import CocoaLumberjack
 //    }
 //}
 
-class RvcStatus: Decodable {
+class RvcStatus: NSObject, Decodable {
 
     let name: String
-    var status: String
-    var ovpnStatus: String
-    var inTotal: Int
-    var outTotal: Int
-    var timestamp: Int
+    @objc dynamic var status: String
+    @objc dynamic var ovpnStatus: String
+    @objc dynamic var inTotal: Int
+    @objc dynamic var outTotal: Int
+    @objc dynamic var timestamp: Int
 
     required init(name: String, status: String, ovpnStatus: String, inTotal: Int, outTotal: Int, timestamp: Int) {
         self.name = name
