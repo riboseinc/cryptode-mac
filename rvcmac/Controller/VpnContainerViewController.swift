@@ -69,13 +69,11 @@ class VpnContainerViewController: NSViewController {
     
     @IBAction func actionConnectAll(_ sender: Any) {
         DDLogInfo("\(#function)")
-//        service.connectAll()
-//        collection.collectionView.reloadData()
+        AppDelegate.shared.rvdClient.connectAll()
     }
     
     @IBAction func actoinDisconnectAll(_ sender: Any) {
         DDLogInfo("\(#function)")
-//        service.disconnectAll()
-//        collection.collectionView.reloadData()
+        AppDelegate.shared.rvdClient.disconnectAll()
     }
 }
