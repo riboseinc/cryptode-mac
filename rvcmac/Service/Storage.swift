@@ -43,7 +43,8 @@ class Storage {
     }
     
     private func _insert(_ connection: RVCVpnConnectionStatus) {
-        _connections[connection.name] = connection
+        let key = connection.name
+        _connections[key] = connection
         NotificationCenter.default.post(name: .RVCConnectionInserted, object: connection)
     }
     
