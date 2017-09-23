@@ -1,5 +1,5 @@
 //
-//  RVCVpnConnection.swift
+//  RvcConnection.swift
 //  rvcmac
 //
 //  Created by Nikita Titov on 17/09/2017.
@@ -26,7 +26,7 @@ import CocoaLumberjack
 //    ]
 //}
 
-class RVCVpnConnection: Decodable {
+class RvcConnection: Decodable {
     
     let name: String
     let profile: String
@@ -51,12 +51,12 @@ class RVCVpnConnection: Decodable {
 
 }
 
-class RVCVpnConnectionEnvelope: Decodable {
+class RvcConnectionEnvelope: Decodable {
     
     let code: Int
-    let data: [RVCVpnConnection]
+    let data: [RvcConnection]
     
-    required init(code: Int, data: [RVCVpnConnection]) {
+    required init(code: Int, data: [RvcConnection]) {
         self.code = code
         self.data = data
     }

@@ -43,7 +43,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
         checkBoxButton.state = .off
     }
     
-    var item: RVCVpnConnectionStatus! {
+    var item: RvcStatus! {
         didSet {
             updateUI()
         }

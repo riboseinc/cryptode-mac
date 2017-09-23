@@ -1,5 +1,5 @@
 //
-//  RVCVpnConnectionStatus.swift
+//  RvcStatus.swift
 //  rvcmac
 //
 //  Created by Nikita Titov on 18/09/2017.
@@ -26,7 +26,7 @@ import CocoaLumberjack
 //    }
 //}
 
-class RVCVpnConnectionStatus: Decodable {
+class RvcStatus: Decodable {
     
     let name: String
     var status: String
@@ -57,12 +57,12 @@ class RVCVpnConnectionStatus: Decodable {
     
 }
 
-class RVCVpnConnectionStatusEnvelope: Decodable {
+class RvcStatusEnvelope: Decodable {
     
     let code: Int
-    let data: RVCVpnConnectionStatus
+    let data: RvcStatus
     
-    required init(code: Int, data: RVCVpnConnectionStatus) {
+    required init(code: Int, data: RvcStatus) {
         self.code = code
         self.data = data
     }

@@ -64,9 +64,9 @@ class VpnCollectionViewController: NSViewController {
     private let notificationCenter = NotificationCenter.default
 
     private func subscribe() {
-        notificationCenter.addObserver(self, selector: #selector(insert), name: .RVCConnectionInserted, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(update), name: .RVCConnectionChanged, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(delete), name: .RVCConnectionDeleted, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(insert), name: .RvcConnectionInserted, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(update), name: .RvcConnectionChanged, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(delete), name: .RvcConnectionDeleted, object: nil)
     }
     
     private func unsubscribe() {
