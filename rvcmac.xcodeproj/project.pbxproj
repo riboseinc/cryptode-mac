@@ -12,6 +12,8 @@
 		6F56F32B1F76AC8B0089053B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56F32A1F76AC8B0089053B /* Storage.swift */; };
 		6F56F32F1F76DB440089053B /* RvcWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56F32E1F76DB440089053B /* RvcWrapper.swift */; };
 		6F56F3511F7714030089053B /* rvcmac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F56F34F1F7714030089053B /* rvcmac.xcdatamodeld */; };
+		6F56F3541F7714D90089053B /* Connection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56F3521F7714D90089053B /* Connection+CoreDataClass.swift */; };
+		6F56F3551F7714D90089053B /* Connection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56F3531F7714D90089053B /* Connection+CoreDataProperties.swift */; };
 		6F7E44D01F23E4540093F37E /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */; };
 		6F7E44D21F23E66E0093F37E /* NSColor+Ribose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */; };
 		6F8B79121F2BD3ED004F469D /* VpnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8B79111F2BD3ED004F469D /* VpnButton.swift */; };
@@ -81,6 +83,8 @@
 		6F56F32A1F76AC8B0089053B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		6F56F32E1F76DB440089053B /* RvcWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RvcWrapper.swift; sourceTree = "<group>"; };
 		6F56F3501F7714030089053B /* rvcmac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rvcmac.xcdatamodel; sourceTree = "<group>"; };
+		6F56F3521F7714D90089053B /* Connection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Connection+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6F56F3531F7714D90089053B /* Connection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Connection+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Ribose.swift"; sourceTree = "<group>"; };
 		6F8B79111F2BD3ED004F469D /* VpnButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnButton.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 		6FAFE35B1F2384D800F66AD3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F56F3521F7714D90089053B /* Connection+CoreDataClass.swift */,
+				6F56F3531F7714D90089053B /* Connection+CoreDataProperties.swift */,
 				6FBB8C661F268C79006838AC /* Defaults.swift */,
 				6FC914D71F6F13AE00ACCC38 /* RvcConnection.swift */,
 				6FC914DB1F6F2DB800ACCC38 /* RvcStatus.swift */,
@@ -694,6 +700,8 @@
 				6FE97E761F274A0000374207 /* LoginItemsController.swift in Sources */,
 				6F8B791E1F2BEE89004F469D /* HeaderView.swift in Sources */,
 				6FC914DA1F6F1BB600ACCC38 /* RvdClient.swift in Sources */,
+				6F56F3551F7714D90089053B /* Connection+CoreDataProperties.swift in Sources */,
+				6F56F3541F7714D90089053B /* Connection+CoreDataClass.swift in Sources */,
 				6FAFE3711F2387C800F66AD3 /* VpnWindow.swift in Sources */,
 				6FAFE3761F238AAC00F66AD3 /* VpnCollectionViewItem.swift in Sources */,
 				6FAFE3671F2387C200F66AD3 /* VpnCollectionViewDelegate.swift in Sources */,
