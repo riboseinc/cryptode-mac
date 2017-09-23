@@ -64,4 +64,15 @@ class RvdClient {
         DDLogInfo("Stored connections: \(storage.connections)")
     }
 
+    func connect(_ connection: RvcStatus) {
+        if let newConnection = RvcWrapper.connect(connection.name) {
+            storage.insert(newConnection)
+        }
+    }
+    
+    func disconnect(_ connection: RvcStatus) {
+        if let newConnection = RvcWrapper.disconnect(connection.name) {
+            storage.insert(newConnection)
+        }
+    }
 }
