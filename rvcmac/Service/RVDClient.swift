@@ -56,12 +56,15 @@ class RVDClient {
     
     // MARK: - Wrappers
     
+    // Swift wrappers for C library functions.
+    // Once C functions become mature enough and will do their own parsing from json string to data structures these wrappers could be eliminated.
+    
     private func rvcList() -> [RVCVpnConnection] {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
             var ptr = bptr.baseAddress!
-            rvc_list_connections(1, &ptr)
+            rvc_list_connections(1, &ptr) // actual library call
             response = String(cString: ptr)
         }
         if let json = jsonObject(response), let envelope = try? RVCVpnConnectionEnvelope.decode(json), envelope.code == 0 {
@@ -75,7 +78,7 @@ class RVDClient {
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
             var ptr = bptr.baseAddress!
-            rvc_get_status(name.cString(using: .utf8)!, 1, &ptr)
+            rvc_get_status(name.cString(using: .utf8)!, 1, &ptr) // actual library call
             response = String(cString: ptr)
         }
         if let json = jsonObject(response), let envelope = try? RVCVpnConnectionStatusEnvelope.decode(json), envelope.code == 0 {
