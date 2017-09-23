@@ -50,9 +50,24 @@ class Storage {
         NotificationCenter.default.post(name: .RvcConnectionInserted, object: connection)
     }
     
-    private func _update(_ connection: RvcStatus) {
-//        storedConnections[connection.name] = connection
-//        NotificationCenter.default.post(name: .RvcConnectionChanged, object: connection)
+    private func _update(_ newConnection: RvcStatus) {
+        let connection = connections[newConnection.name]!
+        
+        if connection.status != newConnection.status {
+            connection.status = newConnection.status
+        }
+        if connection.ovpnStatus != newConnection.ovpnStatus {
+            connection.ovpnStatus = newConnection.ovpnStatus
+        }
+        if connection.inTotal != newConnection.inTotal {
+            connection.inTotal = newConnection.inTotal
+        }
+        if connection.outTotal != newConnection.outTotal {
+            connection.outTotal = newConnection.outTotal
+        }
+        if connection.timestamp != newConnection.timestamp {
+            connection.timestamp = newConnection.timestamp
+        }
     }
     
     private func _contains(_ key: String) -> Bool {
