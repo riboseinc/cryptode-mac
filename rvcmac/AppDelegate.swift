@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             return event
         }
-        DDLogInfo("Start at login is='\(loginItemsController.exists())'")
+        DDLogInfo("start_at_login=\(loginItemsController.exists())")
         rvdClient.startPooling()
     }
 
