@@ -45,12 +45,7 @@ class RVDClient {
     private func pool() {
         let connections = rvcList()
         connections.flatMap {rvcStatus($0.name)}.forEach(storage.insert(_:))
-        storage.connections.values.forEach { connection in
-            let name = connection.name
-            if nil == connections.first { $0.name == name } {
-                _ = storage.delete(name)
-            }
-        }
+        storage.delete(ifMissingIn: Set(connections.map {$0.name}))
         DDLogInfo("Stored connections: \(storage.connections)")
     }
     

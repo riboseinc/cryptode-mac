@@ -36,10 +36,13 @@ class Storage {
         }
     }
     
-    func delete(_ key: String) -> RVCVpnConnectionStatus {
+    func delete(_ key: String) {
         let connection = _connections.removeValue(forKey: key)!
         NotificationCenter.default.post(name: .RVCConnectionDeleted, object: connection)
-        return connection
+    }
+    
+    func delete(ifMissingIn keys: Set<String>) {
+        Set(connections.values.map {$0.name}).symmetricDifference(keys).forEach(delete(_:))
     }
     
     private func _insert(_ connection: RVCVpnConnectionStatus) {
