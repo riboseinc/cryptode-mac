@@ -12,7 +12,6 @@ import CocoaLumberjack
 class VpnContainerViewController: NSViewController {
 
     let collection = VpnCollectionViewController.instantiate()
-    var service: VpnService!
     
     @IBOutlet weak var headerView: NSVisualEffectView!
     @IBOutlet var menuRef: NSMenu!
@@ -27,8 +26,6 @@ class VpnContainerViewController: NSViewController {
     }
 
     func assertCheck() {
-        assert(service != nil)
-
         assert(headerView != nil)
         
         assert(menuRef != nil)

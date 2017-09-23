@@ -13,7 +13,6 @@
 		6F56F32F1F76DB440089053B /* RvcWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56F32E1F76DB440089053B /* RvcWrapper.swift */; };
 		6F7E44D01F23E4540093F37E /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */; };
 		6F7E44D21F23E66E0093F37E /* NSColor+Ribose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */; };
-		6F7E44D71F2499290093F37E /* VpnService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7E44D61F2499290093F37E /* VpnService.swift */; };
 		6F8B79121F2BD3ED004F469D /* VpnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8B79111F2BD3ED004F469D /* VpnButton.swift */; };
 		6F8B79151F2BD4F6004F469D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8B79141F2BD4F6004F469D /* TextButton.swift */; };
 		6F8B79191F2BE253004F469D /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8B79181F2BE253004F469D /* ImageButton.swift */; };
@@ -26,7 +25,6 @@
 		6FAFE32D1F237B9300F66AD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE32B1F237B9300F66AD3 /* Main.storyboard */; };
 		6FAFE3381F237B9300F66AD3 /* rvcmacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3371F237B9300F66AD3 /* rvcmacTests.swift */; };
 		6FAFE3431F237B9300F66AD3 /* rvcmacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3421F237B9300F66AD3 /* rvcmacUITests.swift */; };
-		6FAFE35F1F23861400F66AD3 /* Vpn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE35E1F23861400F66AD3 /* Vpn.swift */; };
 		6FAFE3651F2387C200F66AD3 /* VpnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3601F2387C200F66AD3 /* VpnCollectionViewController.swift */; };
 		6FAFE3661F2387C200F66AD3 /* VpnCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3611F2387C200F66AD3 /* VpnCollectionViewDataSource.swift */; };
 		6FAFE3671F2387C200F66AD3 /* VpnCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3621F2387C200F66AD3 /* VpnCollectionViewDelegate.swift */; };
@@ -39,7 +37,6 @@
 		6FAFE3781F239D0B00F66AD3 /* VpnCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */; };
 		6FAFE37C1F23A75600F66AD3 /* VpnWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE37B1F23A75600F66AD3 /* VpnWindowController.swift */; };
 		6FAFE3841F23CAC600F66AD3 /* VpnPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */; };
-		6FAFE3871F23DD7200F66AD3 /* config.json.example in Resources */ = {isa = PBXBuildFile; fileRef = 6FAFE3861F23DD7200F66AD3 /* config.json.example */; };
 		6FBB8C671F268C79006838AC /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBB8C661F268C79006838AC /* Defaults.swift */; };
 		6FC72DCE1F6DD38A00B7438E /* libssl.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC72DCD1F6DD38A00B7438E /* libssl.1.0.0.dylib */; };
 		6FC72DD01F6DD3A100B7438E /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC72DCF1F6DD3A100B7438E /* libcrypto.1.0.0.dylib */; };
@@ -84,7 +81,6 @@
 		6F56F32E1F76DB440089053B /* RvcWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RvcWrapper.swift; sourceTree = "<group>"; };
 		6F7E44CF1F23E4540093F37E /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		6F7E44D11F23E66E0093F37E /* NSColor+Ribose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Ribose.swift"; sourceTree = "<group>"; };
-		6F7E44D61F2499290093F37E /* VpnService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnService.swift; sourceTree = "<group>"; };
 		6F8B79111F2BD3ED004F469D /* VpnButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnButton.swift; sourceTree = "<group>"; };
 		6F8B79141F2BD4F6004F469D /* TextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		6F8B79181F2BE253004F469D /* ImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
@@ -106,7 +102,6 @@
 		6FAFE3421F237B9300F66AD3 /* rvcmacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rvcmacUITests.swift; sourceTree = "<group>"; };
 		6FAFE3441F237B9300F66AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FAFE3501F237D7B00F66AD3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		6FAFE35E1F23861400F66AD3 /* Vpn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vpn.swift; sourceTree = "<group>"; };
 		6FAFE3601F2387C200F66AD3 /* VpnCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewController.swift; sourceTree = "<group>"; };
 		6FAFE3611F2387C200F66AD3 /* VpnCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		6FAFE3621F2387C200F66AD3 /* VpnCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnCollectionViewDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +114,6 @@
 		6FAFE3771F239D0B00F66AD3 /* VpnCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VpnCollectionViewItem.xib; sourceTree = "<group>"; };
 		6FAFE37B1F23A75600F66AD3 /* VpnWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnWindowController.swift; sourceTree = "<group>"; };
 		6FAFE3831F23CAC600F66AD3 /* VpnPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnPopover.swift; sourceTree = "<group>"; };
-		6FAFE3861F23DD7200F66AD3 /* config.json.example */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.json.example; sourceTree = "<group>"; };
 		6FBB8C661F268C79006838AC /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		6FC72DCD1F6DD38A00B7438E /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = ../../../../../../../usr/local/Cellar/openssl/1.0.2l/lib/libssl.1.0.0.dylib; sourceTree = "<group>"; };
 		6FC72DCF1F6DD3A100B7438E /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = ../../../../../../../usr/local/Cellar/openssl/1.0.2l/lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
@@ -220,7 +214,6 @@
 		6F7E44D51F2498F60093F37E /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				6F7E44D61F2499290093F37E /* VpnService.swift */,
 				6FC914D91F6F1BB600ACCC38 /* RvdClient.swift */,
 				6F56F32E1F76DB440089053B /* RvcWrapper.swift */,
 				6F56F32A1F76AC8B0089053B /* Storage.swift */,
@@ -309,7 +302,6 @@
 		6FAFE35B1F2384D800F66AD3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6FAFE35E1F23861400F66AD3 /* Vpn.swift */,
 				6FBB8C661F268C79006838AC /* Defaults.swift */,
 				6FC914D71F6F13AE00ACCC38 /* RvcConnection.swift */,
 				6FC914DB1F6F2DB800ACCC38 /* RvcStatus.swift */,
@@ -354,7 +346,6 @@
 		6FAFE3851F23DD4300F66AD3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6FAFE3861F23DD7200F66AD3 /* config.json.example */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -495,7 +486,6 @@
 				6FAFE3781F239D0B00F66AD3 /* VpnCollectionViewItem.xib in Resources */,
 				6FAFE32A1F237B9300F66AD3 /* Assets.xcassets in Resources */,
 				6FAFE32D1F237B9300F66AD3 /* Main.storyboard in Resources */,
-				6FAFE3871F23DD7200F66AD3 /* config.json.example in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,7 +678,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F7E44D71F2499290093F37E /* VpnService.swift in Sources */,
 				6FAFE3261F237B9300F66AD3 /* AppDelegate.swift in Sources */,
 				6FC914D81F6F13AE00ACCC38 /* RvcConnection.swift in Sources */,
 				6FAFE3741F2388D400F66AD3 /* NSViewController+Identifier.swift in Sources */,
@@ -703,7 +692,6 @@
 				6FC914DA1F6F1BB600ACCC38 /* RvdClient.swift in Sources */,
 				6FAFE3711F2387C800F66AD3 /* VpnWindow.swift in Sources */,
 				6FAFE3761F238AAC00F66AD3 /* VpnCollectionViewItem.swift in Sources */,
-				6FAFE35F1F23861400F66AD3 /* Vpn.swift in Sources */,
 				6FAFE3671F2387C200F66AD3 /* VpnCollectionViewDelegate.swift in Sources */,
 				6F7E44D21F23E66E0093F37E /* NSColor+Ribose.swift in Sources */,
 				6FAFE3661F2387C200F66AD3 /* VpnCollectionViewDataSource.swift in Sources */,
