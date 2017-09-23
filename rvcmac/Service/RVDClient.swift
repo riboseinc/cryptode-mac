@@ -29,7 +29,7 @@ class RVDClient {
     private var requestCooldown: Double = 1
     private var timeSinceLastRequest: Double = 0
     
-    func start() {
+    func startPooling() {
         if timer == nil {
             let t = Timer.scheduledTimer(timeInterval: dt, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
             RunLoop.current.add(t, forMode: .commonModes)

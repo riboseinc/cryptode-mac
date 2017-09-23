@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return event
         }
         DDLogInfo("Start at login is='\(loginItemsController.exists())'")
-        rvdClient.start()
+        rvdClient.startPooling()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
