@@ -38,11 +38,11 @@ class RVDClient {
         timeSinceLastRequest += dt
         if timeSinceLastRequest > requestCooldown {
             timeSinceLastRequest = 0
-            list()
+            pool()
         }
     }
     
-    private func list() {
+    private func pool() {
         let connections = rvcList()
         connections.flatMap {rvcStatus($0.name)}.forEach(storage.insert(_:))
         storage.connections.values.forEach { connection in
