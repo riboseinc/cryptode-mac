@@ -112,10 +112,10 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     @IBAction func actionToggleButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
-//        if item.isConnected {
-//            item.status = .disconnected
-//        } else {
-//            item.status = .connected
-//        }
+        if item.isConnected {
+            AppDelegate.shared.rvdClient.disconnect(item)
+        } else {
+            AppDelegate.shared.rvdClient.connect(item)
+        }
     }
 }
