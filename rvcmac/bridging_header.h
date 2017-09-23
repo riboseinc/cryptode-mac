@@ -14,5 +14,6 @@
 #include "rvc_shared.h"
 
 int rvc_list_connections(int, char * _Nonnull * _Nonnull);
+int rvc_get_status(const char * _Nonnull, int, char * _Nonnull * _Nonnull);
 
 #endif /* bridging_header_h */

@@ -18,7 +18,7 @@ class VpnCollectionViewDataSource: NSObject, NSCollectionViewDataSource {
         return rvdClient.storedConnections.count
     }
     
-    func item(at index: Int) -> RVCVpnConnection {
+    func item(at index: Int) -> RVCVpnConnectionStatus {
         let key = Array(rvdClient.storedConnections.keys)[index]
         return rvdClient.storedConnections[key]!
     }

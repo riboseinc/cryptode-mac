@@ -57,12 +57,12 @@ class RVCVpnConnectionStatus: Decodable {
     
 }
 
-class RVCVpnConnectionStatusList: Decodable {
+class RVCVpnConnectionStatusEnvelope: Decodable {
     
     let code: Int
-    let data: [RVCVpnConnectionStatus]
+    let data: RVCVpnConnectionStatus
     
-    required init(code: Int, data: [RVCVpnConnectionStatus]) {
+    required init(code: Int, data: RVCVpnConnectionStatus) {
         self.code = code
         self.data = data
     }
