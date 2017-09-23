@@ -22,7 +22,6 @@ class VpnContainerView: NSView {
         backgroundView.translatesAutoresizingMaskIntoConstraints = true
         
         frameView.addSubview(backgroundView, positioned: .below, relativeTo: frameView)
-        
     }
     
 }
