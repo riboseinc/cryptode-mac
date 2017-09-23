@@ -42,7 +42,7 @@ class Storage {
     }
     
     func delete(ifMissingIn keys: Set<String>) {
-        Set(connections.values.map {$0.name}).symmetricDifference(keys).forEach(delete(_:))
+        Set(connections.keys).symmetricDifference(keys).forEach(delete(_:))
     }
     
     private func _insert(_ connection: RVCVpnConnectionStatus) {
