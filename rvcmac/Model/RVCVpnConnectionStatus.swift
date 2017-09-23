@@ -29,11 +29,11 @@ import CocoaLumberjack
 class RVCVpnConnectionStatus: Decodable {
     
     let name: String
-    let status: String
-    let ovpnStatus: String
-    let inTotal: Int
-    let outTotal: Int
-    let timestamp: Int
+    var status: String
+    var ovpnStatus: String
+    var inTotal: Int
+    var outTotal: Int
+    var timestamp: Int
 
     required init(name: String, status: String, ovpnStatus: String, inTotal: Int, outTotal: Int, timestamp: Int) {
         self.name = name
