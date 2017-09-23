@@ -121,4 +121,16 @@ class RVDClient {
         notificationCenter.post(name: RVCConnectionDelete, object: connectionStatus)
     }
 
+    // MARK: - Wrappers
+    
+    private func rvc_list() -> String {
+        var buffer = [Int8]()
+        var result: String!
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            rvc_list_connections(1, &ptr)
+            result = String(cString: ptr)
+        }
+        return result
+    }
 }
