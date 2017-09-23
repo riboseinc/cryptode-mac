@@ -44,22 +44,7 @@ class RVDClient {
     
     private func list() {
         let connections = rvcList()
-        connections.forEach { connection in
-            let name = connection.name
-            let statusResponse = rvcStatus(name)
-            do {
-                let data = statusResponse.data(using: .utf8)!
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                let connectionStatusEnvelope = try RVCVpnConnectionStatusEnvelope.decode(json)
-                if connectionStatusEnvelope.code != 0 {
-                    throw RVDClientError.ServerError("Error: code=\(connectionStatusEnvelope.code)")
-                }
-                let connectionStatus = connectionStatusEnvelope.data
-                storage.insert(connectionStatus)
-            } catch {
-                DDLogError("\(error)")
-            }
-        }
+        connections.flatMap {rvcStatus($0.name)}.forEach(storage.insert(_:))
         storage.connections.values.forEach { connection in
             let name = connection.name
             if nil == connections.first { $0.name == name } {
@@ -85,7 +70,7 @@ class RVDClient {
         return [RVCVpnConnection]()
     }
     
-    private func rvcStatus(_ name: String) -> String {
+    private func rvcStatus(_ name: String) -> RVCVpnConnectionStatus? {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -93,7 +78,10 @@ class RVDClient {
             rvc_get_status(name.cString(using: .utf8)!, 1, &ptr)
             response = String(cString: ptr)
         }
-        return response
+        if let json = jsonObject(response), let envelope = try? RVCVpnConnectionStatusEnvelope.decode(json), envelope.code == 0 {
+            return envelope.data
+        }
+        return nil
     }
     
     private func jsonObject(_ string: String) -> Any? {
