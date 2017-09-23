@@ -46,61 +46,38 @@ class RVDClient {
     }
     
     private func list() {
-        var buffer = [Int8]()
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_list_connections(1, &ptr)
-            handle(String(cString: ptr))
-        }
-        func handle(_ response: String) {
-            do {
-                defer {
-                    DDLogInfo("Stored connections: \(storedConnections)")
-                }
-                let data = response.data(using: .utf8)!
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                let connectionList = try RVCVpnConnectionList.decode(json)
-                if connectionList.code != 0 {
-                    throw RVDClientError.ServerError("Error: code=\(connectionList.code)")
-                }
-                connectionList.data.forEach { connection in
-                    let name = connection.name
-                    let nameCStr = name.cString(using: .utf8)!
-                    var buffer = [Int8]()
-                    buffer.withUnsafeMutableBufferPointer { bptr in
-                        var ptr = bptr.baseAddress!
-                        rvc_get_status(nameCStr, 1, &ptr)
-                        let response = String(cString: ptr)
-                        do {
-                            let data = response.data(using: .utf8)!
-                            let json = try JSONSerialization.jsonObject(with: data, options: [])
-                            let connectionStatusEnvelope = try RVCVpnConnectionStatusEnvelope.decode(json)
-                            if connectionStatusEnvelope.code != 0 {
-                                throw RVDClientError.ServerError("Error: code=\(connectionStatusEnvelope.code)")
-                            }
-                            let connectionStatus = connectionStatusEnvelope.data
-                            // Handle connection status
-                            if !storedConnections.keys.contains(name) {
-                                insert(connectionStatus)
-                            } else {
-                                update(connectionStatus)
-                            }
-                        } catch {
-                            DDLogError("\(error)")
-                        }
+        if let connectionList = rvcList() {
+            connectionList.forEach { connection in
+                let name = connection.name
+                let statusResponse = rvcStatus(name)
+                do {
+                    let data = statusResponse.data(using: .utf8)!
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    let connectionStatusEnvelope = try RVCVpnConnectionStatusEnvelope.decode(json)
+                    if connectionStatusEnvelope.code != 0 {
+                        throw RVDClientError.ServerError("Error: code=\(connectionStatusEnvelope.code)")
                     }
-                }
-                storedConnections.values.forEach { connectionStatus in
-                    let name = connectionStatus.name
-                    if nil == connectionList.data.first { $0.name == name } {
-                        delete(name)
+                    let connectionStatus = connectionStatusEnvelope.data
+                    // Handle connection status
+                    if !storedConnections.keys.contains(name) {
+                        insert(connectionStatus)
+                    } else {
+                        update(connectionStatus)
                     }
+                } catch {
+                    DDLogError("\(error)")
                 }
-            } catch {
-                DDLogError("\(error)")
-                storedConnections.values.map { $0.name }.forEach(delete(_:))
             }
+            storedConnections.values.forEach { connectionStatus in
+                let name = connectionStatus.name
+                if nil == connectionList.first { $0.name == name } {
+                    delete(name)
+                }
+            }
+        } else {
+            storedConnections.values.map { $0.name }.forEach(delete(_:))
         }
+        DDLogInfo("Stored connections: \(storedConnections)")
     }
     
     let notificationCenter = NotificationCenter.default
@@ -123,7 +100,7 @@ class RVDClient {
 
     // MARK: - Wrappers
     
-    private func rvcList() -> String {
+    private func rvcList() -> [RVCVpnConnection]? {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -131,7 +108,16 @@ class RVDClient {
             rvc_list_connections(1, &ptr)
             response = String(cString: ptr)
         }
-        return response
+        guard let json = jsonObject(response) else {
+            return nil
+        }
+        guard let envelope = try? RVCVpnConnectionEnvelope.decode(json) else {
+            return nil
+        }
+        if envelope.code != 0 {
+            return nil
+        }
+        return envelope.data
     }
     
     private func rvcStatus(_ name: String) -> String {
@@ -143,5 +129,10 @@ class RVDClient {
             response = String(cString: ptr)
         }
         return response
+    }
+    
+    private func jsonObject(_ string: String) -> Any? {
+        let data = string.data(using: .utf8)!
+        return try? JSONSerialization.jsonObject(with: data, options: [])
     }
 }

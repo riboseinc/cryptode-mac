@@ -51,7 +51,7 @@ class RVCVpnConnection: Decodable {
 
 }
 
-class RVCVpnConnectionList: Decodable {
+class RVCVpnConnectionEnvelope: Decodable {
     
     let code: Int
     let data: [RVCVpnConnection]
