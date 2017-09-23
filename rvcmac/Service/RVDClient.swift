@@ -123,14 +123,25 @@ class RVDClient {
 
     // MARK: - Wrappers
     
-    private func rvc_list() -> String {
+    private func rvcList() -> String {
         var buffer = [Int8]()
-        var result: String!
+        var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
             var ptr = bptr.baseAddress!
             rvc_list_connections(1, &ptr)
-            result = String(cString: ptr)
+            response = String(cString: ptr)
         }
-        return result
+        return response
+    }
+    
+    private func rvcStatus(_ name: String) -> String {
+        var buffer = [Int8]()
+        var response: String!
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            rvc_get_status(name.cString(using: .utf8)!, 1, &ptr)
+            response = String(cString: ptr)
+        }
+        return response
     }
 }
