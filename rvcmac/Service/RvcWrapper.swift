@@ -41,6 +41,36 @@ class RvcWrapper {
         return nil
     }
     
+    static func connect(_ name: String) -> RvcStatus? {
+        var buffer = [Int8]()
+        var response: String!
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            let name = name.cString(using: .utf8)!
+            rvc_connect(name, 1, &ptr) // actual library call
+            response = String(cString: ptr)
+        }
+        if let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 {
+            return envelope.data
+        }
+        return nil
+    }
+    
+    static func disconnect(_ name: String) -> RvcStatus? {
+        var buffer = [Int8]()
+        var response: String!
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            let name = name.cString(using: .utf8)!
+            rvc_disconnect(name, 1, &ptr) // actual library call
+            response = String(cString: ptr)
+        }
+        if let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 {
+            return envelope.data
+        }
+        return nil
+    }
+    
     private static func jsonObject(_ string: String) -> Any? {
         let data = string.data(using: .utf8)!
         return try? JSONSerialization.jsonObject(with: data, options: [])
