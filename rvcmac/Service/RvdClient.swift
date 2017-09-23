@@ -18,7 +18,7 @@ class RvdClient {
         timer?.invalidate()
     }
     
-    private let dt: TimeInterval = 1 / 3
+    private let dt: TimeInterval = 1 / 30
     private static let poolCooldownDefault: TimeInterval = 2
     private var poolCooldown: TimeInterval = 0
     
