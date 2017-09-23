@@ -52,7 +52,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
         didSet {
             updateUI()
             statusToken = item.observe(\.status) { _, _ in
-                self.updateStatus()
+                self.pullStatus()
             }
         }
     }
@@ -60,41 +60,40 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     // MARK: - UI
     
     private func updateUI() {
-        updateStatus()
-        updateState()
-        updateTitle()
-        updateToggleButton()
+        pullStatus()
+        pullState()
+        pullTitle()
     }
     
-    private func updateStatus() {
+    private func pullStatus() {
         switch item.status {
         case "DISCONNECTED":
             statusView.backgroundColor = NSColor.ribose.disconnected
+            toggleButton.text = "Connect"
+            toggleButton.isEnabled = true
         case "CONNECTING":
             statusView.backgroundColor = NSColor.ribose.connecting
+            toggleButton.text = "Connecting..."
+            toggleButton.isEnabled = false
         case "CONNECTED":
             statusView.backgroundColor = NSColor.ribose.connected
+            toggleButton.text = "Disconnect"
+            toggleButton.isEnabled = true
         case "ERROR":
             statusView.backgroundColor = NSColor.ribose.error
+            toggleButton.text = "Connect"
+            toggleButton.isEnabled = true
         default:
             statusView.backgroundColor = NSColor.ribose.disconnected
         }
     }
     
-    private func updateState() {
+    private func pullState() {
         checkBoxButton.state = item.isSelected ? .on : .off
     }
     
-    private func updateTitle() {
+    private func pullTitle() {
         titleTextField.stringValue = item.name
-    }
-    
-    private func updateToggleButton() {
-//        if item.isConnected {
-//            toggleButton.text = "Disconnect"
-//        } else {
-//            toggleButton.text = "Connect"
-//        }
     }
     
     // MARK: - Actions
@@ -118,7 +117,5 @@ class VpnCollectionViewItem: NSCollectionViewItem {
 //        } else {
 //            item.status = .connected
 //        }
-//        updateStatus()
-//        updateToggleButton()
     }
 }
