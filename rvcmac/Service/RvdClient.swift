@@ -81,4 +81,14 @@ class RvdClient {
             storage.insert(newConnection)
         }
     }
+    
+    func connectAll() {
+        DDLogInfo("\(#function)")
+        storage.connections.values.filter {$0.isSelected && !$0.isConnected}.forEach(connect(_:))
+    }
+    
+    func disconnectAll() {
+        DDLogInfo("\(#function)")
+        storage.connections.values.filter {$0.isSelected && $0.isConnected}.forEach(disconnect(_:))
+    }
 }
