@@ -63,10 +63,6 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     private func pullStatus() {
         switch item.status {
-        case "DISCONNECTING":
-            statusView.backgroundColor = NSColor.ribose.connecting
-            toggleButton.text = "Disconnecting..."
-            toggleButton.isEnabled = false
         case "DISCONNECTED":
             statusView.backgroundColor = NSColor.ribose.disconnected
             toggleButton.text = "Connect"
@@ -79,6 +75,10 @@ class VpnCollectionViewItem: NSCollectionViewItem {
             statusView.backgroundColor = NSColor.ribose.connected
             toggleButton.text = "Disconnect"
             toggleButton.isEnabled = true
+        case "DISCONNECTING":
+            statusView.backgroundColor = NSColor.ribose.connecting
+            toggleButton.text = "Disconnecting..."
+            toggleButton.isEnabled = false
         case "ERROR":
             statusView.backgroundColor = NSColor.ribose.error
             toggleButton.text = "Connect"
