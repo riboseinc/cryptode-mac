@@ -3,6 +3,11 @@
     <entity name="Connection" representedClassName="Connection" syncable="YES">
         <attribute name="isSelected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="Connection" positionX="-63" positionY="-18" width="128" height="75"/>
