@@ -35,10 +35,7 @@ class RvcWrapper {
             rvc_get_status(name.cString(using: .utf8)!, 1, &ptr) // actual library call
             response = String(cString: ptr)
         }
-        if let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 {
-            return envelope.data
-        }
-        return nil
+        return createStatus(response)
     }
     
     func connect(_ name: String) -> RvcStatus? {
@@ -50,10 +47,7 @@ class RvcWrapper {
             rvc_connect(name, 1, &ptr) // actual library call
             response = String(cString: ptr)
         }
-        if let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 {
-            return envelope.data
-        }
-        return nil
+        return createStatus(response)
     }
     
     func disconnect(_ name: String) -> RvcStatus? {
@@ -65,10 +59,16 @@ class RvcWrapper {
             rvc_disconnect(name, 1, &ptr) // actual library call
             response = String(cString: ptr)
         }
-        if let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 {
-            return envelope.data
+        return createStatus(response)
+    }
+    
+    private func createStatus(_ response: String) -> RvcStatus? {
+        guard let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 else {
+            return nil
         }
-        return nil
+        let status = envelope.data
+        // TODO: Get isSelected from persistent storage
+        return status
     }
     
     private func jsonObject(_ string: String) -> Any? {
