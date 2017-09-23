@@ -1,5 +1,5 @@
 //
-//  RVDClient.swift
+//  RvdClient.swift
 //  rvcmac
 //
 //  Created by Nikita Titov on 17/09/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import CocoaLumberjack
 
-class RVDClient {
+class RvdClient {
     
     let storage = Storage()
     var timer: Timer?

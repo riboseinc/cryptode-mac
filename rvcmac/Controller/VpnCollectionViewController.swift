@@ -36,7 +36,7 @@ class VpnCollectionViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assertCheck()
-        collectionViewDataSource.rvdClient = AppDelegate.shared.rvdClient
+        collectionViewDataSource.RvdClient = AppDelegate.shared.rvdClient
         collectionView.register(NSNib(nibNamed: NSNib.Name(rawValue: self.collectionViewDataSource.itemIdentifier), bundle: nil)!, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: self.collectionViewDataSource.itemIdentifier))
         collectionView.enclosingScrollView!.automaticallyAdjustsContentInsets = false
         collectionView.enclosingScrollView!.contentInsets = NSEdgeInsets(top: padding, left: 0, bottom: padding, right: 0)
