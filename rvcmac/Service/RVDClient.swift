@@ -9,10 +9,6 @@
 import Foundation
 import CocoaLumberjack
 
-enum RVDClientError: Error {
-    case ServerError(String)
-}
-
 class RVDClient {
     
     let storage = Storage()
