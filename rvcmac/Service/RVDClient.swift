@@ -45,9 +45,6 @@ class RVDClient {
         }
     }
     
-    let notificationCenter = NotificationCenter.default
-    var storedConnections = [String: RVCVpnConnectionStatus]()
-    
     private func list() {
         var buffer = [Int8]()
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -101,22 +98,27 @@ class RVDClient {
                 }
             } catch {
                 DDLogError("\(error)")
-                storedConnections.values.forEach { connectionStatus in
-                    delete(connectionStatus.name)
-                }
-            }
-            func insert(_ connection: RVCVpnConnectionStatus) {
-                storedConnections[connection.name] = connection
-                notificationCenter.post(name: RVCConnectionInsert, object: connection)
-            }
-            func update(_ connection: RVCVpnConnectionStatus) {
-//                storedConnections[connection.name] = connection
-//                notificationCenter.post(name: RVCConnectionUpdate, object: connection)
-            }
-            func delete(_ key: String) {
-                let connectionStatus = storedConnections.removeValue(forKey: key)!
-                notificationCenter.post(name: RVCConnectionDelete, object: connectionStatus)
+                storedConnections.values.map { $0.name }.forEach(delete(_:))
             }
         }
     }
+    
+    let notificationCenter = NotificationCenter.default
+    var storedConnections = [String: RVCVpnConnectionStatus]()
+    
+    func insert(_ connection: RVCVpnConnectionStatus) {
+        storedConnections[connection.name] = connection
+        notificationCenter.post(name: RVCConnectionInsert, object: connection)
+    }
+    
+    func update(_ connection: RVCVpnConnectionStatus) {
+        //                storedConnections[connection.name] = connection
+        //                notificationCenter.post(name: RVCConnectionUpdate, object: connection)
+    }
+    
+    func delete(_ key: String) {
+        let connectionStatus = storedConnections.removeValue(forKey: key)!
+        notificationCenter.post(name: RVCConnectionDelete, object: connectionStatus)
+    }
+
 }
