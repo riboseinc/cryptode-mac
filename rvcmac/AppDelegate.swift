@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: 24)
     let service = try! VpnService()
     let loginItemsController = LoginItemsController()
-    let rvdClient = RvdClient()
+    let rvdClient = RvdClient(storage: Storage(), wrapper: RvcWrapper())
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {

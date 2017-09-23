@@ -11,21 +11,27 @@ import CocoaLumberjack
 
 class RvdClient {
     
-    let storage = Storage()
+    let storage: Storage
+    let wrapper: RvcWrapper
     var timer: Timer?
     
     deinit {
         timer?.invalidate()
     }
     
-    private let dt: TimeInterval = 1 / 30
-    private static let poolCooldownDefault: TimeInterval = 1
-    private var poolCooldown: TimeInterval = 0
+    required init(storage: Storage, wrapper: RvcWrapper) {
+        self.storage = storage
+        self.wrapper = wrapper
+    }
     
     func startPooling() {
         tick()
     }
     
+    private let dt: TimeInterval = 1 / 30
+    private static let poolCooldownDefault: TimeInterval = 1
+    private var poolCooldown: TimeInterval = 0
+
     func schedule(_ delay: TimeInterval) {
         if let timer = timer {
             timer.invalidate()
@@ -58,20 +64,20 @@ class RvdClient {
     private func pool() {
         poolCooldown = RvdClient.poolCooldownDefault
         
-        let connections = RvcWrapper.list()
-        connections.flatMap {RvcWrapper.status($0.name)}.forEach(storage.insert(_:))
+        let connections = wrapper.list()
+        connections.flatMap {wrapper.status($0.name)}.forEach(storage.insert(_:))
         storage.delete(ifMissingIn: Set(connections.map {$0.name}))
         DDLogInfo("Stored connections: \(storage.connections)")
     }
 
     func connect(_ connection: RvcStatus) {
-        if let newConnection = RvcWrapper.connect(connection.name) {
+        if let newConnection = wrapper.connect(connection.name) {
             storage.insert(newConnection)
         }
     }
     
     func disconnect(_ connection: RvcStatus) {
-        if let newConnection = RvcWrapper.disconnect(connection.name) {
+        if let newConnection = wrapper.disconnect(connection.name) {
             storage.insert(newConnection)
         }
     }

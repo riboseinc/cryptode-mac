@@ -13,7 +13,7 @@ import Foundation
 
 class RvcWrapper {
     
-    static func list() -> [RvcConnection] {
+    func list() -> [RvcConnection] {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -27,7 +27,7 @@ class RvcWrapper {
         return [RvcConnection]()
     }
     
-    static func status(_ name: String) -> RvcStatus? {
+    func status(_ name: String) -> RvcStatus? {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -41,7 +41,7 @@ class RvcWrapper {
         return nil
     }
     
-    static func connect(_ name: String) -> RvcStatus? {
+    func connect(_ name: String) -> RvcStatus? {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -56,7 +56,7 @@ class RvcWrapper {
         return nil
     }
     
-    static func disconnect(_ name: String) -> RvcStatus? {
+    func disconnect(_ name: String) -> RvcStatus? {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -71,7 +71,7 @@ class RvcWrapper {
         return nil
     }
     
-    private static func jsonObject(_ string: String) -> Any? {
+    private func jsonObject(_ string: String) -> Any? {
         let data = string.data(using: .utf8)!
         return try? JSONSerialization.jsonObject(with: data, options: [])
     }
