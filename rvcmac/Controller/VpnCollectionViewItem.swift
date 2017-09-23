@@ -50,7 +50,9 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     var item: RvcStatus! {
         didSet {
-            updateUI()
+            pullStatus()
+            pullState()
+            pullTitle()
             statusToken = item.observe(\.status) { _, _ in
                 self.pullStatus()
             }
@@ -58,12 +60,6 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     // MARK: - UI
-    
-    private func updateUI() {
-        pullStatus()
-        pullState()
-        pullTitle()
-    }
     
     private func pullStatus() {
         switch item.status {
