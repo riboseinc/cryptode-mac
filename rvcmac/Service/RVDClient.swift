@@ -22,68 +22,49 @@ class RVDClient {
         timer?.invalidate()
     }
     
-    private let dt: TimeInterval = 1 / 30
+    private let dt: TimeInterval = 1 / 3
     private var requestCooldown: TimeInterval = 2
     private var timeSinceLastRequest: TimeInterval = 0
     
     func startPooling() {
-        if timer == nil {
-            let t = Timer.scheduledTimer(timeInterval: dt, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
-            RunLoop.current.add(t, forMode: .commonModes)
-            timer = t
+        schedule(dt)
+    }
+    
+    func schedule(_ delay: TimeInterval) {
+        if let timer = timer {
+            timer.invalidate()
         }
+        let t = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(tick), userInfo: nil, repeats: false)
+        RunLoop.current.add(t, forMode: .commonModes)
+        timer = t
     }
     
     @objc private func tick() {
+        let t1 = Date().timeIntervalSinceNow
         timeSinceLastRequest += dt
         if timeSinceLastRequest > requestCooldown {
             timeSinceLastRequest = 0
             pool()
         }
+        let t2 = Date().timeIntervalSinceNow
+        let diff = t2 - t1
+        let delay = dt - diff
+        let limitedDelay = max(0, delay)
+        
+//        DDLogInfo("t1: \(t1)")
+//        DDLogInfo("t2: \(t1)")
+//        DDLogInfo("diff: \(diff)")
+//        DDLogInfo("delay: \(delay)")
+//        DDLogInfo("limitedDelay: \(limitedDelay)")
+
+        schedule(limitedDelay)
     }
     
     private func pool() {
-        let connections = rvcList()
-        connections.flatMap {rvcStatus($0.name)}.forEach(storage.insert(_:))
+        let connections = RvcWrapper.list()
+        connections.flatMap {RvcWrapper.status($0.name)}.forEach(storage.insert(_:))
         storage.delete(ifMissingIn: Set(connections.map {$0.name}))
         DDLogInfo("Stored connections: \(storage.connections)")
     }
-    
-    // MARK: - Wrappers
-    
-    // Swift wrappers for C library functions.
-    // Once C functions become mature enough and will do their own parsing from json string to data structures these wrappers could be eliminated.
-    
-    private func rvcList() -> [RVCVpnConnection] {
-        var buffer = [Int8]()
-        var response: String!
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_list_connections(1, &ptr) // actual library call
-            response = String(cString: ptr)
-        }
-        if let json = jsonObject(response), let envelope = try? RVCVpnConnectionEnvelope.decode(json), envelope.code == 0 {
-            return envelope.data
-        }
-        return [RVCVpnConnection]()
-    }
-    
-    private func rvcStatus(_ name: String) -> RVCVpnConnectionStatus? {
-        var buffer = [Int8]()
-        var response: String!
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_get_status(name.cString(using: .utf8)!, 1, &ptr) // actual library call
-            response = String(cString: ptr)
-        }
-        if let json = jsonObject(response), let envelope = try? RVCVpnConnectionStatusEnvelope.decode(json), envelope.code == 0 {
-            return envelope.data
-        }
-        return nil
-    }
-    
-    private func jsonObject(_ string: String) -> Any? {
-        let data = string.data(using: .utf8)!
-        return try? JSONSerialization.jsonObject(with: data, options: [])
-    }
+
 }
