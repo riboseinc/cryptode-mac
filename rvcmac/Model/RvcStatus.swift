@@ -1,5 +1,5 @@
 //
-//  RVCVpnConnectionStatus.swift
+//  RvcStatus.swift
 //  rvcmac
 //
 //  Created by Nikita Titov on 18/09/2017.
@@ -26,14 +26,15 @@ import CocoaLumberjack
 //    }
 //}
 
-class RVCVpnConnectionStatus: Decodable {
-    
+class RvcStatus: NSObject, Decodable {
+
     let name: String
-    let status: String
-    let ovpnStatus: String
-    let inTotal: Int
-    let outTotal: Int
-    let timestamp: Int
+    @objc dynamic var status: String
+    @objc dynamic var ovpnStatus: String
+    @objc dynamic var inTotal: Int
+    @objc dynamic var outTotal: Int
+    @objc dynamic var timestamp: Int
+    var isSelected = false
 
     required init(name: String, status: String, ovpnStatus: String, inTotal: Int, outTotal: Int, timestamp: Int) {
         self.name = name
@@ -57,12 +58,12 @@ class RVCVpnConnectionStatus: Decodable {
     
 }
 
-class RVCVpnConnectionStatusEnvelope: Decodable {
+class RvcStatusEnvelope: Decodable {
     
     let code: Int
-    let data: RVCVpnConnectionStatus
+    let data: RvcStatus
     
-    required init(code: Int, data: RVCVpnConnectionStatus) {
+    required init(code: Int, data: RvcStatus) {
         self.code = code
         self.data = data
     }

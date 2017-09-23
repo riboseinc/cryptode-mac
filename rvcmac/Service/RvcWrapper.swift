@@ -13,7 +13,7 @@ import Foundation
 
 class RvcWrapper {
     
-    static func list() -> [RVCVpnConnection] {
+    static func list() -> [RvcConnection] {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -21,13 +21,13 @@ class RvcWrapper {
             rvc_list_connections(1, &ptr) // actual library call
             response = String(cString: ptr)
         }
-        if let json = jsonObject(response), let envelope = try? RVCVpnConnectionEnvelope.decode(json), envelope.code == 0 {
+        if let json = jsonObject(response), let envelope = try? RvcConnectionEnvelope.decode(json), envelope.code == 0 {
             return envelope.data
         }
-        return [RVCVpnConnection]()
+        return [RvcConnection]()
     }
     
-    static func status(_ name: String) -> RVCVpnConnectionStatus? {
+    static func status(_ name: String) -> RvcStatus? {
         var buffer = [Int8]()
         var response: String!
         buffer.withUnsafeMutableBufferPointer { bptr in
@@ -35,7 +35,7 @@ class RvcWrapper {
             rvc_get_status(name.cString(using: .utf8)!, 1, &ptr) // actual library call
             response = String(cString: ptr)
         }
-        if let json = jsonObject(response), let envelope = try? RVCVpnConnectionStatusEnvelope.decode(json), envelope.code == 0 {
+        if let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 {
             return envelope.data
         }
         return nil

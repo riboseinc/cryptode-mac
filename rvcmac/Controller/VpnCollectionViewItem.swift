@@ -10,11 +10,15 @@ import Cocoa
 import CocoaLumberjack
 
 class VpnCollectionViewItem: NSCollectionViewItem {
-    
+
+    private var observerContext = 0
+
     @IBOutlet weak var statusView: NSView!
     @IBOutlet weak var checkBoxButton: NSButton!
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var toggleButton: TextButton!
+    
+    var statusToken: NSKeyValueObservation?
     
     func assertCheck() {
         assert(statusView != nil)
@@ -38,67 +42,68 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     override func prepareForReuse() {
         // super.prepareForReuse() leads to a crash
+        statusToken?.invalidate()
         statusView.backgroundColor = NSColor.ribose.disconnected
         titleTextField.stringValue = ""
         checkBoxButton.state = .off
     }
     
-    var item: RVCVpnConnectionStatus! {
+    var item: RvcStatus! {
         didSet {
-            updateUI()
+            pullStatus()
+            pullState()
+            pullTitle()
+            statusToken = item.observe(\.status) { _, _ in
+                self.pullStatus()
+            }
         }
     }
     
     // MARK: - UI
     
-    private func updateUI() {
-        updateStatus()
-        updateState()
-        updateTitle()
-        updateToggleButton()
+    private func pullStatus() {
+        switch item.status {
+        case "DISCONNECTED":
+            statusView.backgroundColor = NSColor.ribose.disconnected
+            toggleButton.text = "Connect"
+            toggleButton.isEnabled = true
+        case "CONNECTING":
+            statusView.backgroundColor = NSColor.ribose.connecting
+            toggleButton.text = "Connecting..."
+            toggleButton.isEnabled = false
+        case "CONNECTED":
+            statusView.backgroundColor = NSColor.ribose.connected
+            toggleButton.text = "Disconnect"
+            toggleButton.isEnabled = true
+        case "ERROR":
+            statusView.backgroundColor = NSColor.ribose.error
+            toggleButton.text = "Connect"
+            toggleButton.isEnabled = true
+        default:
+            statusView.backgroundColor = NSColor.ribose.disconnected
+        }
     }
     
-    private func updateStatus() {
-//        switch item.status {
-//        case .disconnected:
-//            statusView.backgroundColor = NSColor.ribose.disconnected
-//        case .connecting:
-//            statusView.backgroundColor = NSColor.ribose.connecting
-//        case .connected:
-//            statusView.backgroundColor = NSColor.ribose.connected
-//        case .error:
-//            statusView.backgroundColor = NSColor.ribose.error
-//        }
+    private func pullState() {
+        checkBoxButton.state = item.isSelected ? .on : .off
     }
     
-    private func updateState() {
-//        checkBoxButton.state = item.isSelected ? .on : .off
-    }
-    
-    private func updateTitle() {
+    private func pullTitle() {
         titleTextField.stringValue = item.name
-    }
-    
-    private func updateToggleButton() {
-//        if item.isConnected {
-//            toggleButton.text = "Disconnect"
-//        } else {
-//            toggleButton.text = "Connect"
-//        }
     }
     
     // MARK: - Actions
     
     @IBAction func actionCheckBoxButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
-//        switch self.checkBoxButton.state {
-//        case .on:
-//            DDLogInfo("on")
-//            item.isSelected = true
-//        default:
-//            DDLogInfo("off")
-//            item.isSelected = false
-//        }
+        switch self.checkBoxButton.state {
+        case .on:
+            DDLogInfo("on")
+            item.isSelected = true
+        default:
+            DDLogInfo("off")
+            item.isSelected = false
+        }
     }
     
     @IBAction func actionToggleButtonPressed(_ sender: Any) {
@@ -108,7 +113,5 @@ class VpnCollectionViewItem: NSCollectionViewItem {
 //        } else {
 //            item.status = .connected
 //        }
-//        updateStatus()
-//        updateToggleButton()
     }
 }
