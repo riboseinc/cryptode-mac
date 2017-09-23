@@ -19,11 +19,11 @@ class RvdClient {
     }
     
     private let dt: TimeInterval = 1 / 3
-    private var requestCooldown: TimeInterval = 2
-    private var timeSinceLastRequest: TimeInterval = 0
+    private var poolCooldown: TimeInterval = 2
+    private var timeSinceLastPool: TimeInterval = .greatestFiniteMagnitude // forces to pool immediately
     
     func startPooling() {
-        schedule(dt)
+        tick()
     }
     
     func schedule(_ delay: TimeInterval) {
@@ -37,9 +37,8 @@ class RvdClient {
     
     @objc private func tick() {
         let t1 = Date().timeIntervalSinceNow
-        timeSinceLastRequest += dt
-        if timeSinceLastRequest > requestCooldown {
-            timeSinceLastRequest = 0
+        timeSinceLastPool += dt
+        if timeSinceLastPool > poolCooldown {
             pool()
         }
         let t2 = Date().timeIntervalSinceNow
@@ -60,6 +59,7 @@ class RvdClient {
         let connections = RvcWrapper.list()
         connections.flatMap {RvcWrapper.status($0.name)}.forEach(storage.insert(_:))
         storage.delete(ifMissingIn: Set(connections.map {$0.name}))
+        timeSinceLastPool = 0
         DDLogInfo("Stored connections: \(storage.connections)")
     }
 
