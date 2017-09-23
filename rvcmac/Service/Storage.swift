@@ -27,11 +27,11 @@ class Storage {
         }
     }
     
-    func insert(_ connection: RvcStatus) {
-        if !_contains(connection.name) {
-            _insert(connection)
+    func put(_ connection: RvcStatus) {
+        if !contains(connection.name) {
+            insert(connection)
         } else {
-            _update(connection)
+            update(connection)
         }
     }
     
@@ -48,13 +48,13 @@ class Storage {
         Set(connections.keys).symmetricDifference(keys).forEach(delete(_:))
     }
     
-    private func _insert(_ connection: RvcStatus) {
+    private func insert(_ connection: RvcStatus) {
         let key = connection.name
         _connections[key] = connection
         NotificationCenter.default.post(name: .RvcConnectionInserted, object: connection)
     }
     
-    private func _update(_ newConnection: RvcStatus) {
+    private func update(_ newConnection: RvcStatus) {
         let connection = connections[newConnection.name]!
         
         if connection.status != newConnection.status {
@@ -74,7 +74,7 @@ class Storage {
         }
     }
     
-    private func _contains(_ key: String) -> Bool {
+    private func contains(_ key: String) -> Bool {
         return _connections.keys.contains(key)
     }
 }
