@@ -36,11 +36,15 @@ class Storage {
     }
     
     func delete(_ key: String) {
-        let connection = _connections.removeValue(forKey: key)!
-        NotificationCenter.default.post(name: .RvcConnectionDeleted, object: connection)
+        if let connection = _connections.removeValue(forKey: key) {
+            NotificationCenter.default.post(name: .RvcConnectionDeleted, object: connection)
+        }
     }
     
     func delete(ifMissingIn keys: Set<String>) {
+        if connections.isEmpty {
+            return
+        }
         Set(connections.keys).symmetricDifference(keys).forEach(delete(_:))
     }
     

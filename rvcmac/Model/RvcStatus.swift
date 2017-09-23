@@ -27,7 +27,7 @@ import CocoaLumberjack
 //}
 
 class RvcStatus: Decodable {
-    
+
     let name: String
     var status: String
     var ovpnStatus: String
