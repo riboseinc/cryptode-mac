@@ -65,7 +65,6 @@ class VpnCollectionViewController: NSViewController {
 
     private func subscribe() {
         notificationCenter.addObserver(self, selector: #selector(insert), name: .RvcConnectionInserted, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(update), name: .RvcConnectionChanged, object: nil)
         notificationCenter.addObserver(self, selector: #selector(delete), name: .RvcConnectionDeleted, object: nil)
     }
     
@@ -74,10 +73,6 @@ class VpnCollectionViewController: NSViewController {
     }
     
     @objc private func insert() {
-        collectionView.reloadData()
-    }
-    
-    @objc private func update() {
         collectionView.reloadData()
     }
     

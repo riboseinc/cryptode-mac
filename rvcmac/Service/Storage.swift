@@ -15,7 +15,6 @@ import Foundation
 
 extension NSNotification.Name {
     public static let RvcConnectionInserted = NSNotification.Name(rawValue: "RvcConnectionInserted")
-    public static let RvcConnectionChanged = NSNotification.Name(rawValue: "RvcConnectionChanged")
     public static let RvcConnectionDeleted = NSNotification.Name(rawValue: "RvcConnectionDeleted")
 }
 
