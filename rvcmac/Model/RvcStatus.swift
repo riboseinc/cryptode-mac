@@ -34,6 +34,7 @@ class RvcStatus: NSObject, Decodable {
     @objc dynamic var inTotal: Int
     @objc dynamic var outTotal: Int
     @objc dynamic var timestamp: Int
+    var isSelected = false
 
     required init(name: String, status: String, ovpnStatus: String, inTotal: Int, outTotal: Int, timestamp: Int) {
         self.name = name

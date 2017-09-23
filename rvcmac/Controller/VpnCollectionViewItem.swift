@@ -82,7 +82,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     }
     
     private func updateState() {
-//        checkBoxButton.state = item.isSelected ? .on : .off
+        checkBoxButton.state = item.isSelected ? .on : .off
     }
     
     private func updateTitle() {
@@ -101,14 +101,14 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     @IBAction func actionCheckBoxButtonPressed(_ sender: Any) {
         DDLogInfo("\(#function)")
-//        switch self.checkBoxButton.state {
-//        case .on:
-//            DDLogInfo("on")
-//            item.isSelected = true
-//        default:
-//            DDLogInfo("off")
-//            item.isSelected = false
-//        }
+        switch self.checkBoxButton.state {
+        case .on:
+            DDLogInfo("on")
+            item.isSelected = true
+        default:
+            DDLogInfo("off")
+            item.isSelected = false
+        }
     }
     
     @IBAction func actionToggleButtonPressed(_ sender: Any) {
