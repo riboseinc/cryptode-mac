@@ -23,8 +23,8 @@ class RVDClient {
     }
     
     private let dt: TimeInterval = 1 / 30
-    private var requestCooldown: Double = 1
-    private var timeSinceLastRequest: Double = 0
+    private var requestCooldown: TimeInterval = 1
+    private var timeSinceLastRequest: TimeInterval = 0
     
     func startPooling() {
         if timer == nil {
