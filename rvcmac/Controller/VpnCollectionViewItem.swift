@@ -18,7 +18,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var toggleButton: TextButton!
     
-    var token: NSKeyValueObservation?
+    var statusToken: NSKeyValueObservation?
     
     func assertCheck() {
         assert(statusView != nil)
@@ -42,7 +42,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     
     override func prepareForReuse() {
         // super.prepareForReuse() leads to a crash
-        token?.invalidate()
+        statusToken?.invalidate()
         statusView.backgroundColor = NSColor.ribose.disconnected
         titleTextField.stringValue = ""
         checkBoxButton.state = .off
@@ -51,7 +51,7 @@ class VpnCollectionViewItem: NSCollectionViewItem {
     var item: RvcStatus! {
         didSet {
             updateUI()
-            token = item.observe(\.status) { _, _ in
+            statusToken = item.observe(\.status) { _, _ in
                 self.updateStatus()
             }
         }
