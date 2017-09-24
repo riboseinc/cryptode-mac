@@ -10,6 +10,7 @@ import Foundation
 import protocol Decodable.Decodable
 import enum Decodable.DecodingError
 import Decodable
+import CoreData
 import CocoaLumberjack
 
 // Vpn connection status from `rvc status nmtitov --json`
@@ -34,7 +35,26 @@ class RvcStatus: NSObject, Decodable {
     @objc dynamic var inTotal: Int
     @objc dynamic var outTotal: Int
     @objc dynamic var timestamp: Int
-    var isSelected = false
+    
+    var connection: Connection?
+    private var _isSelected = false
+    var isSelected: Bool {
+        get {
+            if let connection = connection {
+                return connection.isSelected
+            } else {
+                return _isSelected
+            }
+        }
+        set {
+            if let connection = connection {
+                connection.isSelected = newValue
+                connection.save()
+            } else {
+                _isSelected = newValue
+            }
+        }
+    }
     
     var isConnected: Bool {
         get {

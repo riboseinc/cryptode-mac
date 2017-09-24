@@ -9,8 +9,18 @@
 
 import Foundation
 import CoreData
+import CocoaLumberjack
 
 @objc(Connection)
 public class Connection: NSManagedObject {
-
+    
+    public func save() {
+        do {
+            try managedObjectContext?.save()
+            DDLogInfo("Saved item=\(self)")
+        } catch let error {
+            DDLogError("Could not save item=\(self), error=\(error.localizedDescription)")
+        }
+    }
+    
 }

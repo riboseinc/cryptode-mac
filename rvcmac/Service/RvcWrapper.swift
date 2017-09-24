@@ -74,13 +74,7 @@ class RvcWrapper {
             return nil
         }
         let status = envelope.data
-        // Get isSelected from persistent storage
-        let name = status.name
-        if let connection = database.selectConnection(name: status.name) {
-            status.isSelected = connection.isSelected
-        } else {
-            database.insertConnection(name: name)
-        }
+        status.connection = database.getConnection(name: status.name)
         return status
     }
     

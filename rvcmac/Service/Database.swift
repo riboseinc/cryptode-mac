@@ -18,8 +18,14 @@ class Database {
         self.context = context
     }
     
+    func getConnection(name: String) -> Connection? {
+        if let connection = self.selectConnection(name: name) {
+            return connection
+        }
+        return insertConnection(name: name)
+    }
+    
     func selectConnection(name: String) -> Connection? {
-        let context = AppDelegate.shared.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Connection> = Connection.fetchRequest()
         let predicate = NSPredicate(format: "name = %@", name)
         fetchRequest.predicate = predicate
@@ -34,16 +40,18 @@ class Database {
         return item
     }
     
-    func insertConnection(name: String) {
+    func insertConnection(name: String) -> Connection? {
         let item = Connection(context: context)
         item.name = name
         item.isSelected = false
         do {
             try context.save()
             DDLogInfo("Inserted connection=\(item)")
+            return item
         } catch let error {
             DDLogError("Could not insert connection with name=\(name) error=\(error.localizedDescription)")
         }
+        return nil
     }
 
 }
