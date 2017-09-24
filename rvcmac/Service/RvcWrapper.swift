@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 // Swift wrappers for C library functions.
 // Once C functions become mature enough and will do their own parsing from json string to data structures these wrappers could be eliminated.
@@ -67,8 +68,37 @@ class RvcWrapper {
             return nil
         }
         let status = envelope.data
-        // TODO: Get isSelected from persistent storage
+        // Get isSelected from persistent storage
+        let name = status.name
+        let context = AppDelegate.shared.persistentContainer.viewContext
+        if let connection = selectConnection(context, name: status.name) {
+            status.isSelected = connection.isSelected
+        } else {
+            insertConnection(context, name: name)
+        }
         return status
+    }
+    
+    func selectConnection(_ context: NSManagedObjectContext, name: String) -> Connection? {
+        let context = AppDelegate.shared.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Connection> = Connection.fetchRequest()
+        let predicate = NSPredicate(format: "name = %@", name)
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchLimit = 1
+        let items = try? context.fetch(fetchRequest)
+        let item = items?.first
+        return item
+    }
+    
+    func insertConnection(_ context: NSManagedObjectContext, name: String) {
+        let item = Connection(context: context)
+        item.name = name
+        item.isSelected = false
+        do {
+            try context.save()
+        } catch let error {
+            debugPrint("Error in saveRecords \(error.localizedDescription)")
+        }
     }
     
     private func jsonObject(_ string: String) -> Any? {
