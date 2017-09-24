@@ -10,8 +10,6 @@ import Cocoa
 
 class VpnCollectionViewController: NSViewController {
     
-    let padding: CGFloat = 30
-
     @IBOutlet weak var collectionView: VpnCollectionView!
     @IBOutlet var collectionViewDataSource: VpnCollectionViewDataSource!
     @IBOutlet var collectionViewDelegate: VpnCollectionViewDelegate!
@@ -33,6 +31,8 @@ class VpnCollectionViewController: NSViewController {
         assert(collectionView.delegate != nil)
     }
     
+    let padding: CGFloat = 30
+
     override func viewDidLoad() {
         func subscribe() {
             NotificationCenter.default.addObserver(collectionView, selector: #selector(collectionView.reloadData), name: .RvcConnectionInserted, object: nil)
