@@ -9,10 +9,14 @@
 import Cocoa
 import CocoaLumberjack
 
+extension NSStoryboard.Name {
+    public static let main = NSStoryboard.Name(rawValue: "Main")
+}
+
 class VpnWindowController: NSWindowController, NSWindowDelegate {
 
     static func instantiate() -> VpnWindowController {
-        let sb = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let sb = NSStoryboard(name: .main, bundle: nil)
         return sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: self.identifier())) as! VpnWindowController
     }
     

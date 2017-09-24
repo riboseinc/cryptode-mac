@@ -17,7 +17,7 @@ class VpnCollectionViewController: NSViewController {
     @IBOutlet var collectionViewDelegate: VpnCollectionViewDelegate!
     
     static func instantiate() -> VpnCollectionViewController {
-        let sb = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let sb = NSStoryboard(name: .main, bundle: nil)
         return sb.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: self.identifier())) as! VpnCollectionViewController
     }
 
