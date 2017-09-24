@@ -21,56 +21,47 @@ class RvcWrapper {
     }
     
     func list() -> [RvcConnection] {
-        var buffer = [Int8]()
-        var response: String!
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_list_connections(1, &ptr) // actual library call
-            response = String(cString: ptr)
-        }
-        if let json = jsonObject(response), let envelope = try? RvcConnectionEnvelope.decode(json), envelope.code == 0 {
+        let response = libraryCall {rvc_list_connections(1, $0)}
+        if let response = response, let json = jsonObject(response), let envelope = try? RvcConnectionEnvelope.decode(json), envelope.code == 0 {
             return envelope.data
         }
         return [RvcConnection]()
     }
     
     func status(_ name: String) -> RvcStatus? {
-        var buffer = [Int8]()
-        var response: String!
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            rvc_get_status(name.cString(using: .utf8)!, 1, &ptr) // actual library call
-            response = String(cString: ptr)
-        }
+        let name = name.cString(using: .utf8)!
+        let response = libraryCall {rvc_get_status(name, 1, $0)}
         return createStatus(response)
     }
     
     func connect(_ name: String) -> RvcStatus? {
-        var buffer = [Int8]()
-        var response: String!
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            let name = name.cString(using: .utf8)!
-            rvc_connect(name, 1, &ptr) // actual library call
-            response = String(cString: ptr)
-        }
+        let name = name.cString(using: .utf8)!
+        let response = libraryCall {rvc_connect(name, 1, $0)}
         return createStatus(response)
     }
     
     func disconnect(_ name: String) -> RvcStatus? {
-        var buffer = [Int8]()
-        var response: String!
-        buffer.withUnsafeMutableBufferPointer { bptr in
-            var ptr = bptr.baseAddress!
-            let name = name.cString(using: .utf8)!
-            rvc_disconnect(name, 1, &ptr) // actual library call
-            response = String(cString: ptr)
-        }
+        let name = name.cString(using: .utf8)!
+        let response = libraryCall {rvc_disconnect(name, 1, $0)}
         return createStatus(response)
     }
     
-    private func createStatus(_ response: String) -> RvcStatus? {
-        guard let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 else {
+    private func libraryCall(_ block: (UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> Int32) -> String? {
+        var buffer = [Int8]()
+        var response: String?
+        buffer.withUnsafeMutableBufferPointer { bptr in
+            var ptr = bptr.baseAddress!
+            let ret = block(&ptr)
+            if ret != 0 {
+                return
+            }
+            response = String(cString: ptr)
+        }
+        return response
+    }
+    
+    private func createStatus(_ response: String?) -> RvcStatus? {
+        guard let response = response, let json = jsonObject(response), let envelope = try? RvcStatusEnvelope.decode(json), envelope.code == 0 else {
             return nil
         }
         let status = envelope.data
