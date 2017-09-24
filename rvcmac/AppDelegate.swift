@@ -35,11 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         loginItemsController.add()
         popover.contentViewController = rootController
         statusItem.button!.image = NSImage(named: NSImage.Name(rawValue: "rvcmac-status-item"))!
-        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: { event in
-            if self.popover.isShown {
-                self.hide(event)
-            }
-        })
+        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: hide(_:))
         NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { event -> NSEvent? in
             if event.window == self.statusItem.button!.window {
                 self.toggle(sender: self.statusItem.button!)
@@ -67,6 +63,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func hide(_ event: NSEvent?) {
         DDLogInfo("\(#function)")
+        if !popover.isShown {
+            return
+        }
         popover.performClose(event)
         statusItem.button!.highlight(false)
     }
