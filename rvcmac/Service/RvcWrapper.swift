@@ -14,6 +14,12 @@ import CoreData
 
 class RvcWrapper {
     
+    let database: Database
+    
+    required init(database: Database) {
+        self.database = database
+    }
+    
     func list() -> [RvcConnection] {
         var buffer = [Int8]()
         var response: String!
@@ -70,35 +76,12 @@ class RvcWrapper {
         let status = envelope.data
         // Get isSelected from persistent storage
         let name = status.name
-        let context = AppDelegate.shared.persistentContainer.viewContext
-        if let connection = selectConnection(context, name: status.name) {
+        if let connection = database.selectConnection(name: status.name) {
             status.isSelected = connection.isSelected
         } else {
-            insertConnection(context, name: name)
+            database.insertConnection(name: name)
         }
         return status
-    }
-    
-    func selectConnection(_ context: NSManagedObjectContext, name: String) -> Connection? {
-        let context = AppDelegate.shared.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Connection> = Connection.fetchRequest()
-        let predicate = NSPredicate(format: "name = %@", name)
-        fetchRequest.predicate = predicate
-        fetchRequest.fetchLimit = 1
-        let items = try? context.fetch(fetchRequest)
-        let item = items?.first
-        return item
-    }
-    
-    func insertConnection(_ context: NSManagedObjectContext, name: String) {
-        let item = Connection(context: context)
-        item.name = name
-        item.isSelected = false
-        do {
-            try context.save()
-        } catch let error {
-            debugPrint("Error in saveRecords \(error.localizedDescription)")
-        }
     }
     
     private func jsonObject(_ string: String) -> Any? {

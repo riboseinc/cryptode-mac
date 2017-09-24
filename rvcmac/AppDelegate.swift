@@ -19,10 +19,10 @@ extension NSImage.Name {
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var rvdClient: RvdClient!
     let popover = VpnPopover()
     let statusItem = NSStatusBar.system.statusItem(withLength: 24)
     let loginItemsController = LoginItemsController()
-    let rvdClient = RvdClient(storage: Storage(), wrapper: RvcWrapper())
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         func setupLogging() {
@@ -35,6 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DDLog.add(fileLogger)
         }
         setupLogging()
+        rvdClient = RvdClient(storage: Storage(), wrapper: RvcWrapper(database: Database(context: persistentContainer.viewContext)))
         loginItemsController.add()
         popover.contentViewController = VpnContainerViewController.instantiate()
         statusItem.button!.image = NSImage(named: .rvcmacStatusItem)!
