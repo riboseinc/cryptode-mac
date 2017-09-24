@@ -118,4 +118,6 @@ class VpnCollectionViewItem: NSCollectionViewItem {
             AppDelegate.shared.rvdClient.connect(item)
         }
     }
+    
+    // MARK: - Core Data
 }

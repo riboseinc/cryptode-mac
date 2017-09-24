@@ -65,20 +65,20 @@ class RvdClient {
         poolCooldown = RvdClient.poolCooldownDefault
         
         let connections = wrapper.list()
-        connections.flatMap {wrapper.status($0.name)}.forEach(storage.insert(_:))
+        connections.flatMap {wrapper.status($0.name)}.forEach(storage.put(_:))
         storage.delete(ifMissingIn: Set(connections.map {$0.name}))
         DDLogInfo("Stored connections: \(storage.connections)")
     }
 
     func connect(_ connection: RvcStatus) {
         if let newConnection = wrapper.connect(connection.name) {
-            storage.insert(newConnection)
+            storage.put(newConnection)
         }
     }
     
     func disconnect(_ connection: RvcStatus) {
         if let newConnection = wrapper.disconnect(connection.name) {
-            storage.insert(newConnection)
+            storage.put(newConnection)
         }
     }
     
