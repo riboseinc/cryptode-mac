@@ -15,7 +15,6 @@ private let helperBundleId = "com.ribose.rvcmac"
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let rootController = VpnContainerViewController.instantiate()
     let popover = VpnPopover()
     let statusItem = NSStatusBar.system.statusItem(withLength: 24)
     let loginItemsController = LoginItemsController()
@@ -33,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         setupLogging()
         loginItemsController.add()
-        popover.contentViewController = rootController
+        popover.contentViewController = VpnContainerViewController.instantiate()
         statusItem.button!.image = NSImage(named: NSImage.Name(rawValue: "rvcmac-status-item"))!
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown], handler: hide(_:))
         NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { event -> NSEvent? in
