@@ -21,7 +21,7 @@ class RvcWrapper {
     }
     
     func list() -> [RvcConnection] {
-        let response = libraryCall {rvc_list_connections(1, $0)}
+        let response = libraryCall {rvc_get_status("all", 1, $0)}
         if let response = response, let json = jsonObject(response), let envelope = try? RvcConnectionEnvelope.decode(json), envelope.code == 0 {
             return envelope.data
         }
